@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Eligibility - Medical Reporting Skill</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f6fa;
+}
+
+/* ===== HEADER (same as other pages) ===== */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 40px;
+    background: #ffffff;
+}
+
+.header-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.title p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+}
+
+nav {
+    display: flex;
+    gap: 16px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+}
+
+nav a.active {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 2px;
+}
+
+/* moving sentence bar */
+.header-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 4px;
+    border-top: 1px solid #eee;
+    padding-top: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #004aad;
+}
+
+.header-marquee {
+    display: inline-block;
+    animation: headerScroll 30s linear infinite;
+}
+
+.header-marquee-wrapper:hover .header-marquee {
+    animation-play-state: paused;
+}
+
+@keyframes headerScroll {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* ===== PAGE CONTENT: ELIGIBILITY BOX ===== */
+.container {
+    width: 90%;
+    margin: 60px auto;
+    min-height: 650px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('css/women.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.info-box {
+    width: 75%;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 40px;
+    border-radius: 16px;
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+}
+
+.info-box h1 {
+    font-size: 42px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 25px;
+    background: linear-gradient(to right, #003A75, #007BFF);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.card {
+    background: rgba(0,0,0,0.78);
+    padding: 25px 28px;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.65);
+}
+
+.card p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: #e0e7ff;
+    margin-bottom: 20px;
+}
+
+.tick-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.tick-list li {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.tick-list li::before {
+    content: "?";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #3498db;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+    background: #111827;
+    color: #e5e7eb;
+    padding: 30px 40px 15px;
+    margin-top: 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.footer-content h3,
+.footer-content h4 {
+    margin-top: 0;
+}
+
+.footer-center ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-center li {
+    margin-bottom: 6px;
+}
+
+.footer-center a,
+.footer-right a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-center a:hover,
+.footer-right a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+@media (max-width: 900px) {
+    .info-box {
+        width: 90%;
+        padding: 25px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-top">
+        <div class="logo">
+            <img src="css/logo.png" alt="Medical Reporting Skill Logo" height="60">
+            <div class="title">
+                <h2>Medical Reporting Skill</h2>
+                <p>Training & Placement Support</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="info.html">Info</a>
+            <a href="eligibility.html" class="active">Eligibility</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <div class="header-marquee-wrapper">
+        <span class="header-marquee">
+            welcome to the right way to make your career with medical reporting skills. Here we provide you that skill through which you can make your career taking work at home and office by itself. No need of anyone to support you will make that much skill.
+        </span>
+    </div>
+</header>
+
+<!-- PAGE CONTENT -->
+<div class="container">
+    <div class="info-box">
+        <h1>Eligibility</h1>
+
+        <div class="card">
+            <p>
+                Open to graduates in life sciences, BSc, MSc, B.Pharmacy, M.Pharmacy,
+                medical or non-medical, Bio-technology and allied fields.
+                Freshers and experienced professionals are welcome.
+            </p>
+
+            <ul class="tick-list">
+                <li>B.Sc / M.Sc / MBBS / Pharm.D / B.Pharm / D.Pharm</li>
+                <li>Basic computer literacy</li>
+                <li>Medical or Non-medical</li>
+                <li>Anyone can do & No age bar</li>
+                <li>Working person or non-working (like student) anyone can do</li>
+                <li>Science / Commerce / any other field – anyone can do and get the job and can work from wherever you want</li>
+                <li>Good communication skills (spoken & written – we will guide)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <h3>Medical Reporting Skill</h3>
+            <p>Empowering healthcare professionals through industry-focused medical reporting training.</p>
+        </div>
+
+        <div class="footer-center">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="info.html">Info</a></li>
+                <li><a href="eligibility.html" class="active">Eligibility</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-right">
+            <h4>Contact Us</h4>
+            <p>Email: <a href="mailto:info@medicalreportingskill.com">avsoni10987@gmail.com</a></p>
+            <p>Phone: +91 9752043256</p>
+            <p>Phone: +91 8871866088</p>
+            <p>Address: Bengaluru, India</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Medical Reporting Skill | All Rights Reserved</p>
+    </div>
+</footer>
+
+</body>
+</html>

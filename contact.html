@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Contact - Medical Reporting Skill</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f6fa;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 40px;
+        background: #ffffff;
+    }
+
+    .header-top {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .title h2 {
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .title p {
+        margin: 0;
+        font-size: 13px;
+        color: #555;
+    }
+
+    nav {
+        display: flex;
+        gap: 16px;
+    }
+
+    nav a {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 14px;
+        color: #333;
+    }
+
+    nav a.active {
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 2px;
+    }
+
+    .header-marquee-wrapper {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-top: 4px;
+        border-top: 1px solid #eee;
+        padding-top: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #004aad;
+    }
+
+    .header-marquee {
+        display: inline-block;
+        animation: headerScroll 30s linear infinite;
+    }
+
+    .header-marquee-wrapper:hover .header-marquee {
+        animation-play-state: paused;
+    }
+
+    @keyframes headerScroll {
+        0%   { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    /* ===== CONTACT PAGE CONTENT ===== */
+    .contact-section {
+        width: 90%;
+        margin: 60px auto;
+        min-height: 650px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        background-image: url('css/discharge.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 16px;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+        padding: 50px;
+    }
+
+    .contact-left {
+        flex: 1;
+        max-width: 350px;
+        background: rgba(255,255,255,0.9);
+        padding: 30px 25px;
+        border-radius: 16px;
+        color: #000000;
+        backdrop-filter: blur(4px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-left:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+    }
+
+    .contact-left h2 {
+        font-size: 42px;
+        margin-bottom: 15px;
+        color: #000000;
+    }
+
+    .contact-left p {
+        font-size: 20px;
+        line-height: 1.6;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+
+    .contact-right {
+        flex: 1;
+        max-width: 480px;
+    }
+
+    .contact-right h2 {
+        font-size: 32px;
+        margin-bottom: 18px;
+        color: #000;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        background: rgba(255,255,255,0.95);
+        padding: 28px;
+        border-radius: 16px;
+        color: #000000;
+        backdrop-filter: blur(4px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-form:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form button {
+        width: 100%;
+        padding: 16px 18px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid #aaa;
+        background: #ffffff;
+        color: #000000;
+        box-sizing: border-box;
+    }
+
+    .contact-form button {
+        border: none;
+        background: #f39c12;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .contact-form button:hover {
+        background: #d68910;
+        transform: scale(1.02);
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+        background: #111827;
+        color: #e5e7eb;
+        padding: 30px 40px 15px;
+        margin-top: 40px;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: space-between;
+    }
+
+    .footer-content h3,
+    .footer-content h4 {
+        margin-top: 0;
+    }
+
+    .footer-center ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-center li {
+        margin-bottom: 6px;
+    }
+
+    .footer-center a,
+    .footer-right a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .footer-center a:hover,
+    .footer-right a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #9ca3af;
+    }
+
+    @media (max-width: 900px) {
+        .contact-section {
+            flex-direction: column;
+            padding: 30px 20px;
+        }
+
+        .contact-left,
+        .contact-right {
+            max-width: 100%;
+            margin-left: 0;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="css/logo.png" alt="Medical Reporting Skill Logo" height="60">
+                <div class="title">
+                    <h2>Medical Reporting Skill</h2>
+                    <p>Training &amp; Placement Support</p>
+                </div>
+            </div>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="info.html">Info</a>
+                <a href="eligibility.html">Eligibility</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+
+        <div class="header-marquee-wrapper">
+            <span class="header-marquee">
+                Welcome to the right way to make your career with medical reporting skills. Here we provide you that skill through which you can make your career taking work at home and office by itself. No need of anyone to support you; you will gain that skill.
+            </span>
+        </div>
+    </header>
+
+    <!-- MAIN CONTACT SECTION -->
+    <div class="contact-section">
+        <div class="contact-left">
+            <h2>Contact Us:</h2>
+            <p>?? +91-9752043256</p>
+            <p>?? +91-8871866088</p>
+            <p>?? avsoni10987@gmail.com</p>
+        </div>
+
+        <div class="contact-right">
+            <h2>Get more information</h2>
+            <form action="#" method="post" class="contact-form">
+                <input type="text" name="fullname" placeholder="Full Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+
+                <select name="qualification" required>
+                    <option value="">Select Qualification</option>
+                    <option>B.Sc</option>
+                    <option>M.Sc</option>
+                    <option>MBBS</option>
+                    <option>Pharm.D</option>
+                    <option>Other</option>
+                </select>
+
+                <input type="number" name="year" placeholder="Year of completion" min="1950" max="2099">
+
+                <select name="campus" required>
+                    <option value="">Preferred Campus</option>
+                    <option>Main</option>
+                    <option>Remote</option>
+                    <option>Online</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>Medical Reporting Skill</h3>
+                <p>Empowering healthcare professionals through industry-focused medical reporting training.</p>
+            </div>
+
+            <div class="footer-center">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="info.html">Info</a></li>
+                    <li><a href="eligibility.html">Eligibility</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:avsoni10987@gmail.com">avsoni10987@gmail.com</a></p>
+                <p>Phone: +91 9752043256</p>
+                <p>Phone: +91 8871866088</p>
+                <p>Address: Bengaluru, India</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Medical Reporting Skill | All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+</html>

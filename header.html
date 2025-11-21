@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Medical Reporting Skill</title>
+
+<style>
+/* ===== HEADER LAYOUT ===== */
+header {
+    display: flex;
+    flex-direction: column;      /* header-top on first line, moving text below */
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 40px;
+    background: #ffffff;
+}
+
+/* top row: logo on left, menu on right */
+.header-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.title p {
+    margin: 0;
+    font-size: 13px;
+    color: #555;
+}
+
+/* nav links */
+nav {
+    display: flex;
+    gap: 16px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+}
+
+nav a.active {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 2px;
+}
+
+/* ===== MOVING SENTENCE BAR ===== */
+.header-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 4px;
+    border-top: 1px solid #eee;
+    padding-top: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #004aad;
+}
+
+.header-marquee {
+    display: inline-block;
+    animation: headerScroll 30s linear infinite;  /* slower speed */
+}
+
+/* ? pause on hover */
+.header-marquee-wrapper:hover .header-marquee {
+    animation-play-state: paused;
+}
+
+/* scrolling animation: right ? left */
+@keyframes headerScroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="header-top">
+        <div class="logo">
+            <img src="css/logo.png" alt="Medical Reporting Skill Logo" height="60">
+            <div class="title">
+                <h2>Medical Reporting Skill</h2>
+                <p>Training &amp; Placement Support</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="courses.html" class="active">Courses</a>
+            <a href="info.html">Info</a>
+            <a href="eligibility.html">Eligibility</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Moving sentence -->
+    <div class="header-marquee-wrapper">
+        <span class="header-marquee">
+            welcome to the right way to make your career with medical reporting skills. Here we provide you that skill through which you can make your career taking work at home and office by itself. No need of anyone to support you will make that much skill.
+        </span>
+    </div>
+</header>
+
+<hr>
+
+<!-- your page content below -->
+</body>
+</html>

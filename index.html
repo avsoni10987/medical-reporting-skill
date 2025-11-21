@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Medical Reporting Skill - Info</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f6fa;
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 40px;
+    background: #ffffff;
+}
+
+.header-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title h2 { margin: 0; font-size: 22px; }
+.title p { margin: 0; font-size: 13px; color: #555; }
+
+nav { display: flex; gap: 16px; }
+nav a { text-decoration: none; font-weight: 500; font-size: 14px; color: #333; }
+nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
+
+/* ===== MARQUEE ===== */
+.header-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 4px;
+    border-top: 1px solid #eee;
+    padding-top: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #004aad;
+}
+.header-marquee { display: inline-block; animation: headerScroll 30s linear infinite; }
+.header-marquee-wrapper:hover .header-marquee { animation-play-state: paused; }
+@keyframes headerScroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+/* ===== HERO SECTION ===== */
+.hero {
+    width: 100%;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('css/discharge.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 60px 0;
+}
+
+.hero-overlay {
+    width: 90%;
+    max-width: 1100px;
+    background: rgba(255,255,255,0.9);
+    padding: 40px;
+    border-radius: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 320px;
+    color: #000000;
+}
+
+.hero-text h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.hero-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.hero-text li {
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.hero-text li::before {
+    content: "?";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.hero-form {
+    flex: 1;
+    min-width: 320px;
+    background: rgba(255,255,255,0.95);
+    padding: 28px;
+    border-radius: 16px;
+    color: #000000;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+.hero-form h2 {
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 26px;
+    color: #f39c12;
+}
+
+.hero-form input,
+.hero-form select,
+.hero-form button {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #aaa;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.hero-form input {
+    background: #fff;
+    color: #000;
+}
+
+.hero-form select {
+    background: #fff;
+    color: #000;
+}
+
+.hero-form button {
+    background: #f39c12;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hero-form button:hover {
+    background: #d68910;
+    transform: scale(1.02);
+    transition: 0.2s;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+    background: #111827;
+    color: #e5e7eb;
+    padding: 30px 40px 15px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.footer-content h3,
+.footer-content h4 { margin-top: 0; }
+
+.footer-center ul { list-style: none; padding: 0; margin: 0; }
+.footer-center li { margin-bottom: 6px; }
+.footer-center a,
+.footer-right a { color: #ffffff; text-decoration: none; }
+.footer-center a:hover,
+.footer-right a:hover { text-decoration: underline; }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #9ca3af;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .hero-overlay { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-top">
+        <div class="logo">
+            <img src="css/logo.png" alt="Medical Reporting Skill Logo" height="60">
+            <div class="title">
+                <h2>Medical Reporting Skill</h2>
+                <p>Training & Placement Support</p>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="info.html" >Info</a>
+            <a href="eligibility.html">Eligibility</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </div>
+    <div class="header-marquee-wrapper">
+        <span class="header-marquee">
+            Welcome to the right way to make your career with medical reporting skills. Learn from home or office with full support.
+        </span>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-overlay">
+        <div class="hero-text">
+            <h1>Medical Reporting Course from India’s Dedicated Medical Reporting Place</h1>
+            <p>Learn Medical Reporting online and become job-ready in:</p>
+            <ul>
+                <li>Training in Medical Reporting, Radiology, Hospital Reporting</li>
+                <li>Medical Analyst / Summarizer / Content Writing</li>
+                <li>Medical Transcription</li>
+                <li>Soft Skills and Communication Skills</li>
+                <li>Work From Home and Office Opportunities</li>
+            </ul>
+        </div>
+        <div class="hero-form">
+            <h2>Get more information</h2>
+            <form action="contact.html" method="post">
+                <input type="text" name="fullname" placeholder="Full Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <select name="qualification" required>
+                    <option value="">Select Qualification</option>
+                    <option>B.Sc</option>
+                    <option>M.Sc</option>
+                    <option>MBBS</option>
+                    <option>Pharm.D</option>
+                    <option>Other</option>
+                </select>
+                <input type="number" name="year" placeholder="Year of Completion" min="1950" max="2099" required>
+                <select name="campus" required>
+                    <option value="">Preferred Campus / Location</option>
+                    <option>Main</option>
+                    <option>Remote</option>
+                    <option>Online</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <h3>Medical Reporting Skill</h3>
+            <p>Empowering healthcare professionals through industry-focused medical reporting training.</p>
+        </div>
+        <div class="footer-center">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="info.html" >Info</a></li>
+                <li><a href="eligibility.html">Eligibility</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-right">
+            <h4>Contact Us</h4>
+            <p>Email: <a href="mailto:avsoni10987@gmail.com">avsoni10987@gmail.com</a></p>
+            <p>Phone: +91 9752043256</p>
+            <p>Phone: +91 8871866088</p>
+            <p>Address: Bengaluru, India</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Medical Reporting Skill | All Rights Reserved</p>
+    </div>
+</footer>
+
+</body>
+</html>
