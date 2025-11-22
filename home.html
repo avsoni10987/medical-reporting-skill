@@ -215,21 +215,33 @@ nav a.active {
     margin-bottom: 20px;
 }
 
-/* Numbered list */
+/* Custom ⬤ bullet list */
 .tick-list {
-    list-style: decimal;
-    padding-left: 40px;
+    list-style: none;
+    padding-left: 0;
     font-size: 18px;
 }
 
-.tick-list li {
+.tick-list > li {
+    position: relative;
+    padding-left: 28px;
     margin-bottom: 12px;
 }
 
+.tick-list > li::before {
+    content: "⬤";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    font-size: 12px;
+}
+
+/* Inner sublist as normal round bullets */
 .tick-list li ul {
     list-style: disc;
     margin-top: 6px;
-    padding-left: 30px;
+    padding-left: 40px;
+    font-size: 16px;
 }
 
 .tick-list li ul li {
@@ -381,7 +393,8 @@ nav a.active {
 <!-- WHY CHOOSE US SECTION -->
 <section class="card why-us">
   <h2>Why choose us?</h2>
-  <ol class="tick-list">
+  <!-- changed from <ol> to <ul> and using ⬤ bullets via CSS -->
+  <ul class="tick-list">
     <li>Hands-on training in medical reporting and quick job opportunities.
         <ul>
             <li>Learn report making efficiently</li>
@@ -391,7 +404,7 @@ nav a.active {
     <li>Soft skills; Communication training (helpful will guide).
         <ul>
             <li>Enhance verbal skills</li>
-            <li>Improve email & report writing</li>
+            <li>Improve email &amp; report writing</li>
         </ul>
     </li>
     <li>Lifetime placement assistance and ongoing career support.
@@ -405,10 +418,10 @@ nav a.active {
       Pharmaceutical Companies and Radiologist Doctors / Discharge summary maker etc...
         <ul>
             <li>Work from home options</li>
-            <li>Work in hospitals & clinics</li>
+            <li>Work in hospitals &amp; clinics</li>
         </ul>
     </li>
-  </ol>
+  </ul>
 </section>
 
 <!-- FOOTER -->
@@ -446,5 +459,3 @@ nav a.active {
 
 </body>
 </html>
-
-
