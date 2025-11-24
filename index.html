@@ -33,10 +33,10 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
-.title h2 { margin: 0; font-size: 22px; }
+.title h2 { margin: 0; font-size: 22px; line-height: 1.2;}
 .title p { margin: 0; font-size: 13px; color: #555; }
 
 nav { display: flex; gap: 16px; }
@@ -59,7 +59,7 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 .header-marquee-wrapper:hover .header-marquee { animation-play-state: paused; }
 @keyframes headerScroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO SECTION (FROM FIRST HTML) ===== */
 .hero {
     width: 100%;
     min-height: 650px;
@@ -112,8 +112,6 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     margin-bottom: 10px;
     font-size: 18px;
 }
-
-
 
 .hero-form {
     flex: 1;
@@ -199,9 +197,295 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     color: #9ca3af;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE (FROM FIRST HTML) ===== */
 @media (max-width: 900px) {
     .hero-overlay { flex-direction: column; }
+}
+
+/* ===================================================================== */
+/* ===== EXTRA STYLES ADDED FROM YOUR JSP PAGE (ONLY ADDED, NOT CHANGED) */
+/* ===================================================================== */
+
+/* Background image override for body (optional: you can remove if not needed) */
+body {
+    background-image: url("discharge.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Smooth hover scaling for panels/cards */
+.hero-text,
+.hero-form,
+.dark-card,
+.testimonial {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* grow slightly on hover */
+.dark-card:hover,
+.testimonial:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* Left hero text section (from JSP – will mainly affect extra page if reused) */
+.hero-text h1 {
+    font-size: 42px;            /* bigger heading */
+    line-height: 1.4;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* wrap the left text in a soft black transparent panel */
+.hero-text {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 24px 28px;
+    border-radius: 14px;
+}
+
+.hero-text p {
+    font-size: 21px;            /* bigger paragraph */
+    margin-bottom: 14px;
+    color: #f3f3f3;
+}
+
+/* custom tick list */
+.hero-text ul {
+    margin-top: 14px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.hero-text li {
+    position: relative;
+    padding-left: 32px;
+    font-size: 20px;            /* bigger bullet text */
+    line-height: 1.9;
+    margin-bottom: 10px;
+    color: #eaeaea;
+}
+
+/* blue tick mark */
+.hero-text li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 20px;
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* Right form column – control width */
+.hero-form {
+    max-width: 520px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+.hero-form h2 {
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 26px;
+    color: #f1c40f;
+}
+
+/* Bigger inputs & button */
+.hero-form form input,
+.hero-form form button {
+    width: 100%;
+    padding: 18px 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #555;
+}
+
+.hero-form form input {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.hero-form form input::placeholder {
+    color: #bbbbbb;
+}
+
+/* submit button */
+.hero-form form button {
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    background: #f39c12;
+    color: #fff;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.hero-form form button:hover {
+    background: #d68910;
+}
+
+/* ===== UNDER-HERO CONTENT SECTIONS (TRANSPARENT BLACK CARDS) ===== */
+
+.section-wrapper {
+    max-width: 1100px;
+    margin: 45px auto 25px;
+    padding: 0 15px;
+}
+
+/* generic dark card style */
+.dark-card {
+    background: rgba(0, 0, 0, 0.78);
+    color: #f2f6ff;
+    border-radius: 14px;
+    padding: 26px 28px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+/* headings inside dark cards */
+.dark-card h2,
+.dark-card h3 {
+    color: #ffffff;
+    margin-bottom: 14px;
+    font-size: 26px;             /* bigger heading inside cards */
+}
+
+/* blue accent under headings */
+.dark-card h2::after,
+.dark-card h3::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    margin-top: 6px;
+    background: #3498db;
+    border-radius: 999px;
+}
+
+/* intro block text */
+.intro-block.dark-card p {
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+/* Features grid (two columns) */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1.1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+/* list with blue ticks inside dark cards */
+.dark-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 8px;
+}
+
+.dark-card li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 9px;
+    font-size: 18px;
+}
+
+/* blue tick for all lists in dark cards */
+.dark-card li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    color: #3498db;
+    font-weight: bold;
+}
+
+/* badges inside Why join card */
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 14px 0 18px;
+}
+
+.badge {
+    background: rgba(255,255,255,0.08);
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Testimonials section */
+.testimonials {
+    margin-bottom: 40px;
+}
+
+.testimonials h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* cards inside testimonials */
+.testimonial-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.testimonial {
+    background: rgba(0, 0, 0, 0.78);
+    color: #f0f4ff;
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.testimonial strong {
+    display: block;
+    margin-top: 10px;
+    color: #3498db;
+}
+
+/* footer line style (© 2025...) if needed */
+.footer-note {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin: 15px 0 5px;
+}
+
+/* responsive additions */
+@media (max-width: 900px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-text p,
+    .intro-block.dark-card p {
+        font-size: 18px;
+    }
+
+    .hero-form {
+        margin-top: 20px;
+        max-width: 100%;
+    }
 }
 </style>
 </head>
@@ -220,7 +504,7 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
         <nav>
             <a href="index.html" class="active">Home</a>
             <a href="courses.html">Courses</a>
-            <a href="info.html" >Info</a>
+            <a href="info.html">Info</a>
             <a href="eligibility.html">Eligibility</a>
             <a href="contact.html">Contact</a>
         </nav>
@@ -232,11 +516,11 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     </div>
 </header>
 
-<!-- HERO SECTION -->
+<!-- HERO SECTION (ORIGINAL FIRST HTML CONTENT) -->
 <section class="hero">
     <div class="hero-overlay">
         <div class="hero-text">
-            <h1>Medical Reporting Course from India’s Dedicated Medical Reporting Place</h1>
+            <h1>Medical Reporting Course from India's Dedicated Medical Reporting Place</h1>
             <p>Learn Medical Reporting online and become job-ready in:</p>
             <ul>
                 <li>Training in Medical Reporting, Radiology, Hospital Reporting</li>
@@ -273,6 +557,106 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     </div>
 </section>
 
+<!-- ===================================================================== -->
+<!-- CONTENT FROM JSP PAGE ADDED BELOW HERO (TEXT + SECTIONS ONLY)         -->
+<!-- ===================================================================== -->
+
+<div class="section-wrapper">
+
+  <!-- Intro block -->
+  <div class="intro-block dark-card">
+    <h2>Join Online Medical Reporting Skill Course with best Job opportunities at Everywhere</h2>
+    <p>
+      Join our Medical Reporting Training skill Program and learn Medical Reporting work,
+      Discharge Summary Making, Medical Content Writing, Medical Transcription and Healthcare Documentation, Content writer, Medical writer –
+      with LIVE Online or Recorded Classes and LMS access.
+    </p>
+    
+    <p>
+      Hundreds of students have been successfully placed in Hospitals, Radiology Imaging Centers,
+      Pharmaceutical and Healthcare companies. (Get 100% placement support and build a stable career
+      in Medical Reporting).
+    </p>
+  </div>
+
+  <!-- Program features -->
+  <div class="highlight-box dark-card">
+    <h3>Program Features</h3>
+    <ul>
+      <li>Industry-oriented curriculum for Medical Reporting.</li>
+      <li>Live online sessions & recordings</li>
+      <li>Hands-on practice on real-world formats & actual medical reports.</li>
+      <li>Soft skills and communication training to make you industry-ready.</li>
+      <li>Lifetime placement assistance and all guidance</li>
+    </ul>
+  </div>
+
+  <!-- Features grid: left = overview, right = why join -->
+  <div class="features-grid">
+    <div class="features-card dark-card">
+      <h3>Advance Minor & Major reports real content in Medical Reporting</h3>
+      <p><strong>Duration:</strong> 1 Months to 3-4 Months</p>
+      <p><strong>Mode:</strong> Instructor LIVE Online or Recorded Sessions with LMS access</p>
+      <p><strong>Key Modules:</strong></p>
+      <ul>
+        <li>Medical Reporting</li>
+        <li>Hospital Reporting</li>
+        <li>Radiology reports & Discharge Summaries</li>
+        <li>Medical Transcription</li>
+        <li>Tele-reporting</li>
+        <li>Live and Home-Based work or work in-Office</li>
+        <li>Medical record maintain</li>
+        <li>Soft Skills</li>
+      </ul>
+      <p style="margin-top:10px;">
+        In recent batches, students from Life Science, Pharmacy and other backgrounds
+        have started careers in Hospitals, Diagnostic Centers, and Healthcare Companies.
+      </p>
+    </div>
+
+    <div class="features-card dark-card">
+      <h3>Why join Medical Reporting Skill?</h3>
+      <div class="badges">
+        <div class="badge">Focused on Medical Reporting</div>
+        <div class="badge">No recession in this</div>
+        <div class="badge">Work from Home and Office both are available in very huge quantities</div>
+      </div>
+      <p><strong>Call Now:</strong> +91-97520 43256 / +91-88718 66088</p>
+      <p><strong>Email:</strong> avsoni10987@gmail.com</p>
+      <p style="margin-top:10px;">
+        Learn directly from experienced professionals from Hospitals, Radiology Centers,
+        and Healthcare organizations and become job-ready for Medical Reporting roles.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Testimonials / Happy Stories -->
+  <div class="testimonials">
+    <h2>Happy Stories</h2>
+    <div class="testimonial-list">
+      <div class="testimonial">
+        I joined the online Medical Reporting batch and the explanations about
+        real-time reports and documentation were very clear. I feel confident
+        to work on hospital and radiology reports now.
+        <strong>-- Student A</strong>
+      </div>
+      <div class="testimonial">
+        I was looking for a flexible course I could do along with my job.
+        Weekend online classes and lifetime placement support really helped me
+        switch to a Medical Reporting profile.
+        <strong>-- Student B</strong>
+      </div>
+      <div class="testimonial">
+        Trainers are supportive and share real-world examples. The course is
+        very detailed and helped me understand how reports are actually used in Hospitals/Radiology centers/ MNC's or in any Industries.
+        <strong>-- Student C</strong>
+      </div>
+    </div>
+  </div>
+
+</div>
+
 <!-- FOOTER -->
 <footer class="site-footer">
     <div class="footer-content">
@@ -285,7 +669,7 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="courses.html">Courses</a></li>
-                <li><a href="info.html" >Info</a></li>
+                <li><a href="info.html">Info</a></li>
                 <li><a href="eligibility.html">Eligibility</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -305,8 +689,3 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 
 </body>
 </html>
-
-
-
-
-
