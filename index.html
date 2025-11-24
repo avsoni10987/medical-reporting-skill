@@ -9,7 +9,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f6fa;
+    background-color: #0b1120; /* dark navy behind everything */
 }
 
 /* ===== HEADER ===== */
@@ -59,7 +59,7 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 .header-marquee-wrapper:hover .header-marquee { animation-play-state: paused; }
 @keyframes headerScroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-/* ===== HERO SECTION (FROM FIRST HTML) ===== */
+/* ===== HERO SECTION ===== */
 .hero {
     width: 100%;
     min-height: 650px;
@@ -73,97 +73,139 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     padding: 60px 0;
 }
 
+/* dark blur layer behind both cards */
 .hero-overlay {
     width: 90%;
     max-width: 1100px;
-    background: rgba(255,255,255,0.9);
     padding: 40px;
     border-radius: 16px;
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
 }
 
+/* LEFT SIDE TEXT */
 .hero-text {
     flex: 1;
     min-width: 320px;
-    color: #000000;
+    background: rgba(0, 0, 0, 0);
+    padding: 10px 10px;
+    border-radius: 14px;
+    color: #f5f5f5;
 }
 
 .hero-text h1 {
-    font-size: 32px;
+    font-size: 42px;
+    line-height: 1.4;
+    font-weight: 800;
     margin-bottom: 20px;
+    color: #ffffff;
 }
 
 .hero-text p {
     font-size: 18px;
     margin-bottom: 14px;
+    color: #e5e7eb;
 }
 
 .hero-text ul {
-    list-style: none;
+    margin-top: 14px;
     padding-left: 0;
+    list-style: none;
 }
 
 .hero-text li {
     position: relative;
-    padding-left: 32px;
-    margin-bottom: 10px;
+    padding-left: 28px;
     font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    color: #e5e7eb;
 }
 
+.hero-text li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    color: #fbbf24;
+    font-weight: bold;
+}
+
+/* RIGHT SIDE FORM (matching strong style) */
 .hero-form {
     flex: 1;
     min-width: 320px;
-    background: rgba(255,255,255,0.95);
-    padding: 28px;
-    border-radius: 16px;
-    color: #000000;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+    max-width: 520px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.7);
 }
 
 .hero-form h2 {
     text-align: center;
     margin-bottom: 18px;
     font-size: 26px;
-    color: #f39c12;
+    color: #fbbf24;
 }
 
 .hero-form input,
 .hero-form select,
 .hero-form button {
     width: 100%;
-    padding: 14px 16px;
+    padding: 16px 18px;
     margin-bottom: 12px;
     border-radius: 8px;
-    border: 1px solid #aaa;
+    border: 1px solid #4b5563;
     font-size: 16px;
     box-sizing: border-box;
 }
 
-.hero-form input {
-    background: #fff;
-    color: #000;
+.hero-form input,
+.hero-form select {
+    background: rgba(17, 24, 39, 0.85);
+    color: #f9fafb;
 }
 
-.hero-form select {
-    background: #fff;
-    color: #000;
+.hero-form input::placeholder {
+    color: #9ca3af;
 }
 
 .hero-form button {
     background: #f39c12;
     border: none;
-    color: #fff;
-    font-weight: 600;
+    color: #111827;
+    font-weight: 700;
     cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 .hero-form button:hover {
-    background: #d68910;
+    background: #fbbf24;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+}
+
+/* Smooth hover scaling for panels/cards */
+.hero-text,
+.hero-form,
+.dark-card,
+.testimonial {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* grow slightly on hover */
+.dark-card:hover,
+.testimonial:hover {
     transform: scale(1.02);
-    transition: 0.2s;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
 /* ===== FOOTER ===== */
@@ -197,141 +239,6 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     color: #9ca3af;
 }
 
-/* ===== RESPONSIVE (FROM FIRST HTML) ===== */
-@media (max-width: 900px) {
-    .hero-overlay { flex-direction: column; }
-}
-
-/* ===================================================================== */
-/* ===== EXTRA STYLES ADDED FROM YOUR JSP PAGE (ONLY ADDED, NOT CHANGED) */
-/* ===================================================================== */
-
-/* Background image override for body (optional: you can remove if not needed) */
-body {
-    background-image: url("discharge.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Smooth hover scaling for panels/cards */
-.hero-text,
-.hero-form,
-.dark-card,
-.testimonial {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* grow slightly on hover */
-.dark-card:hover,
-.testimonial:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-}
-
-/* Left hero text section (from JSP – will mainly affect extra page if reused) */
-.hero-text h1 {
-    font-size: 42px;            /* bigger heading */
-    line-height: 1.4;
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: #ffffff;
-}
-
-/* wrap the left text in a soft black transparent panel */
-.hero-text {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 24px 28px;
-    border-radius: 14px;
-}
-
-.hero-text p {
-    font-size: 21px;            /* bigger paragraph */
-    margin-bottom: 14px;
-    color: #f3f3f3;
-}
-
-/* custom tick list */
-.hero-text ul {
-    margin-top: 14px;
-    padding-left: 0;
-    list-style: none;
-}
-
-.hero-text li {
-    position: relative;
-    padding-left: 32px;
-    font-size: 20px;            /* bigger bullet text */
-    line-height: 1.9;
-    margin-bottom: 10px;
-    color: #eaeaea;
-}
-
-/* blue tick mark */
-.hero-text li::before {
-    content: "-";
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 20px;
-    color: #3498db;
-    font-weight: bold;
-}
-
-/* Right form column – control width */
-.hero-form {
-    max-width: 520px;
-    width: 100%;
-    padding: 30px;
-    border-radius: 14px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-}
-
-.hero-form h2 {
-    text-align: center;
-    margin-bottom: 18px;
-    font-size: 26px;
-    color: #f1c40f;
-}
-
-/* Bigger inputs & button */
-.hero-form form input,
-.hero-form form button {
-    width: 100%;
-    padding: 18px 20px;
-    box-sizing: border-box;
-    font-size: 18px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    border: 1px solid #555;
-}
-
-.hero-form form input {
-    background: rgba(255, 255, 255, 0.08);
-    color: #fff;
-}
-
-.hero-form form input::placeholder {
-    color: #bbbbbb;
-}
-
-/* submit button */
-.hero-form form button {
-    border: none;
-    cursor: pointer;
-    font-weight: 700;
-    background: #f39c12;
-    color: #fff;
-    border-radius: 8px;
-    transition: background 0.2s;
-}
-
-.hero-form form button:hover {
-    background: #d68910;
-}
-
 /* ===== UNDER-HERO CONTENT SECTIONS (TRANSPARENT BLACK CARDS) ===== */
 
 .section-wrapper {
@@ -354,7 +261,7 @@ body {
 .dark-card h3 {
     color: #ffffff;
     margin-bottom: 14px;
-    font-size: 26px;             /* bigger heading inside cards */
+    font-size: 26px;
 }
 
 /* blue accent under headings */
@@ -467,8 +374,12 @@ body {
     margin: 15px 0 5px;
 }
 
-/* responsive additions */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
+    .hero-overlay {
+        flex-direction: column;
+    }
+
     .features-grid {
         grid-template-columns: 1fr;
     }
@@ -516,7 +427,7 @@ body {
     </div>
 </header>
 
-<!-- HERO SECTION (ORIGINAL FIRST HTML CONTENT) -->
+<!-- HERO SECTION -->
 <section class="hero">
     <div class="hero-overlay">
         <div class="hero-text">
@@ -557,10 +468,7 @@ body {
     </div>
 </section>
 
-<!-- ===================================================================== -->
-<!-- CONTENT FROM JSP PAGE ADDED BELOW HERO (TEXT + SECTIONS ONLY)         -->
-<!-- ===================================================================== -->
-
+<!-- UNDER-HERO CONTENT -->
 <div class="section-wrapper">
 
   <!-- Intro block -->
@@ -568,7 +476,7 @@ body {
     <h2>Join Online Medical Reporting Skill Course with best Job opportunities at Everywhere</h2>
     <p>
       Join our Medical Reporting Training skill Program and learn Medical Reporting work,
-      Discharge Summary Making, Medical Content Writing, Medical Transcription and Healthcare Documentation, Content writer, Medical writer –
+      Discharge Summary Making, Medical Content Writing, Medical Transcription and Healthcare Documentation, Content writer, Medical writer -
       with LIVE Online or Recorded Classes and LMS access.
     </p>
     
@@ -615,7 +523,7 @@ body {
     </div>
 
     <div class="features-card dark-card">
-      <h3>Why join Medical Reporting Skill?</h3>
+      <h3>Why join Medical Reporting Skill</h3>
       <div class="badges">
         <div class="badge">Focused on Medical Reporting</div>
         <div class="badge">No recession in this</div>
