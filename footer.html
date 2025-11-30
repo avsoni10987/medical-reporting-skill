@@ -118,6 +118,13 @@ nav a.active {
     justify-content: space-between;
 }
 
+/* Make each column flexible on larger screens */
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1 1 250px;  /* min width 250px, grows as needed */
+}
+
 .footer-content h3,
 .footer-content h4 {
     margin-top: 0;
@@ -154,14 +161,35 @@ nav a.active {
     color: #9ca3af;
 }
 
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
     .main-content {
         width: 95%;
         padding: 25px;
     }
+
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    /* Footer: stack columns nicely on mobile */
     .footer-content {
         flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        width: 100%;      /* each column full width on small screens */
     }
 }
 </style>
@@ -189,7 +217,6 @@ nav a.active {
     <div class="header-marquee-wrapper">
         <span class="header-marquee">
           welcome to the Right way in making your career with medical reporting skills. Here we provide you that skill through which you can make your career taking work at home and office by itself. No need of anyone to support will make that much skilled.
-       
         </span>
     </div>
 </header>
@@ -235,7 +262,3 @@ nav a.active {
 
 </body>
 </html>
-
-
-
-
