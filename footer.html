@@ -161,7 +161,7 @@ nav a.active {
     color: #9ca3af;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE (TABLET & SMALL LAPTOP) ===== */
 @media (max-width: 900px) {
     .main-content {
         width: 95%;
@@ -180,7 +180,7 @@ nav a.active {
         flex-wrap: wrap;
     }
 
-    /* Footer: stack columns nicely on mobile */
+    /* Footer: columns stacked, left aligned */
     .footer-content {
         flex-direction: column;
         align-items: flex-start;
@@ -189,7 +189,32 @@ nav a.active {
     .footer-left,
     .footer-center,
     .footer-right {
-        width: 100%;      /* each column full width on small screens */
+        width: 100%;
+    }
+}
+
+/* ===== EXTRA STRONG MOBILE FIX (PHONES) ===== */
+@media (max-width: 600px) {
+
+    /* Reduce padding on very small screens */
+    .site-footer {
+        padding: 20px 16px 12px;
+    }
+
+    /* Turn off flex, use normal block layout */
+    .footer-content {
+        display: block;      /* no more flex on small phones */
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .footer-center ul {
+        padding-left: 0;
     }
 }
 </style>
