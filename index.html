@@ -5,7 +5,9 @@
 <title>Medical Reporting Skill - Info</title>
 <link rel="stylesheet" href="style">
 <style>
-body {
+
+        
+    body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
@@ -398,6 +400,27 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
         max-width: 100%;
     }
 }
+
+.footer-slider {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+}
+
+.footer-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.footer-slider img.active {
+    display: block;
+}
+
+    
 </style>
 </head>
 <body>
@@ -596,13 +619,37 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
             <p>Address: Bengaluru, India</p>
         </div>
     </div>
+
+<div class="footer-slider">
+    <img src="image1.jpg" class="active">
+    <img src="image2.jpg">
+    <img src="image3.jpg">
+</div>
+
+
+    
     <div class="footer-bottom">
         <p>© 2025 Medical Reporting Skill | All Rights Reserved</p>
     </div>
 </footer>
 
+
+    <script>
+const images = document.querySelectorAll(".footer-slider img");
+let index = 0;
+
+function showNext() {
+    images[index].classList.remove("active");
+    index = (index + 1) % images.length;
+    images[index].classList.add("active");
+}
+
+setInterval(showNext, 2000);
+</script>
+
 </body>
 </html>
+
 
 
 
