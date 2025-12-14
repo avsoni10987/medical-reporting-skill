@@ -500,7 +500,35 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     to { opacity: 1; }
 }
 
-    
+
+        /* ===== ENTRANCE ANIMATIONS ===== */
+
+/* from left */
+.animate-left {
+    animation: slideInLeft 1s ease forwards;
+}
+
+/* from right */
+.animate-right {
+    animation: slideInRight 1s ease forwards;
+}
+
+/* from bottom */
+.animate-up {
+    animation: slideInUp 1s ease forwards;
+}
+
+/* soft fade only */
+.animate-fade {
+    animation: fadeIn 1.2s ease forwards;
+}
+
+/* delay helpers */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+
 </style>
 </head>
 <body>
@@ -733,6 +761,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
 
 
 
