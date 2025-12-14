@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Medical Reporting Skill - Info</title>
-<link rel="stylesheet" href="style">
 <style>
 body {
     font-family: 'Segoe UI', sans-serif;
@@ -73,7 +72,6 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     padding: 60px 0;
 }
 
-/* dark blur layer behind both cards */
 .hero-overlay {
     width: 90%;
     max-width: 1100px;
@@ -94,14 +92,14 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     box-shadow: 0 18px 45px rgba(0,0,0,0.85);
 }
 
-/* LEFT SIDE TEXT */
+/* HERO TEXT */
 .hero-text {
     flex: 1;
     min-width: 320px;
     padding: 10px 10px;
     border-radius: 14px;
     color: #f5f5f5;
-    opacity: 0; /* start hidden for animation */
+    opacity: 0;
 }
 
 .hero-text h1 {
@@ -131,8 +129,8 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     line-height: 1.8;
     margin-bottom: 8px;
     color: #e5e7eb;
-    opacity: 0; /* start hidden for animation */
-    transform: translateX(-50px); /* start from left */
+    opacity: 0;
+    transform: translateX(-50px);
 }
 
 .hero-text li::before {
@@ -145,29 +143,48 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     font-weight: bold;
 }
 
-/* ===== HERO TEXT ANIMATION ===== */
+/* HERO ANIMATIONS */
 @keyframes slideInLeft {
     from { opacity: 0; transform: translateX(-60px); }
     to { opacity: 1; transform: translateX(0); }
 }
 
-.animate-left {
-    animation: slideInLeft 1s ease forwards;
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(60px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
-/* stagger animation for list items */
-.hero-text li.animate-item {
-    animation: slideInLeft 0.8s ease forwards;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* delay helper for list items */
-.hero-text li:nth-child(1) { animation-delay: 0.4s; }
-.hero-text li:nth-child(2) { animation-delay: 0.6s; }
-.hero-text li:nth-child(3) { animation-delay: 0.8s; }
-.hero-text li:nth-child(4) { animation-delay: 1s; }
-.hero-text li:nth-child(5) { animation-delay: 1.2s; }
+.animate-fade { opacity: 0; animation: fadeIn 1s ease forwards; }
+.animate-left { opacity: 0; animation: slideInLeft 1s ease forwards; }
+.animate-right { opacity: 0; animation: slideInRight 1s ease forwards; }
 
-/* RIGHT SIDE FORM */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1s; }
+
+/* COURSE DETAILS SECTION */
+.section-wrapper { max-width: 1100px; margin: 45px auto 25px; padding: 0 15px; }
+.dark-card {
+    background: rgba(0, 0, 0, 0.78);
+    color: #f2f6ff;
+    border-radius: 14px;
+    padding: 26px 28px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    margin-bottom: 25px;
+}
+
+.dark-card h2, .dark-card h3, .dark-card h4 { color: #fbbf24; margin-bottom: 12px; }
+.dark-card p, .dark-card li { font-size: 17px; line-height: 1.7; color: #e5e7eb; }
+.dark-card ul { padding-left: 20px; }
+
+/* HERO FORM */
 .hero-form {
     flex: 1;
     min-width: 320px;
@@ -180,43 +197,41 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     box-shadow: 0 8px 22px rgba(0,0,0,0.7);
 }
 
-/* rest of CSS remains same... */
-.hero-form h2 { text-align: center; margin-bottom: 18px; font-size: 26px; color: #fbbf24; }
-
-.hero-form input,
-.hero-form select,
-.hero-form button {
+/* FOOTER & SLIDER (keep existing styling) */
+.footer-slider {
+    position: relative;
     width: 100%;
-    padding: 16px 18px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    border: 1px solid #4b5563;
-    font-size: 16px;
-    box-sizing: border-box;
+    max-width: 900px;
+    height: 360px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #000;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
-.hero-form input,
-.hero-form select { background: rgba(17, 24, 39, 0.85); color: #f9fafb; }
+.footer-slider img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s ease, transform 0.4s ease;
+    transform: scale(1);
+    border-radius: 20px;
+    background: #000;
+}
 
-.hero-form input::placeholder { color: #9ca3af; }
+.footer-slider img.active {
+    opacity: 1;
+    z-index: 1;
+}
 
-.hero-form button {
-    background: #f39c12;
-    border: none;
-    color: #111827;
-    font-weight: 700;
+.footer-slider img.active:hover {
+    transform: scale(1.08);
     cursor: pointer;
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
-
-.hero-form button:hover {
-    background: #fbbf24;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
-}
-
-/* rest of page CSS including footer, slider, dark cards, etc remains the same */
-/* omitted here for brevity, keep everything you already have */
 
 </style>
 </head>
@@ -226,7 +241,7 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 <header>
     <div class="header-top">
         <div class="logo">
-            <img src="logo.png" alt="Medical Reporting Skill Logo" height="60">
+            <img src="logo.png" alt="Logo" height="60">
             <div class="title">
                 <h2>Medical Reporting Skill</h2>
                 <p>Training & Placement Support</p>
@@ -242,33 +257,93 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     </div>
     <div class="header-marquee-wrapper">
         <span class="header-marquee">
-            welcome to the Right way in making your career with medical reporting skills. Here we provide you that skill through which you can make your career taking work at home and office by itself. No need of anyone to support will make that much skilled.
+            Welcome to the Right way in making your career with medical reporting skills...
         </span>
     </div>
 </header>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero">
     <div class="hero-overlay">
-        <div class="hero-text animate-left">
-            <h1>Medical Reporting Course from India's Dedicated Medical Reporting Place, Guaranteed work at everywhere - You can cross check by your end also.</h1>
+        <div class="hero-text animate-left delay-1">
+            <h1>Medical Reporting Course from India's Dedicated Medical Reporting Place, Guaranteed work at everywhere.</h1>
             <p>Learn Medical Reporting online and become job-ready in:</p>
             <ul>
-                <li class="animate-item">Training in Medical Reporting, Radiology, Hospital Reporting</li>
-                <li class="animate-item">Medical Analyst / Summarizer / Content Writing</li>
-                <li class="animate-item">Medical Transcription</li>
-                <li class="animate-item">Soft Skills and Communication Skills</li>
-                <li class="animate-item">Work From Home and Office Opportunities</li>
+                <li>Training in Medical Reporting, Radiology, Hospital Reporting</li>
+                <li>Medical Analyst / Summarizer / Content Writing</li>
+                <li>Medical Transcription</li>
+                <li>Soft Skills and Communication Skills</li>
+                <li>Work From Home and Office Opportunities</li>
             </ul>
         </div>
     </div>
 </section>
 
-<!-- rest of your page (cards, testimonials, footer, slider) remains the same -->
+<!-- COURSE DETAILS -->
+<div class="section-wrapper">
+
+  <div class="dark-card animate-fade delay-1">
+    <h2>Join Online Medical Reporting Skill Course</h2>
+    <p>
+      Join our Medical Reporting Training Skill Program and learn Medical Reporting work, 
+      Discharge Summary Making, Medical Content Writing, Medical Transcription and Healthcare Documentation, 
+      Content writer, Medical writer – with LIVE Online or Recorded Classes and LMS access.
+    </p>
+    <p>
+      Hundreds of students have been successfully placed in Hospitals, Radiology Imaging Centers, 
+      Pharmaceutical and Healthcare companies. Get 100% placement support and build a stable career in Medical Reporting.
+    </p>
+  </div>
+
+  <div class="dark-card animate-left delay-2">
+    <h3>Program Features</h3>
+    <ul>
+      <li>Industry-oriented curriculum for Medical Reporting</li>
+      <li>Live online sessions & recordings</li>
+      <li>Hands-on practice on real-world formats & actual medical reports</li>
+      <li>Soft skills and communication training to make you industry-ready</li>
+      <li>Lifetime placement assistance and all guidance</li>
+    </ul>
+  </div>
+
+  <div class="dark-card animate-right delay-3">
+    <h3>Advance Minor & Major Reports Real Content</h3>
+    <p><strong>Duration:</strong> 1 to 3-4 Months</p>
+    <p><strong>Mode:</strong> Instructor LIVE Online or Recorded Sessions with LMS access</p>
+    <h4>Key Modules:</h4>
+    <ul>
+      <li>Medical Reporting</li>
+      <li>Hospital Reporting</li>
+      <li>Radiology Reports & Discharge Summaries</li>
+      <li>Medical Transcription</li>
+      <li>Tele-reporting</li>
+      <li>Live and Home-Based Work or Work in Office</li>
+      <li>Medical Record Maintenance</li>
+      <li>Soft Skills</li>
+      <li>Autohot-Keys for Unlimited Shortcuts</li>
+      <li>Template Creation with Scripts or Shortcuts</li>
+      <li>Lifetime License Free AnyDesk / TeamViewer / UltraViewer / Screen Sharing</li>
+      <li>Work from Big Clients at Home or Office</li>
+      <li>Expert Guidance to Make You Job-Ready Rapidly</li>
+    </ul>
+    <p>Students from Life Science, Pharmacy, and other backgrounds have started careers in Hospitals, Diagnostic Centers, and Healthcare Companies.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-slider">
+        <img src="image1.jpg" class="active">
+        <img src="image2.jpg">
+        <img src="image3.jpg">
+        <img src="image4.jpg">
+        <img src="image5.jpg">
+    </div>
+</footer>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    // Footer slider
     const images = document.querySelectorAll(".footer-slider img");
     let index = 0;
     if (images.length === 0) return;
