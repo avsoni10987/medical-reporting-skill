@@ -75,6 +75,8 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     padding: 60px 0;
 }
 
+        
+
 /* dark blur layer behind both cards */
 .hero-overlay {
     width: 90%;
@@ -91,6 +93,17 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 
 
 
+/* HERO MAIN BOX – grow on hover */
+.hero-overlay {
+    transform: scale(1);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* grow when mouse goes on it */
+.hero-overlay:hover {
+    transform: scale(1.05);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.85);
+}
 
         
 /* LEFT SIDE TEXT */
@@ -656,6 +669,7 @@ setInterval(showNext, 2000);
 
 </body>
 </html>
+
 
 
 
