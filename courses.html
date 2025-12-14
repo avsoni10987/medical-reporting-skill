@@ -409,38 +409,29 @@
     </footer>
 
 
-    <script>
-const images = document.querySelectorAll(".footer-slider img");
-let index = 0;
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-function showNext() {
-    images[index].classList.remove("active");
-    index = (index + 1) % images.length;
-    images[index].classList.add("active");
-}
+    const images = document.querySelectorAll(".footer-slider img");
+    let index = 0;
 
-setInterval(showNext, 2000);
+    // Safety check
+    if (images.length === 0) return;
+
+    images[0].classList.add("active");
+
+    function showNext() {
+        images[index].classList.remove("active");
+        index = (index + 1) % images.length;
+        images[index].classList.add("active");
+    }
+
+    setInterval(showNext, 2000); // change every 2 seconds
+});
 </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
