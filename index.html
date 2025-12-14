@@ -408,31 +408,40 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     }
 }
 
+/* ===== FOOTER IMAGE SLIDER (FIXED) ===== */
+
 .footer-slider {
+    position: relative;
     width: 100%;
     max-width: 900px;
     height: 360px;
     margin: 40px auto;
     overflow: hidden;
     border-radius: 20px;
+    background: #000;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.footer-slider img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    opacity: 0;
+    transition: opacity 1s ease;
+
+    border-radius: 20px;
     background: #000;
 }
 
-
-.footer-slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;   /* ← KEY CHANGE */
-    object-position: center;
-    display: none;
-    border-radius: 20px;
-    background: #000;      /* fills empty space */
-    image-rendering: auto;
-}
-
 .footer-slider img.active {
-    display: block;
+    opacity: 1;
+    z-index: 1;
 }
 
         /* HERO BOX – grow on hover and return on mouse out */
@@ -724,6 +733,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
 
 
 
