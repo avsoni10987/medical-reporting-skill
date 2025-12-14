@@ -89,6 +89,21 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     backdrop-filter: blur(4px);
 }
 
+/* HERO BOX HOVER APPEAR EFFECT */
+.hero-overlay {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* when mouse enters hero section */
+.hero:hover .hero-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+        
 /* LEFT SIDE TEXT */
 .hero-text {
     flex: 1;
@@ -652,6 +667,7 @@ setInterval(showNext, 2000);
 
 </body>
 </html>
+
 
 
 
