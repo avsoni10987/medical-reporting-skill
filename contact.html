@@ -314,10 +314,11 @@
             margin-left: 0;
         }
     }
-        .footer-slider {
+
+   .footer-slider {
     width: 100%;
     max-width: 900px;
-    height: 360px; /* increased to avoid face cut */
+    height: 360px;
     margin: 40px auto;
     overflow: hidden;
     border-radius: 20px;
@@ -325,19 +326,23 @@
     background: #000;
 }
 
+/* IMPORTANT FIX */
 .footer-slider img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: 50% 30%; 
+    object-fit: contain;   /* ← KEY CHANGE */
+    object-position: center;
     display: none;
     border-radius: 20px;
+    background: #000;      /* fills empty space */
+    image-rendering: auto;
 }
-
 
 .footer-slider img.active {
     display: block;
 }
+
+
     </style>
 </head>
 <body>
@@ -483,5 +488,6 @@ setInterval(showNext, 2000);
     
 </body>
 </html>
+
 
 
