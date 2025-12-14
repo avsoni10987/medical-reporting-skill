@@ -93,17 +93,7 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 
 
 
-/* HERO MAIN BOX – grow on hover */
-.hero-overlay {
-    transform: scale(1);
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
 
-/* grow when mouse goes on it */
-.hero-overlay:hover {
-    transform: scale(1.05);
-    box-shadow: 0 18px 45px rgba(0,0,0,0.85);
-}
 
         
 /* LEFT SIDE TEXT */
@@ -445,6 +435,18 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     display: block;
 }
 
+        /* HERO BOX – grow on hover and return on mouse out */
+.hero-overlay {
+    transform: scale(1);                 /* normal state */
+    transition: transform 0.4s ease, 
+                box-shadow 0.4s ease;    /* smooth both ways */
+}
+
+.hero-overlay:hover {
+    transform: scale(1.05);              /* grow on hover */
+    box-shadow: 0 18px 45px rgba(0,0,0,0.85);
+}
+
     
 </style>
 </head>
@@ -669,6 +671,7 @@ setInterval(showNext, 2000);
 
 </body>
 </html>
+
 
 
 
