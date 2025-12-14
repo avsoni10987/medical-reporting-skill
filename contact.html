@@ -314,31 +314,37 @@
             margin-left: 0;
         }
     }
+
 .footer-slider {
+    position: relative;
     width: 100%;
     max-width: 900px;
     height: 360px;
     margin: 40px auto;
     overflow: hidden;
     border-radius: 20px;
+    background: #000;
     box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.footer-slider img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    opacity: 0;
+    transition: opacity 1s ease;   /* 🔥 smooth fade */
+
+    border-radius: 20px;
     background: #000;
 }
 
-/* IMPORTANT FIX */
-.footer-slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;   /* ← KEY CHANGE */
-    object-position: center;
-    display: none;
-    border-radius: 20px;
-    background: #000;      /* fills empty space */
-    image-rendering: auto;
-}
-
 .footer-slider img.active {
-    display: block;
+    opacity: 1;
+    z-index: 1;
 }
 
 
@@ -473,18 +479,29 @@
         </div>
     </footer>
 
-    <script>
-const images = document.querySelectorAll(".footer-slider img");
-let index = 0;
+       <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-function showNext() {
-    images[index].classList.remove("active");
-    index = (index + 1) % images.length;
-    images[index].classList.add("active");
-}
+    const images = document.querySelectorAll(".footer-slider img");
+    let index = 0;
 
-setInterval(showNext, 2000);
+    // Safety check
+    if (images.length === 0) return;
+
+    images[0].classList.add("active");
+
+    function showNext() {
+        images[index].classList.remove("active");
+        index = (index + 1) % images.length;
+        images[index].classList.add("active");
+    }
+
+    setInterval(showNext, 2000); // change every 2 seconds
+});
 </script>
+
+
+
     
 </body>
 </html>
@@ -492,3 +509,5 @@ setInterval(showNext, 2000);
 
 
 
+
+s
