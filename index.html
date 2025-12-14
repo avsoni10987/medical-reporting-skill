@@ -433,10 +433,19 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     object-position: center;
 
     opacity: 0;
-    transition: opacity 1s ease;
+    transition:
+        opacity 1s ease,
+        transform 0.4s ease;   /* ← ADD THIS */
+
+    transform: scale(1);      /* ← DEFAULT SIZE */
 
     border-radius: 20px;
     background: #000;
+}
+
+.footer-slider img.active:hover {
+    transform: scale(1.08);   /* zoom on hover */
+    cursor: pointer;
 }
 
 .footer-slider img.active {
@@ -762,6 +771,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
 
 
 
