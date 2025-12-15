@@ -158,6 +158,29 @@ nav a.active {
     margin-bottom: 12px; /* spacing between bullets */
 }
 
+
+
+    /* ===== ELIGIBILITY CARD ANIMATION ===== */
+.card {
+    opacity: 0;
+    transform: translateX(60px); /* default from right */
+}
+
+/* from left */
+.card.from-left {
+    transform: translateX(-60px);
+}
+
+/* when visible */
+.card.show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+
+    
+
 /* ===== FOOTER ===== */
 .site-footer {
     background: #111827;
@@ -375,37 +398,57 @@ Interdisciplinary / applied science degrees, Medical & health science, BSc(Hons)
     </div>
 </footer>
 
-   <script>
+ <script>
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* ===== FOOTER SLIDER (KEEP AS IT IS) ===== */
     const images = document.querySelectorAll(".footer-slider img");
     let index = 0;
 
-    if (images.length === 0) return;
+    if (images.length > 0) {
+        images[0].classList.add("active");
 
-    images[0].classList.add("active");
+        function showNext() {
+            const current = images[index];
+            current.classList.remove("active");
+            current.classList.add("exit");
 
-    function showNext() {
-        const current = images[index];
-        current.classList.remove("active");
-        current.classList.add("exit");
+            index = (index + 1) % images.length;
+            const next = images[index];
+            next.classList.remove("exit");
+            next.classList.add("active");
 
-        index = (index + 1) % images.length;
-        const next = images[index];
-        next.classList.remove("exit");
-        next.classList.add("active");
+            setTimeout(() => {
+                current.classList.remove("exit");
+            }, 1000);
+        }
 
-        setTimeout(() => {
-            current.classList.remove("exit");
-        }, 1000);
+        setInterval(showNext, 2500);
     }
 
-    setInterval(showNext, 2500);
+    /* ===== ELIGIBILITY CARD ANIMATION ===== */
+    const card = document.querySelector(".card");
+
+    if (card) {
+        card.classList.add("from-left"); // change to from-right if needed
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        observer.observe(card);
+    }
 });
 </script>
+
 
     
 </body>
 </html>
+
 
 
