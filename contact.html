@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact - Medical Reporting Skill</title>
+    <link rel="stylesheet" href="style">
 
     <style>
     body {
@@ -18,6 +19,7 @@
         flex-direction: column;
         gap: 6px;
         align-items: center;
+        justify-content: center;
         padding: 12px 40px;
         background: #ffffff;
     }
@@ -25,8 +27,8 @@
     .header-top {
         width: 100%;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
     }
 
     .logo {
@@ -39,8 +41,8 @@
         margin: 0;
         font-size: 22px;
         display: flex;
-        gap: 8px;
         align-items: center;
+        gap: 8px;
     }
 
     .title p {
@@ -49,18 +51,30 @@
         color: #555;
     }
 
+    /* === MONO DYNAMIC BLINK SIGN === */
     .dynamic-sign {
+        font-family: "Consolas", "Courier New", monospace;
         font-size: 12px;
         padding: 2px 6px;
         border-radius: 999px;
         border: 1px solid #16a34a;
         color: #16a34a;
-        animation: blink 3s infinite;
+        background: rgba(22,163,74,0.06);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        animation: slowBlink 3s ease-in-out infinite;
     }
 
-    @keyframes blink {
-        0%,100%{opacity:.2}
-        50%{opacity:1}
+    @keyframes slowBlink {
+        0%, 40% {
+            opacity: 0.2;
+        }
+        50%, 70% {
+            opacity: 1;
+        }
+        80%, 100% {
+            opacity: 0.2;
+        }
     }
 
     nav {
@@ -70,9 +84,9 @@
 
     nav a {
         text-decoration: none;
-        color: #333;
-        font-size: 14px;
         font-weight: 500;
+        font-size: 14px;
+        color: #333;
     }
 
     nav a.active {
@@ -84,211 +98,363 @@
         width: 100%;
         overflow: hidden;
         white-space: nowrap;
+        margin-top: 4px;
         border-top: 1px solid #eee;
         padding-top: 4px;
         font-size: 14px;
+        font-weight: 500;
         color: #004aad;
     }
 
     .header-marquee {
         display: inline-block;
-        animation: scroll 30s linear infinite;
+        animation: headerScroll 30s linear infinite;
     }
 
-    @keyframes scroll {
-        from {transform: translateX(100%)}
-        to {transform: translateX(-100%)}
+    .header-marquee-wrapper:hover .header-marquee {
+        animation-play-state: paused;
     }
 
-    /* ===== CONTACT SECTION ===== */
+    @keyframes headerScroll {
+        0%   { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    /* ===== CONTACT PAGE CONTENT ===== */
     .contact-section {
         width: 90%;
         margin: 60px auto;
         min-height: 650px;
         display: flex;
-        gap: 40px;
+        flex-wrap: wrap;
         justify-content: center;
-        background: url('discharge.jpg') center/cover no-repeat;
+        gap: 40px;
+
+        background-image: url('discharge.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        position: relative;
         border-radius: 16px;
         padding: 50px;
-        position: relative;
-        box-shadow: 0 8px 22px rgba(0,0,0,.6);
+        overflow: hidden;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.6);
     }
 
+    /* big transparent black overlay like courses page */
     .contact-section::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: rgba(0,0,0,.78);
+        background: rgba(0,0,0,0.78);
         border-radius: 16px;
+        z-index: 0;
     }
 
-    /* LEFT BOX */
+    /* LEFT BOX – black transparent */
     .contact-left {
-        max-width: 520px;
-        width: 100%;
-        background: rgba(0,0,0,.75);
-        padding: 45px 40px;
+        flex: 1;
+        max-width: 350px;
+        background: rgba(0,0,0,0.75);
+        padding: 30px 25px;
         border-radius: 16px;
-        color: #fff;
+        color: #ffffff;
+        backdrop-filter: blur(4px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
         position: relative;
         z-index: 1;
-
-        opacity: 0;
-        transform: translateX(-80px);
-        transition: 1s ease;
     }
 
-    .contact-left.show {
-        opacity: 1;
-        transform: translateX(0);
+    .contact-left:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.5);
     }
 
     .contact-left h2 {
         font-size: 42px;
+        margin-bottom: 15px;
         color: #ffc107;
     }
 
     .contact-left p {
         font-size: 20px;
+        line-height: 1.6;
         font-weight: 600;
+        margin-bottom: 12px;
     }
 
-    /* RIGHT BOX */
     .contact-right {
-        max-width: 600px;
-        width: 100%;
+        flex: 1;
+        max-width: 480px;
         position: relative;
         z-index: 1;
-
-        opacity: 0;
-        transform: translateX(80px);
-        transition: 1s ease;
     }
 
-    .contact-right.show {
-        opacity: 1;
-        transform: translateX(0);
+    .contact-right h2 {
+        font-size: 32px;
+        margin-bottom: 18px;
+        color: #ffc107;
     }
 
+    /* RIGHT BOX – black transparent panel */
     .contact-form {
-        background: rgba(0,0,0,.8);
-        padding: 40px;
-        border-radius: 16px;
         display: flex;
         flex-direction: column;
-        gap: 14px;
+        gap: 12px;
+        background: rgba(0,0,0,0.8);
+        padding: 28px;
+        border-radius: 16px;
+        color: #ffffff;
+        backdrop-filter: blur(4px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-form:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.5);
     }
 
     .contact-form input,
     .contact-form select,
     .contact-form button {
-        padding: 16px;
+        width: 100%;
+        padding: 16px 18px;
         font-size: 16px;
         border-radius: 8px;
+        box-sizing: border-box;
     }
 
     .contact-form input,
     .contact-form select {
-        background: #0f172a;
-        color: #fff;
         border: 1px solid #374151;
+        background: rgba(15,23,42,0.9);
+        color: #ffffff;
+    }
+
+    .contact-form input::placeholder {
+        color: #9ca3af;
+    }
+
+    .contact-form select option {
+        color: #000000;
     }
 
     .contact-form button {
+        border: none;
         background: #f39c12;
         color: #fff;
         font-weight: 600;
-        border: none;
         cursor: pointer;
+        transition: 0.2s;
     }
 
-    /* FOOTER */
+    .contact-form button:hover {
+        background: #d68910;
+        transform: scale(1.02);
+    }
+
+    /* ===== FOOTER ===== */
     .site-footer {
         background: #111827;
         color: #e5e7eb;
-        padding: 30px 40px;
+        padding: 30px 40px 15px;
         margin-top: 40px;
     }
 
-    .footer-slider {
-        position: relative;
-        max-width: 900px;
-        height: 360px;
-        margin: 40px auto;
-        overflow: hidden;
-        border-radius: 20px;
-        background: #000;
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: space-between;
     }
 
-    .footer-slider img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        opacity: 0;
-        transition: opacity 1s;
+    .footer-content h3,
+    .footer-content h4 {
+        margin-top: 0;
     }
 
-    .footer-slider img.active {
-        opacity: 1;
+    .footer-center ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
+
+    .footer-center li {
+        margin-bottom: 6px;
+    }
+
+    .footer-center a,
+    .footer-right a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .footer-center a:hover,
+    .footer-right a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #9ca3af;
+    }
+
+    @media (max-width: 900px) {
+        .contact-section {
+            flex-direction: column;
+            padding: 30px 20px;
+        }
+
+        .contact-left,
+        .contact-right {
+            max-width: 100%;
+            margin-left: 0;
+        }
+    }
+
+.footer-slider {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 360px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #000;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.footer-slider img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    opacity: 0;
+    transition: opacity 1s ease;   /* 🔥 smooth fade */
+
+    border-radius: 20px;
+    background: #000;
+}
+
+.footer-slider img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+
+
     </style>
 </head>
-
 <body>
 
-<header>
-    <div class="header-top">
-        <div class="logo">
-            <img src="logo.png" height="60">
-            <div class="title">
-                <h2>Medical Reporting Skill <span class="dynamic-sign">Dynamic</span></h2>
-                <p>Training & Placement Support</p>
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="logo.png" alt="Medical Reporting Skill Logo" height="60">
+                <div class="title">
+                    <h2>
+                        Medical Reporting Skill
+                        <span class="dynamic-sign">Dynamic</span>
+                    </h2>
+                    <p>Training and Placement Support</p>
+                </div>
+            </div>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="info.html">Info</a>
+                <a href="eligibility.html">Eligibility</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+
+        <div class="header-marquee-wrapper">
+            <span class="header-marquee">
+                Welcome to the right way to make your career with medical reporting skills. Here we provide you that skill through which you can make your career taking work at home and office by itself. No need of anyone to support you; you will gain that skill.
+            </span>
+        </div>
+    </header>
+
+    <!-- MAIN CONTACT SECTION -->
+    <div class="contact-section">
+        <div class="contact-left">
+            <h2>Contact Us:</h2>
+            <p> +91-9752043256</p>
+            <p> +91-8871866088</p>
+            <p> avsoni10987@gmail.com</p>
+        </div>
+
+        <div class="contact-right">
+            <h2>Get more information</h2>
+            <form action="#" method="post" class="contact-form">
+                <input type="text" name="fullname" placeholder="Full Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+
+                <select name="qualification" required>
+                    <option value="">Select Qualification</option>
+                    <option>B.Sc</option>
+                    <option>M.Sc</option>
+                    <option>MBBS</option>
+                    <option>Pharm.D</option>
+                    <option>Other</option>
+                </select>
+
+                <input type="number" name="year" placeholder="Year of completion" min="1950" max="2099">
+
+                <select name="campus" required>
+                    <option value="">Preferred Campus</option>
+                    <option>Main</option>
+                    <option>Remote</option>
+                    <option>Online</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>Medical Reporting Skill</h3>
+                <p>Empowering healthcare professionals through industry-focused medical reporting training.</p>
+            </div>
+
+            <div class="footer-center">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="info.html">Info</a></li>
+                    <li><a href="eligibility.html">Eligibility</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h4>Contact Us</h4>
+                <p>Email: <a href="mailto:avsoni10987@gmail.com">avsoni10987@gmail.com</a></p>
+                <p>Phone: +91 9752043256</p>
+                <p>Phone: +91 8871866088</p>
+                <p>Address: Bengaluru, India</p>
             </div>
         </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="courses.html">Courses</a>
-            <a href="info.html">Info</a>
-            <a href="eligibility.html">Eligibility</a>
-            <a href="contact.html" class="active">Contact</a>
-        </nav>
-    </div>
-    <div class="header-marquee-wrapper">
-        <span class="header-marquee">
-            Welcome to the right way to make your career with medical reporting skills.
-        </span>
-    </div>
-</header>
 
-<div class="contact-section">
-    <div class="contact-left">
-        <h2>Contact Us</h2>
-        <p>+91-9752043256</p>
-        <p>+91-8871866088</p>
-        <p>avsoni10987@gmail.com</p>
-    </div>
-
-    <div class="contact-right">
-        <h2 style="color:#ffc107">Get more information</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Full Name">
-            <input type="tel" placeholder="Phone Number">
-            <input type="email" placeholder="Email Address">
-            <select><option>Select Qualification</option></select>
-            <button>Submit</button>
-        </form>
-    </div>
-</div>
-
-<footer class="site-footer">
-    <div class="footer-slider">
-        <img src="image27.jpg" class="active">
-        <img src="image28.jpg">
-        <img src="image29.jpg">
-        <img src="image30.jpg">
+<div class="footer-slider">
+    <img src="image27.jpg" class="active">
+    <img src="image28.jpg">
+    <img src="image29.jpg">
+     <img src="image30.jpg">
         <img src="image31.jpg">
         <img src="image32.jpg">
         <img src="image33.jpg">
@@ -305,23 +471,43 @@
         <img src="image44.jpg">
         <img src="image45.jpg">
         <img src="image46.jpg">
-    </div>
-</footer>
+        
+</div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 Medical Reporting Skill | All Rights Reserved</p>
+        </div>
+    </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded",()=>{
-    document.querySelector(".contact-left").classList.add("show");
-    document.querySelector(".contact-right").classList.add("show");
+       <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-    const imgs=document.querySelectorAll(".footer-slider img");
-    let i=0;
-    setInterval(()=>{
-        imgs[i].classList.remove("active");
-        i=(i+1)%imgs.length;
-        imgs[i].classList.add("active");
-    },2000);
+    const images = document.querySelectorAll(".footer-slider img");
+    let index = 0;
+
+    // Safety check
+    if (images.length === 0) return;
+
+    images[0].classList.add("active");
+
+    function showNext() {
+        images[index].classList.remove("active");
+        index = (index + 1) % images.length;
+        images[index].classList.add("active");
+    }
+
+    setInterval(showNext, 2000); // change every 2 seconds
 });
 </script>
 
+
+
+    
 </body>
 </html>
+
+
+
+
+
+s
