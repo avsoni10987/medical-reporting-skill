@@ -205,29 +205,29 @@ h1 {
 </footer>
 
 
+         <script>
+document.addEventListener("DOMContentLoaded", function () {
 
-    <script>
-document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".footer-slider img");
+    let index = 0;
 
-    const items = document.querySelectorAll(".animate");
+    // Safety check
+    if (images.length === 0) return;
 
-    items.forEach((el, i) => {
-        el.style.transitionDelay = `${i * 120}ms`;
-    });
+    images[0].classList.add("active");
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-                observer.unobserve(entry.target); // animate only once
-            }
-        });
-    }, { threshold: 0.15 });
+    function showNext() {
+        images[index].classList.remove("active");
+        index = (index + 1) % images.length;
+        images[index].classList.add("active");
+    }
 
-    items.forEach(item => observer.observe(item));
+    setInterval(showNext, 2000); // change every 2 seconds
 });
 </script>
 
+
 </body>
 </html>
+
 
