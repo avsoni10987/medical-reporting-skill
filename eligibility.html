@@ -244,6 +244,22 @@ nav a.active {
     z-index: 1;
 }
 
+    /* ===== LEFT / RIGHT ANIMATION ===== */
+.animate {
+    opacity: 0;
+    transform: translateX(60px);
+}
+
+.from-left {
+    transform: translateX(-60px);
+}
+
+.animate.show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.9s ease, opacity 0.9s ease;
+}
+
     
 </style>
 </head>
@@ -256,7 +272,8 @@ nav a.active {
             <img src="logo.png" alt="Medical Reporting Skill Logo" height="50">
             <div class="title">
                 <h2>Medical Reporting Skill</h2>
-                <p>Training & Placement Support</p>
+                <p class="animate">Training & Placement Support</p>
+                
             </div>
         </div>
 
@@ -279,9 +296,11 @@ nav a.active {
 <!-- PAGE CONTENT -->
 <div class="container">
     <div class="info-box">
-        <h1>Eligibility</h1>
 
-        <div class="card">
+        <h1 class="animate">Eligibility</h1>
+
+            <div class="card animate">
+
          <b>   <p>
                 Open to graduates in life sciences, BSc, MSc, B.Pharmacy, M.Pharmacy,
                 medical or non-medical, Bio-technology and allied fields.
@@ -289,18 +308,18 @@ nav a.active {
             </p></b>
 
             <ul>
-               <b> <li>(BSc / MSc / PhD)/ MBBS / Pharm.D / B.Pharm / M.Pharm</li></b>
+               <b> <li class="animate">(BSc / MSc / PhD)/ MBBS / Pharm.D / B.Pharm / M.Pharm</li></b>
 <b><li>Life science degrees, Physical & mathematical science degrees, Computer & data-related degrees, Environmental & earth science degrees, 
 Interdisciplinary / applied science degrees, Medical & health science, BSc(Hons), BS, BE, etc.</li></b>
 
-            <b><li>B.Sc Nursing/ BMLT / BSc MLT/ DMLT/ Lab / Pathology–related medical degrees and diplomas</li></b>
+            <b><li class="animate">B.Sc Nursing/ BMLT / BSc MLT/ DMLT/ Lab / Pathology–related medical degrees and diplomas</li></b>
                 
-                <b><li>Basic computer literacy</li></b>
-                <b><li>Medical or Non-medical</li></b>
-                <b><li>Anyone can do & No age bar</li></b>
-                <b><li>Working person or non-working (like student) anyone can do</li></b>
-                <b><li>Science / Commerce / any other field – anyone can do and get the job and can work from wherever you want</li></b>
-                <b><li>Good communication skills (spoken & written – we will guide)</li></b>
+                <b><li class="animate">Basic computer literacy</li></b>
+                <b><li class="animate">Medical or Non-medical</li></b>
+                <b><li class="animate">Anyone can do & No age bar</li></b>
+                <b><li class="animate">Working person or non-working (like student) anyone can do</li></b>
+                <b><li class="animate">Science / Commerce / any other field – anyone can do and get the job and can work from wherever you want</li></b>
+                <b><li class="animate">Good communication skills (spoken & written – we will guide)</li></b>
             </ul>
         </div>
     </div>
@@ -365,40 +384,45 @@ Interdisciplinary / applied science degrees, Medical & health science, BSc(Hons)
     </div>
 </footer>
 
-    
-         <script>
-document.addEventListener("DOMContentLoaded", function () {
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+    /* ===== FOOTER SLIDER ===== */
     const images = document.querySelectorAll(".footer-slider img");
     let index = 0;
 
-    // Safety check
-    if (images.length === 0) return;
+    if (images.length > 0) {
+        images[0].classList.add("active");
 
-    images[0].classList.add("active");
-
-    function showNext() {
-        images[index].classList.remove("active");
-        index = (index + 1) % images.length;
-        images[index].classList.add("active");
+        setInterval(() => {
+            images[index].classList.remove("active");
+            index = (index + 1) % images.length;
+            images[index].classList.add("active");
+        }, 2000);
     }
 
-    setInterval(showNext, 2000); // change every 2 seconds
+    /* ===== LEFT / RIGHT ANIMATION ===== */
+    const animatedItems = document.querySelectorAll(".animate");
+
+    animatedItems.forEach((el, i) => {
+        el.classList.add(i % 2 === 0 ? "from-left" : "from-right");
+    });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    animatedItems.forEach(el => observer.observe(el));
 });
 </script>
-
 
     
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 
 
