@@ -194,6 +194,23 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     z-index: 1;
 }
 
+/* ===== SLIDE-IN ANIMATIONS ===== */
+.animate {
+    opacity: 0;
+    transform: translateX(60px);
+}
+
+/* from LEFT */
+.from-left {
+    transform: translateX(-60px);
+}
+
+/* when visible */
+.animate.show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.9s ease, opacity 0.9s ease;
+}
 
 </style>
 </head>
@@ -228,14 +245,16 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 
 <!-- MAIN INFO CONTENT -->
 <div class="container">
-  <b><h1>Information</h1></b>
-    <b><p>
-        Our Medical Reporting Skill program equips you with all the knowledge, tools, and guidance required 
+
+    <b><h1 class="animate">Information</h1></b>
+    <b><p class="animate">
+       Our Medical Reporting Skill program equips you with all the knowledge, tools, and guidance required 
         to build a career in medical reporting from home or office. Explore the course structure, benefits, 
         and opportunities below.
     </p></b>
 
-    <section class="card">
+
+        <section class="card animate">
         <b><h3>About the Training</h3></b>
         <b><p>
             Learn accurate documentation, reporting, and analysis of medical cases. Our program supports 
@@ -245,7 +264,7 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 
     <section class="card">
         <b><h3>Benefits</h3></b>
-        <b><ul>
+        <b><ul class="animate">
             <li>Enhances documentation and reporting skills</li>
             <li>Improves accuracy in medical analysis</li>
             <li>Provides multiple job opportunities</li>
@@ -312,24 +331,39 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     </div>
 </footer>
 
-        <script>
-document.addEventListener("DOMContentLoaded", function () {
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+    /* ===== FOOTER SLIDER ===== */
     const images = document.querySelectorAll(".footer-slider img");
     let index = 0;
 
-    // Safety check
-    if (images.length === 0) return;
+    if (images.length > 0) {
+        images[0].classList.add("active");
 
-    images[0].classList.add("active");
-
-    function showNext() {
-        images[index].classList.remove("active");
-        index = (index + 1) % images.length;
-        images[index].classList.add("active");
+        setInterval(() => {
+            images[index].classList.remove("active");
+            index = (index + 1) % images.length;
+            images[index].classList.add("active");
+        }, 2000);
     }
 
-    setInterval(showNext, 2000); // change every 2 seconds
+    /* ===== LEFT / RIGHT SCROLL ANIMATION ===== */
+    const animatedItems = document.querySelectorAll(".animate");
+
+    animatedItems.forEach((el, i) => {
+        el.classList.add(i % 2 === 0 ? "from-left" : "from-right");
+    });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    animatedItems.forEach(el => observer.observe(el));
 });
 </script>
 
@@ -338,6 +372,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 </body>
 </html>
+
 
 
 
