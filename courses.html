@@ -173,6 +173,29 @@
             letter-spacing: 0.4px;
         }
 
+
+
+        /* ===== COURSE CARD ANIMATION ===== */
+.course-card {
+    opacity: 0;
+    transform: translateX(60px);
+}
+
+/* from LEFT */
+.course-card.from-left {
+    transform: translateX(-60px);
+}
+
+/* when visible */
+.course-card.show {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.9s ease, opacity 0.9s ease;
+}
+
+
+        
+
         /* ===== FOOTER ===== */
         .site-footer {
             background: #111827;
@@ -414,29 +437,46 @@
     </footer>
 
 
-   <script>
-document.addEventListener("DOMContentLoaded", function () {
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+    /* ===== FOOTER SLIDER ===== */
     const images = document.querySelectorAll(".footer-slider img");
     let index = 0;
 
-    // Safety check
-    if (images.length === 0) return;
+    if (images.length > 0) {
+        images[0].classList.add("active");
 
-    images[0].classList.add("active");
-
-    function showNext() {
-        images[index].classList.remove("active");
-        index = (index + 1) % images.length;
-        images[index].classList.add("active");
+        setInterval(() => {
+            images[index].classList.remove("active");
+            index = (index + 1) % images.length;
+            images[index].classList.add("active");
+        }, 2000);
     }
 
-    setInterval(showNext, 2000); // change every 2 seconds
+    /* ===== COURSE CARD ANIMATION ===== */
+    const cards = document.querySelectorAll(".course-card");
+
+    cards.forEach((card, i) => {
+        card.classList.add(i % 2 === 0 ? "from-left" : "from-right");
+    });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
 });
 </script>
 
+
 </body>
 </html>
+
 
 
 
