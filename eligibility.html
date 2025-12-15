@@ -375,30 +375,37 @@ Interdisciplinary / applied science degrees, Medical & health science, BSc(Hons)
     </div>
 </footer>
 
-    
-         <script>
+   <script>
 document.addEventListener("DOMContentLoaded", function () {
 
     const images = document.querySelectorAll(".footer-slider img");
     let index = 0;
 
-    // Safety check
     if (images.length === 0) return;
 
     images[0].classList.add("active");
 
     function showNext() {
-        images[index].classList.remove("active");
+        const current = images[index];
+        current.classList.remove("active");
+        current.classList.add("exit");
+
         index = (index + 1) % images.length;
-        images[index].classList.add("active");
+        const next = images[index];
+        next.classList.remove("exit");
+        next.classList.add("active");
+
+        setTimeout(() => {
+            current.classList.remove("exit");
+        }, 1000);
     }
 
-    setInterval(showNext, 2000); // change every 2 seconds
+    setInterval(showNext, 2500);
 });
 </script>
-
 
     
 </body>
 </html>
+
 
