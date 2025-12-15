@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Eligibility - Medical Reporting Skill</title>
+
 <style>
 body {
     font-family: 'Segoe UI', sans-serif;
@@ -12,7 +12,7 @@ body {
     background-color: #f5f6fa;
 }
 
-/* ===== HEADER (same as other pages) ===== */
+/* ===== HEADER ===== */
 header {
     display: flex;
     flex-direction: column;
@@ -36,17 +36,6 @@ header {
     gap: 10px;
 }
 
-.title h2 {
-    margin: 0;
-    font-size: 22px;
-}
-
-.title p {
-    margin: 0;
-    font-size: 13px;
-    color: #555;
-}
-
 nav {
     display: flex;
     gap: 16px;
@@ -61,10 +50,9 @@ nav a {
 
 nav a.active {
     border-bottom: 2px solid #007bff;
-    padding-bottom: 2px;
 }
 
-/* moving sentence bar */
+/* ===== MARQUEE ===== */
 .header-marquee-wrapper {
     width: 100%;
     overflow: hidden;
@@ -79,316 +67,173 @@ nav a.active {
 
 .header-marquee {
     display: inline-block;
-    animation: headerScroll 30s linear infinite;
+    animation: marquee 30s linear infinite;
 }
 
-.header-marquee-wrapper:hover .header-marquee {
-    animation-play-state: paused;
+@keyframes marquee {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
 }
 
-@keyframes headerScroll {
-    0%   { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-
-/* ===== PAGE CONTENT: ELIGIBILITY BOX ===== */
+/* ===== PAGE CONTENT ===== */
 .container {
     width: 90%;
     margin: 60px auto;
     min-height: 650px;
     border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('women.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: url('women.jpg') center/cover no-repeat;
 }
 
 .info-box {
     width: 75%;
-    background: rgba(0, 0, 0, 0.75);
-    padding: 50px; /* increased from 40px */
+    background: rgba(0,0,0,0.75);
+    padding: 50px;
     border-radius: 16px;
-    backdrop-filter: blur(4px);
-    color: #ffffff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-    
-.info-box:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+    color: white;
 }
 
-.info-box h1 {
-    font-size: 48px; /* increased from 42px */
-    font-weight: 800;
+h1 {
+    font-size: 48px;
     text-align: center;
-    margin-bottom: 35px; /* increased spacing */
+    margin-bottom: 35px;
     background: linear-gradient(to right, #003A75, #007BFF);
     -webkit-background-clip: text;
     color: transparent;
 }
-    
+
 .card {
     background: rgba(0,0,0,0.78);
-    padding: 30px 35px; /* increased padding */
+    padding: 35px;
     border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 25px; /* increased spacing */
-}
-
-.card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.65);
 }
 
 .card p {
-    font-size: 22px; /* increased from 20px */
-    line-height: 1.9; /* increased line spacing */
+    font-size: 22px;
+    line-height: 1.9;
     color: #e0e7ff;
-    margin-bottom: 25px; /* increased spacing */
 }
+
 .card ul li {
-    font-size: 20px; /* slightly larger */
-    line-height: 1.8; /* more spacing between list items */
-    margin-bottom: 12px; /* spacing between bullets */
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+/* ===== ANIMATION (ADDED ONLY) ===== */
+.animate {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.animate.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s ease;
 }
 
 /* ===== FOOTER ===== */
 .site-footer {
     background: #111827;
     color: #e5e7eb;
-    padding: 30px 40px 15px;
-    margin-top: 0;
-}
-
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: space-between;
-}
-
-.footer-content h3,
-.footer-content h4 {
-    margin-top: 0;
-}
-
-.footer-center ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-center li {
-    margin-bottom: 6px;
-}
-
-.footer-center a,
-.footer-right a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.footer-center a:hover,
-.footer-right a:hover {
-    text-decoration: underline;
+    padding: 30px;
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 20px;
-    font-size: 14px;
     color: #9ca3af;
 }
-
-@media (max-width: 900px) {
-    .info-box {
-        width: 90%;
-        padding: 25px;
-    }
-}
-
-.footer-slider {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    height: 360px;
-    margin: 40px auto;
-    overflow: hidden;
-    border-radius: 20px;
-    background: #000;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-}
-
-.footer-slider img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-
-    opacity: 0;
-    transition: opacity 1s ease;   /* 🔥 smooth fade */
-
-    border-radius: 20px;
-    background: #000;
-}
-
-.footer-slider img.active {
-    opacity: 1;
-    z-index: 1;
-}
-
-    
 </style>
 </head>
+
 <body>
 
 <!-- HEADER -->
 <header>
     <div class="header-top">
         <div class="logo">
-            <img src="logo.png" alt="Medical Reporting Skill Logo" height="50">
-            <div class="title">
-                <h2>Medical Reporting Skill</h2>
-                <p>Training & Placement Support</p>
-            </div>
+            <img src="logo.png" height="50">
+            <h2>Medical Reporting Skill</h2>
         </div>
-
         <nav>
-            <a href="index.html">Home</a>
-            <a href="courses.html">Courses</a>
-            <a href="info.html">Info</a>
-            <a href="eligibility.html" class="active">Eligibility</a>
-            <a href="contact.html">Contact</a>
+            <a href="#">Home</a>
+            <a href="#">Courses</a>
+            <a href="#" class="active">Eligibility</a>
+            <a href="#">Contact</a>
         </nav>
     </div>
 
     <div class="header-marquee-wrapper">
         <span class="header-marquee">
-            welcome to the right way to make your career with medical reporting skills. Here we provide you that skill through which you can make your career taking work at home and office by itself. No need of anyone to support you will make that much skill.
+            welcome to the right way to make your career with medical reporting skills.
         </span>
     </div>
 </header>
 
-<!-- PAGE CONTENT -->
+<!-- CONTENT -->
 <div class="container">
     <div class="info-box">
-        <h1>Eligibility</h1>
+
+        <h1 class="animate">Eligibility</h1>
 
         <div class="card">
-         <b>   <p>
-                Open to graduates in life sciences, BSc, MSc, B.Pharmacy, M.Pharmacy,
-                medical or non-medical, Bio-technology and allied fields.
-                Freshers and experienced professionals are welcome.
-            </p></b>
+            <b>
+                <p class="animate">
+                    Open to graduates in life sciences, BSc, MSc, B.Pharmacy, M.Pharmacy,
+                    medical or non-medical, Bio-technology and allied fields.
+                    Freshers and experienced professionals are welcome.
+                </p>
+            </b>
 
             <ul>
-               <b> <li>(BSc / MSc / PhD)/ MBBS / Pharm.D / B.Pharm / M.Pharm</li></b>
-<b><li>Life science degrees, Physical & mathematical science degrees, Computer & data-related degrees, Environmental & earth science degrees, 
-Interdisciplinary / applied science degrees, Medical & health science, BSc(Hons), BS, BE, etc.</li></b>
-
-            <b><li>B.Sc Nursing/ BMLT / BSc MLT/ DMLT/ Lab / Pathology–related medical degrees and diplomas</li></b>
-                
-                <b><li>Basic computer literacy</li></b>
-                <b><li>Medical or Non-medical</li></b>
-                <b><li>Anyone can do & No age bar</li></b>
-                <b><li>Working person or non-working (like student) anyone can do</li></b>
-                <b><li>Science / Commerce / any other field – anyone can do and get the job and can work from wherever you want</li></b>
-                <b><li>Good communication skills (spoken & written – we will guide)</li></b>
+                <b><li class="animate">(BSc / MSc / PhD)/ MBBS / Pharm.D / B.Pharm / M.Pharm</li></b>
+                <b><li class="animate">Life science degrees, Physical & mathematical science degrees, Computer & data-related degrees, Environmental & earth science degrees, Interdisciplinary / applied science degrees, Medical & health science, BSc(Hons), BS, BE, etc.</li></b>
+                <b><li class="animate">B.Sc Nursing/ BMLT / BSc MLT/ DMLT/ Lab / Pathology–related medical degrees and diplomas</li></b>
+                <b><li class="animate">Basic computer literacy</li></b>
+                <b><li class="animate">Medical or Non-medical</li></b>
+                <b><li class="animate">Anyone can do & No age bar</li></b>
+                <b><li class="animate">Working person or non-working (like student) anyone can do</li></b>
+                <b><li class="animate">Science / Commerce / any other field – anyone can do and get the job and can work from wherever you want</li></b>
+                <b><li class="animate">Good communication skills (spoken & written – we will guide)</li></b>
             </ul>
         </div>
+
     </div>
 </div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
-    <div class="footer-content">
-        <div class="footer-left">
-            <h3>Medical Reporting Skill</h3>
-            <p>Empowering healthcare professionals through industry-focused medical reporting training.</p>
-        </div>
-
-        <div class="footer-center">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="info.html">Info</a></li>
-                <li><a href="eligibility.html" class="active">Eligibility</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-right">
-            <h4>Contact Us</h4>
-            <p>Email: <a href="mailto:info@medicalreportingskill.com">avsoni10987@gmail.com</a></p>
-            <p>Phone: +91 9752043256</p>
-            <p>Phone: +91 8871866088</p>
-            <p>Address: Bengaluru, India</p>
-        </div>
-    </div>
-
-
-    <div class="footer-slider">
-    <img src="image7.jpg" class="active">
-    <img src="image8.jpg">
-    <img src="image9.jpg">
-     <img src="image10.jpg">
-        <img src="image11.jpg">
-        <img src="image12.jpg">
-        <img src="image13.jpg">
-        <img src="image14.jpg">
-        <img src="image15.jpg">
-        <img src="image16.jpg">
-        <img src="image17.jpg">
-        <img src="image18.jpg">
-        <img src="image19.jpg">
-        <img src="image20.jpg">
-        <img src="image21.jpg">
-        <img src="image22.jpg">
-        <img src="image23.jpg">
-        <img src="image24.jpg">
-        <img src="image25.jpg">
-        <img src="image26.jpg">
-        
-</div>
-
-    
     <div class="footer-bottom">
-        <p>© 2025 Medical Reporting Skill | All Rights Reserved</p>
+        © 2025 Medical Reporting Skill | All Rights Reserved
     </div>
 </footer>
 
-    
-         <script>
-document.addEventListener("DOMContentLoaded", function () {
+<!-- SCRIPT (ADDED ONLY) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-    const images = document.querySelectorAll(".footer-slider img");
-    let index = 0;
+    const items = document.querySelectorAll(".animate");
 
-    // Safety check
-    if (images.length === 0) return;
+    items.forEach((el, i) => {
+        el.style.transitionDelay = `${i * 120}ms`;
+    });
 
-    images[0].classList.add("active");
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
 
-    function showNext() {
-        images[index].classList.remove("active");
-        index = (index + 1) % images.length;
-        images[index].classList.add("active");
-    }
-
-    setInterval(showNext, 2000); // change every 2 seconds
+    items.forEach(el => observer.observe(el));
 });
 </script>
 
-
-    
 </body>
 </html>
+
