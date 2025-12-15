@@ -204,21 +204,25 @@ h1 {
     </div>
 </footer>
 
-<!-- SCRIPT -->
-<script>
+
+
+    <script>
 document.addEventListener("DOMContentLoaded", () => {
 
     const items = document.querySelectorAll(".animate");
 
+    items.forEach((el, i) => {
+        el.style.transitionDelay = `${i * 120}ms`;
+    });
+
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach(entry => {
             if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add("show");
-                }, index * 120);   // 🔥 stagger animation
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // animate only once
             }
         });
-    }, { threshold: 0 });
+    }, { threshold: 0.15 });
 
     items.forEach(item => observer.observe(item));
 });
@@ -226,3 +230,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
