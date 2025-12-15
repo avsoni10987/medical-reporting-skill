@@ -234,7 +234,8 @@ nav a.active {
     object-position: center;
 
     opacity: 0;
-    transition: opacity 1s ease;   /* 🔥 smooth fade */
+    transform: translateX(100%);   /* start from right */
+    transition: transform 1s ease, opacity 1s ease;
 
     border-radius: 20px;
     background: #000;
@@ -242,6 +243,14 @@ nav a.active {
 
 .footer-slider img.active {
     opacity: 1;
+    transform: translateX(0);      /* move to center */
+    z-index: 2;
+}
+
+/* image leaving to left */
+.footer-slider img.exit {
+    opacity: 0;
+    transform: translateX(-100%);
     z-index: 1;
 }
 
@@ -392,3 +401,4 @@ document.addEventListener("DOMContentLoaded", function () {
     
 </body>
 </html>
+
