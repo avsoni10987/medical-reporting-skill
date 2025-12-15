@@ -66,15 +66,9 @@
     }
 
     @keyframes slowBlink {
-        0%, 40% {
-            opacity: 0.2;
-        }
-        50%, 70% {
-            opacity: 1;
-        }
-        80%, 100% {
-            opacity: 0.2;
-        }
+        0%, 40% { opacity: 0.2; }
+        50%, 70% { opacity: 1; }
+        80%, 100% { opacity: 0.2; }
     }
 
     nav {
@@ -155,15 +149,25 @@
     /* LEFT BOX – black transparent */
     .contact-left {
         flex: 1;
-        max-width: 350px;
+        max-width: 520px; /* increased size */
+        padding: 45px 40px; /* bigger padding */
         background: rgba(0,0,0,0.75);
-        padding: 30px 25px;
         border-radius: 16px;
         color: #ffffff;
         backdrop-filter: blur(4px);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         position: relative;
         z-index: 1;
+
+        /* Animation */
+        opacity: 0;
+        transform: translateX(-100px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .contact-left.show {
+        opacity: 1;
+        transform: translateX(0);
     }
 
     .contact-left:hover {
@@ -336,8 +340,7 @@
     object-position: center;
 
     opacity: 0;
-    transition: opacity 1s ease;   /* 🔥 smooth fade */
-
+    transition: opacity 1s ease;
     border-radius: 20px;
     background: #000;
 }
@@ -347,9 +350,7 @@
     z-index: 1;
 }
 
-
-
-    </style>
+</style>
 </head>
 <body>
 
@@ -392,7 +393,35 @@
             <p> avsoni10987@gmail.com</p>
         </div>
 
-         </div>
+        <div class="contact-right">
+            <h2>Get more information</h2>
+            <form action="#" method="post" class="contact-form">
+                <input type="text" name="fullname" placeholder="Full Name" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+
+                <select name="qualification" required>
+                    <option value="">Select Qualification</option>
+                    <option>B.Sc</option>
+                    <option>M.Sc</option>
+                    <option>MBBS</option>
+                    <option>Pharm.D</option>
+                    <option>Other</option>
+                </select>
+
+                <input type="number" name="year" placeholder="Year of completion" min="1950" max="2099">
+
+                <select name="campus" required>
+                    <option value="">Preferred Campus</option>
+                    <option>Main</option>
+                    <option>Remote</option>
+                    <option>Online</option>
+                </select>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -422,65 +451,52 @@
             </div>
         </div>
 
-<div class="footer-slider">
-    <img src="image27.jpg" class="active">
-    <img src="image28.jpg">
-    <img src="image29.jpg">
-     <img src="image30.jpg">
-        <img src="image31.jpg">
-        <img src="image32.jpg">
-        <img src="image33.jpg">
-        <img src="image34.jpg">
-        <img src="image35.jpg">
-        <img src="image36.jpg">
-        <img src="image37.jpg">
-        <img src="image38.jpg">
-        <img src="image39.jpg">
-        <img src="image40.jpg">
-        <img src="image41.jpg">
-        <img src="image42.jpg">
-        <img src="image43.jpg">
-        <img src="image44.jpg">
-        <img src="image45.jpg">
-        <img src="image46.jpg">
-        
-</div>
-        
+        <div class="footer-slider">
+            <img src="image27.jpg" class="active">
+            <img src="image28.jpg">
+            <img src="image29.jpg">
+            <img src="image30.jpg">
+            <img src="image31.jpg">
+            <img src="image32.jpg">
+            <img src="image33.jpg">
+            <img src="image34.jpg">
+            <img src="image35.jpg">
+            <img src="image36.jpg">
+            <img src="image37.jpg">
+            <img src="image38.jpg">
+            <img src="image39.jpg">
+            <img src="image40.jpg">
+            <img src="image41.jpg">
+            <img src="image42.jpg">
+            <img src="image43.jpg">
+            <img src="image44.jpg">
+            <img src="image45.jpg">
+            <img src="image46.jpg">
+        </div>
+
         <div class="footer-bottom">
             <p>© 2025 Medical Reporting Skill | All Rights Reserved</p>
         </div>
     </footer>
 
-       <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
-
     const images = document.querySelectorAll(".footer-slider img");
     let index = 0;
-
-    // Safety check
     if (images.length === 0) return;
-
     images[0].classList.add("active");
-
     function showNext() {
         images[index].classList.remove("active");
         index = (index + 1) % images.length;
         images[index].classList.add("active");
     }
+    setInterval(showNext, 2000);
 
-    setInterval(showNext, 2000); // change every 2 seconds
+    // Animate middle box
+    const box = document.querySelector(".contact-left");
+    if (box) box.classList.add("show");
 });
 </script>
 
-
-
-    
 </body>
 </html>
-
-
-
-
-
-s
-
