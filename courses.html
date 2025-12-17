@@ -281,6 +281,29 @@
     z-index: 1;
 }
 
+        /* ===== GLOBAL HOVER FOR ALL MAIN DIVS (SAFE) ===== */
+.container,
+.course-card,
+.footer-content > div,
+.footer-slider,
+.header-top,
+.logo,
+.page-bg > div {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.container:hover,
+.course-card:hover,
+.footer-content > div:hover,
+.footer-slider:hover,
+.header-top:hover,
+.logo:hover,
+.page-bg > div:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+
     </style>
 </head>
 <body>
@@ -476,6 +499,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
