@@ -257,7 +257,7 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 }
 
     /* ===== STRONG GLOBAL HOVER (ALL MAIN BLOCKS) ===== */
-.container,
+
 .card,
 .footer-content > div,
 .footer-slider,
@@ -265,6 +265,7 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 .logo {
     transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
+
 
 
 .card:hover,
@@ -291,6 +292,11 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
     justify-content: center;
 
     box-sizing: border-box;
+}
+.info-overlay {
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
 }
 
 </style>
@@ -456,6 +462,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
