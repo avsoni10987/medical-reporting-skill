@@ -551,6 +551,28 @@ div:hover {
     cursor: pointer;
 }
 
+/* ===== SCROLL & MOUSE ACTIVATION SUPPORT ===== */
+
+/* Pause animation until activated */
+[class*="animate-"] {
+    opacity: 0;
+    animation-play-state: paused;
+}
+
+/* When activated */
+.animate-active {
+    opacity: 1;
+    animation-play-state: running;
+}
+
+/* Subtle mouse interaction (no layout change) */
+.hero-overlay,
+.dark-card,
+.testimonial,
+.features-card {
+    will-change: transform;
+}
+
         
 </style>
 </head>
@@ -795,10 +817,44 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(showNext, 2000); // change every 2 seconds
 });
 </script>
+<script>
+/* ===== SCROLL-BASED ACTIVATION ===== */
+const animatedElements = document.querySelectorAll('[class*="animate-"]');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-active');
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+animatedElements.forEach(el => observer.observe(el));
+
+/* ===== MOUSE MOVE INTERACTION (VERY LIGHT) ===== */
+document.addEventListener('mousemove', e => {
+    const x = (window.innerWidth / 2 - e.clientX) / 60;
+    const y = (window.innerHeight / 2 - e.clientY) / 60;
+
+    document.querySelectorAll('.hero-overlay, .dark-card, .testimonial').forEach(el => {
+        el.style.transform = `translate(${x}px, ${y}px) scale(1.02)`;
+    });
+});
+
+/* Reset transform when mouse leaves window */
+document.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.hero-overlay, .dark-card, .testimonial').forEach(el => {
+        el.style.transform = '';
+    });
+});
+</script>
 
 
 </body>
 </html>
+
 
 
 
