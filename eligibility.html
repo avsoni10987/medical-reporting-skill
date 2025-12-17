@@ -322,6 +322,42 @@ nav a.active {
     box-shadow: 0 16px 36px rgba(0,0,0,0.65);
 }
 
+
+    /* ===== FIX HOVER WHEN <b> WRAPS TEXT ===== */
+
+/* Make <b> behave like block so hover works fully */
+.card b {
+    display: block;
+    width: 100%;
+}
+
+/* Hover paragraph via <b> */
+.card b:hover p {
+    color: #ffffff;
+    text-shadow:
+        0 0 6px rgba(255,255,255,0.6),
+        0 0 14px rgba(0,123,255,0.7);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover list item via <b> */
+.card b:hover li {
+    transform: translateX(6px);
+    color: #ffffff;
+    text-shadow:
+        0 0 6px rgba(255,255,255,0.6),
+        0 0 12px rgba(0,123,255,0.6);
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+/* Cursor feedback */
+.card b:hover {
+    cursor: pointer;
+}
+
     
 </style>
 </head>
@@ -494,6 +530,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 </body>
 </html>
+
 
 
 
