@@ -87,6 +87,32 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 
 }
 
+    /* ===== BLACK TRANSPARENT INFO OVERLAY ===== */
+.info-overlay {
+    background: rgba(0, 0, 0, 0.65);   /* black transparent */
+    padding: 26px 32px;
+    border-radius: 14px;
+    margin-bottom: 35px;
+    text-align: center;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+}
+
+.info-overlay p {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.75;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+/* subtle glow on hover */
+.info-overlay:hover {
+    background: rgba(0, 0, 0, 0.75);
+    transform: scale(1.03);
+    transition: all 0.35s ease;
+}
+
 /* ===== CARDS ===== */
 .card {
     background: #ffffff;
@@ -265,14 +291,14 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 </header>
 
 <!-- MAIN INFO CONTENT -->
-<div class="container">
 
-    <b><h1 class="animate">Information</h1></b>
-    <b><p class="animate">
-       Our Medical Reporting Skill program equips you with all the knowledge, tools, and guidance required 
+    <div class="info-overlay animate">
+    <p>
+        Our Medical Reporting Skill program equips you with all the knowledge, tools, and guidance required 
         to build a career in medical reporting from home or office. Explore the course structure, benefits, 
         and opportunities below.
-    </p></b>
+    </p>
+</div>
 
 
         <section class="card animate">
@@ -393,6 +419,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
