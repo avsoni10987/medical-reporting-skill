@@ -277,6 +277,51 @@ nav a.active {
     z-index: 1;
 }
 
+    /* ===== GLOBAL SAFE HOVER FOR ALL CONTENT ===== */
+
+/* Paragraph hover */
+.card p:hover {
+    color: #ffffff;
+    text-shadow:
+        0 0 6px rgba(255,255,255,0.6),
+        0 0 14px rgba(0,123,255,0.7);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* List item hover */
+.card ul li {
+    transition: 
+        transform 0.25s ease,
+        color 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+.card ul li:hover {
+    transform: translateX(6px);
+    color: #ffffff;
+    text-shadow:
+        0 0 6px rgba(255,255,255,0.6),
+        0 0 12px rgba(0,123,255,0.6);
+}
+
+/* Heading hover */
+.info-box h1:hover {
+    filter: brightness(1.2);
+    transition: filter 0.3s ease;
+}
+
+/* Card hover enhancement (already exists, just smoother) */
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.7);
+}
+
+/* Info-box hover enhancement (already exists) */
+.info-box:hover {
+    transform: scale(1.025);
+    box-shadow: 0 16px 36px rgba(0,0,0,0.65);
+}
+
     
 </style>
 </head>
@@ -449,6 +494,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 </body>
 </html>
+
 
 
 
