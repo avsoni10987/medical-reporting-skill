@@ -415,8 +415,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     setInterval(showNext, 2000);
 });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const rows = document.querySelectorAll(".slide-row");
+
+    rows.forEach(row => {
+        const images = row.querySelectorAll("img");
+        let index = 0;
+
+        setInterval(() => {
+            images.forEach((img, i) => {
+                img.style.opacity = (i === index) ? "1" : "0";
+            });
+            index = (index + 1) % images.length;
+        }, 2000);
+    });
+});
+
 </script>
 
 </body>
 </html>
+
 
