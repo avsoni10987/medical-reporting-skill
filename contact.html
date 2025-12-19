@@ -259,31 +259,35 @@
     flex: 2;
     min-width: 300px;
     max-width: 600px;
-    height: 400px; /* adjust as needed */
-    position: relative;
+    height: 160px;
     overflow: hidden;
     border-radius: 16px;
-    background: #000;
+    background: transparent;
 }
 
-     .image-rotator {
+
+        .image-rotator {
     display: flex;
-    gap: 18px;
+    gap: 5px;
     overflow: hidden;
+    flex-wrap: nowrap;
     width: 100%;
+}
+
+.image-rotator {
+    display: flex;
+    gap: 20px;
+    width: max-content;
     align-items: center;
 }
 
 .image-rotator img {
-    flex: 0 0 auto;
-    width: 180px;       /* medium size */
+    width: 180px;
     height: 120px;
     object-fit: cover;
     border-radius: 14px;
+    flex-shrink: 0;
 }
-
-
-
 
 .image-rotator img.active {
     opacity: 1;
@@ -423,47 +427,33 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    // Animate middle box
+
+    /* LEFT CONTACT BOX ANIMATION */
     const box = document.querySelector(".contact-left");
     if (box) box.classList.add("show");
 
-    // Animate each line
     const lines = document.querySelectorAll(".contact-left p");
-    lines.forEach((line, i) => { line.style.animationDelay = `${0.4 * (i+1)}s`; });
+    lines.forEach((line, i) => {
+        line.style.animationDelay = `${0.4 * (i + 1)}s`;
+    });
 
-    // Footer slider logic
+    /* FOOTER IMAGE SLIDER */
     const images = document.querySelectorAll(".footer-slider img");
     let index = 0;
+
     if (images.length > 0) images[0].classList.add("active");
-    function showNext() {
+
+    setInterval(() => {
         images[index].classList.remove("active");
         index = (index + 1) % images.length;
         images[index].classList.add("active");
-    }
-    setInterval(showNext, 2000);
+    }, 2000);
+
 });
-
-// Rotate images by moving the first image to the end every 2 seconds
-const rotator = document.getElementById("imageRotator");
-const totalImages = 100;
-for (let i = 1; i <= totalImages; i++) {
-    const img = document.createElement("img");
-    img.src = `image${i}.jpg`;
-    rotator.appendChild(img);
-}
-
-setInterval(() => {
-    const first = rotator.firstElementChild;
-    rotator.appendChild(first);
-}, 2000);
-
-
-
 </script>
 
 </body>
 </html>
-
 
 
 
