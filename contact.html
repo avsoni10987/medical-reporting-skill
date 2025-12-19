@@ -475,59 +475,49 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(showNext, 2000);
 });
 
-const totalImages = 100;
+const totalImages = 72; // 🔴 SET REAL COUNT
 const topRotator = document.getElementById("imageRotatorTop");
 const bottomRotator = document.getElementById("imageRotatorBottom");
 
-/* helper: random image number */
-function randomImage(exclude = null) {
+function addImage(container, exclude = null) {
     let num;
     do {
         num = Math.floor(Math.random() * totalImages) + 1;
     } while (num === exclude);
+
+    const img = document.createElement("img");
+    img.src = `images/image${num}.jpg`;
+
+    img.onerror = () => img.remove();
+    container.appendChild(img);
+
     return num;
 }
 
-/* initial load (4 images each) */
 let topLast = null;
 let bottomLast = null;
 
 for (let i = 0; i < 4; i++) {
-    topLast = randomImage(topLast);
-    bottomLast = randomImage(topLast); // avoid same image
-
-    const topImg = document.createElement("img");
-    topImg.src = `image${topLast}.jpg`;
-    topRotator.appendChild(topImg);
-
-    const bottomImg = document.createElement("img");
-    bottomImg.src = `image${bottomLast}.jpg`;
-    bottomRotator.appendChild(bottomImg);
+    topLast = addImage(topRotator, topLast);
+    bottomLast = addImage(bottomRotator, topLast);
 }
 
-/* rotate randomly */
 setInterval(() => {
+    topLast = addImage(topRotator, topLast);
+    bottomLast = addImage(bottomRotator, topLast);
 
-    topLast = randomImage(topLast);
-    bottomLast = randomImage(topLast);
+    if (topRotator.children.length > 4)
+        topRotator.removeChild(topRotator.firstElementChild);
 
-    const newTop = document.createElement("img");
-    newTop.src = `image${topLast}.jpg`;
-    topRotator.appendChild(newTop);
-    topRotator.removeChild(topRotator.firstElementChild);
-
-    const newBottom = document.createElement("img");
-    newBottom.src = `image${bottomLast}.jpg`;
-    bottomRotator.appendChild(newBottom);
-    bottomRotator.removeChild(bottomRotator.firstElementChild);
-
-}, 2000);
-
+    if (bottomRotator.children.length > 4)
+        bottomRotator.removeChild(bottomRotator.firstElementChild);
+}, 2500);
 
 </script>
 
 </body>
 </html>
+
 
 
 
