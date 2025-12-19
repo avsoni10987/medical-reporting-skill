@@ -266,41 +266,29 @@
     background: #000;
 }
 
-      /* RIGHT IMAGE STRIP – FIXED 3–4 MEDIUM IMAGES */
-.contact-right {
-    flex: 2;
-    min-width: 300px;
-    max-width: 600px;
-    height: 260px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;
-    background: rgba(0,0,0,0.6);
-    padding: 20px;
-}
-
-/* image row */
-.image-rotator {
+        .image-rotator {
     display: flex;
-    gap: 20px;
-    align-items: center;
-    height: 100%;
+    gap: 5px;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    width: 100%;
 }
 
-/* exact medium size images */
 .image-rotator img {
-    width: 160px;       /* exact width */
-    height: 200px;      /* exact height */
+    flex: 0 0 auto;
+    width: 60px;   /* Adjust size */
+    height: 60px;
     object-fit: cover;
-    border-radius: 14px;
-    flex-shrink: 0;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.5);
-    transition: transform 0.4s ease;
+    border-radius: 8px;
+    opacity: 1;    /* All visible */
+    transition: transform 0.5s ease;
 }
 
-/* subtle hover */
-.image-rotator img:hover {
-    transform: scale(1.05);
+
+
+.image-rotator img.active {
+    opacity: 1;
+    z-index: 1;
 }
 
 
@@ -456,36 +444,26 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(showNext, 2000);
 });
 
-<script>
+// Rotate images by moving the first image to the end every 2 seconds
 const rotator = document.getElementById("imageRotator");
-const totalImages = 20; // keep reasonable number
-
+const totalImages = 100;
 for (let i = 1; i <= totalImages; i++) {
     const img = document.createElement("img");
     img.src = `image${i}.jpg`;
     rotator.appendChild(img);
 }
 
-/* smooth infinite move */
 setInterval(() => {
-    rotator.style.transition = "transform 0.8s ease";
-    rotator.style.transform = "translateX(-180px)";
-
-    setTimeout(() => {
-        rotator.style.transition = "none";
-        rotator.appendChild(rotator.firstElementChild);
-        rotator.style.transform = "translateX(0)";
-    }, 800);
+    const first = rotator.firstElementChild;
+    rotator.appendChild(first);
 }, 2000);
-</script>
+
 
 
 </script>
 
 </body>
 </html>
-
-
 
 
 
