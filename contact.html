@@ -274,6 +274,18 @@
     align-items: center;
 }
 
+        .contact-right-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* bottom box same size */
+.contact-right.bottom {
+    height: 220px;
+}
+
+
 /* image container */
 .image-rotator {
     display: flex;
@@ -282,6 +294,7 @@
     width: max-content;
 }
 
+        
 /* BIG images (3–4 visible) */
 .image-rotator img {
     flex: 0 0 auto;
@@ -363,10 +376,18 @@
        </div>
 
   <!-- RIGHT: Rotating Images -->
-<div class="contact-right">
-    <div class="image-rotator" id="imageRotator">
-        <!-- Images will be added dynamically -->
+<div class="contact-right-wrapper">
+
+    <!-- TOP ROTATOR -->
+    <div class="contact-right">
+        <div class="image-rotator" id="imageRotatorTop"></div>
     </div>
+
+    <!-- BOTTOM ROTATOR -->
+    <div class="contact-right bottom">
+        <div class="image-rotator" id="imageRotatorBottom"></div>
+    </div>
+
 </div>
 
         
@@ -454,26 +475,60 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(showNext, 2000);
 });
 
-// Rotate images by moving the first image to the end every 2 seconds
-const rotator = document.getElementById("imageRotator");
 const totalImages = 100;
-for (let i = 1; i <= totalImages; i++) {
-    const img = document.createElement("img");
-    img.src = `image${i}.jpg`;
-    rotator.appendChild(img);
+const topRotator = document.getElementById("imageRotatorTop");
+const bottomRotator = document.getElementById("imageRotatorBottom");
+
+/* helper: random image number */
+function randomImage(exclude = null) {
+    let num;
+    do {
+        num = Math.floor(Math.random() * totalImages) + 1;
+    } while (num === exclude);
+    return num;
 }
 
-setInterval(() => {
-    const first = rotator.firstElementChild;
-    rotator.appendChild(first);
-}, 2000);
+/* initial load (4 images each) */
+let topLast = null;
+let bottomLast = null;
 
+for (let i = 0; i < 4; i++) {
+    topLast = randomImage(topLast);
+    bottomLast = randomImage(topLast); // avoid same image
+
+    const topImg = document.createElement("img");
+    topImg.src = `image${topLast}.jpg`;
+    topRotator.appendChild(topImg);
+
+    const bottomImg = document.createElement("img");
+    bottomImg.src = `image${bottomLast}.jpg`;
+    bottomRotator.appendChild(bottomImg);
+}
+
+/* rotate randomly */
+setInterval(() => {
+
+    topLast = randomImage(topLast);
+    bottomLast = randomImage(topLast);
+
+    const newTop = document.createElement("img");
+    newTop.src = `image${topLast}.jpg`;
+    topRotator.appendChild(newTop);
+    topRotator.removeChild(topRotator.firstElementChild);
+
+    const newBottom = document.createElement("img");
+    newBottom.src = `image${bottomLast}.jpg`;
+    bottomRotator.appendChild(newBottom);
+    bottomRotator.removeChild(bottomRotator.firstElementChild);
+
+}, 2000);
 
 
 </script>
 
 </body>
 </html>
+
 
 
 
