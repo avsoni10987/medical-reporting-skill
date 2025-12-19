@@ -259,31 +259,41 @@
     flex: 2;
     min-width: 300px;
     max-width: 600px;
-    height: 400px; /* adjust as needed */
+
+    /* height equals image height */
+    height: 220px;
+
     position: relative;
     overflow: hidden;
     border-radius: 16px;
+
+    /* black only behind images */
     background: #000;
-}
 
-        .image-rotator {
     display: flex;
-    gap: 5px;
-    overflow: hidden;
-    flex-wrap: nowrap;
-    width: 100%;
+    align-items: center;
 }
 
+/* image container */
+.image-rotator {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    width: max-content;
+}
+
+/* BIG images (3–4 visible) */
 .image-rotator img {
     flex: 0 0 auto;
-    width: 60px;   /* Adjust size */
-    height: 60px;
-    object-fit: cover;
-    border-radius: 8px;
-    opacity: 1;    /* All visible */
-    transition: transform 0.5s ease;
-}
 
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+    border-radius: 14px;
+
+    background: #000;
+}
 
 
 .image-rotator img.active {
@@ -464,6 +474,7 @@ setInterval(() => {
 
 </body>
 </html>
+
 
 
 
