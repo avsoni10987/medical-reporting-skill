@@ -274,18 +274,6 @@
     align-items: center;
 }
 
-        .contact-right-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* bottom box same size */
-.contact-right.bottom {
-    height: 220px;
-}
-
-
 /* image container */
 .image-rotator {
     display: flex;
@@ -294,7 +282,6 @@
     width: max-content;
 }
 
-        
 /* BIG images (3–4 visible) */
 .image-rotator img {
     flex: 0 0 auto;
@@ -376,18 +363,10 @@
        </div>
 
   <!-- RIGHT: Rotating Images -->
-<div class="contact-right-wrapper">
-
-    <!-- TOP ROTATOR -->
-    <div class="contact-right">
-        <div class="image-rotator" id="imageRotatorTop"></div>
+<div class="contact-right">
+    <div class="image-rotator" id="imageRotator">
+        <!-- Images will be added dynamically -->
     </div>
-
-    <!-- BOTTOM ROTATOR -->
-    <div class="contact-right bottom">
-        <div class="image-rotator" id="imageRotatorBottom"></div>
-    </div>
-
 </div>
 
         
@@ -475,51 +454,26 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(showNext, 2000);
 });
 
-const totalImages = 72; // 🔴 SET REAL COUNT
-const topRotator = document.getElementById("imageRotatorTop");
-const bottomRotator = document.getElementById("imageRotatorBottom");
-
-function addImage(container, exclude = null) {
-    let num;
-    do {
-        num = Math.floor(Math.random() * totalImages) + 1;
-    } while (num === exclude);
-
+// Rotate images by moving the first image to the end every 2 seconds
+const rotator = document.getElementById("imageRotator");
+const totalImages = 100;
+for (let i = 1; i <= totalImages; i++) {
     const img = document.createElement("img");
-    img.src = `images/image${num}.jpg`;
-
-    img.onerror = () => img.remove();
-    container.appendChild(img);
-
-    return num;
-}
-
-let topLast = null;
-let bottomLast = null;
-
-for (let i = 0; i < 4; i++) {
-    topLast = addImage(topRotator, topLast);
-    bottomLast = addImage(bottomRotator, topLast);
+    img.src = `image${i}.jpg`;
+    rotator.appendChild(img);
 }
 
 setInterval(() => {
-    topLast = addImage(topRotator, topLast);
-    bottomLast = addImage(bottomRotator, topLast);
+    const first = rotator.firstElementChild;
+    rotator.appendChild(first);
+}, 2000);
 
-    if (topRotator.children.length > 4)
-        topRotator.removeChild(topRotator.firstElementChild);
 
-    if (bottomRotator.children.length > 4)
-        bottomRotator.removeChild(bottomRotator.firstElementChild);
-}, 2500);
 
 </script>
 
 </body>
 </html>
-
-
-
 
 
 
