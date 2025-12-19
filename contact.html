@@ -269,25 +269,21 @@
 }
 
 
-  .image-rotator {
-    display: flex;
-    gap: 18px;
+.contact-right {
+    flex: 2;
+    max-width: 600px;
     overflow: hidden;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0;
+    border-radius: 16px;
 }
 
-
-.image-rotator {
+.image-track {
     display: flex;
     gap: 20px;
+    animation: slideImages 25s linear infinite;
     width: max-content;
-    align-items: center;
 }
 
-.image-rotator img {
+.image-track img {
     width: 180px;
     height: 130px;
     object-fit: cover;
@@ -295,10 +291,15 @@
     flex-shrink: 0;
 }
 
-.image-rotator img.active {
-    opacity: 1;
-    z-index: 1;
+@keyframes slideImages {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
+
 
 
 .footer-multi-slider {
@@ -460,6 +461,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
 
 
 
