@@ -422,64 +422,48 @@
         </div>
     </footer>
 
-    
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
-    /* LEFT BOX ANIMATION */
+    // Animate middle box
     const box = document.querySelector(".contact-left");
     if (box) box.classList.add("show");
 
+    // Animate each line
     const lines = document.querySelectorAll(".contact-left p");
-    lines.forEach((line, i) => {
-        line.style.animationDelay = `${0.4 * (i + 1)}s`;
-    });
+    lines.forEach((line, i) => { line.style.animationDelay = `${0.4 * (i+1)}s`; });
 
-    /* FOOTER SLIDER */
-    const footerImages = document.querySelectorAll(".footer-slider img");
-    let footerIndex = 0;
-
-    if (footerImages.length > 0) footerImages[0].classList.add("active");
-
-    setInterval(() => {
-        footerImages[footerIndex].classList.remove("active");
-        footerIndex = (footerIndex + 1) % footerImages.length;
-        footerImages[footerIndex].classList.add("active");
-    }, 2000);
-
-    /* RIGHT IMAGE ROTATOR (100+ IMAGES) */
-    const rotator = document.getElementById("imageRotator");
-    const totalImages = 120; // change if needed
-    let images = [];
-
-    for (let i = 1; i <= totalImages; i++) {
-        images.push(`image${i}.jpg`);
-    }
-
+    // Footer slider logic
+    const images = document.querySelectorAll(".footer-slider img");
     let index = 0;
-
-    function loadImages() {
-        rotator.innerHTML = "";
-        for (let i = 0; i < 4; i++) {   // show 4 images
-            const img = document.createElement("img");
-            img.src = images[(index + i) % images.length];
-            rotator.appendChild(img);
-        }
-    }
-
-    loadImages();
-
-    setInterval(() => {
+    if (images.length > 0) images[0].classList.add("active");
+    function showNext() {
+        images[index].classList.remove("active");
         index = (index + 1) % images.length;
-        loadImages();
-    }, 2500);
-
+        images[index].classList.add("active");
+    }
+    setInterval(showNext, 2000);
 });
+
+// Rotate images by moving the first image to the end every 2 seconds
+const rotator = document.getElementById("imageRotator");
+const totalImages = 100;
+for (let i = 1; i <= totalImages; i++) {
+    const img = document.createElement("img");
+    img.src = `image${i}.jpg`;
+    rotator.appendChild(img);
+}
+
+setInterval(() => {
+    const first = rotator.firstElementChild;
+    rotator.appendChild(first);
+}, 2000);
+
+
+
 </script>
+
 </body>
 </html>
-
-
 
 
 
