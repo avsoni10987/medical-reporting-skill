@@ -444,19 +444,34 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(showNext, 2000);
 });
 
-// Rotate images by moving the first image to the end every 2 seconds
+<script>
 const rotator = document.getElementById("imageRotator");
-const totalImages = 100;
+
+let images = [];
+const totalImages = 120; // ← set this to your actual number (100+)
+
 for (let i = 1; i <= totalImages; i++) {
-    const img = document.createElement("img");
-    img.src = `image${i}.jpg`;
-    rotator.appendChild(img);
+    images.push(`image${i}.jpg`);
 }
 
+let index = 0;
+
+function loadImages() {
+    rotator.innerHTML = "";
+    for (let i = 0; i < 4; i++) {   // ← shows 4 images at a time
+        const img = document.createElement("img");
+        img.src = images[(index + i) % images.length];
+        rotator.appendChild(img);
+    }
+}
+
+loadImages();
+
 setInterval(() => {
-    const first = rotator.firstElementChild;
-    rotator.appendChild(first);
-}, 2000);
+    index = (index + 1) % images.length;
+    loadImages();
+}, 2500); // speed
+</script>
 
 
 
@@ -464,6 +479,7 @@ setInterval(() => {
 
 </body>
 </html>
+
 
 
 
