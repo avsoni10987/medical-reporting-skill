@@ -256,27 +256,22 @@
 }
 
 .contact-right {
-    flex: 1;
+    flex: 2;
     min-width: 300px;
     max-width: 600px;
+
+    /* height equals image height */
     height: 220px;
 
-    background: #000;
+    position: relative;
+    overflow: hidden;
     border-radius: 16px;
+
+    /* black only behind images */
+    background: #000;
 
     display: flex;
     align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-}
-
-.contact-right img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 14px;
-    transition: opacity 0.5s ease;
 }
 
 /* image container */
@@ -369,7 +364,9 @@
 
   <!-- RIGHT: Rotating Images -->
 <div class="contact-right">
-    <img id="randomImage" src="" alt="Random Image">
+    <div class="image-rotator" id="imageRotator">
+        <!-- Images will be added dynamically -->
+    </div>
 </div>
 
         
@@ -437,50 +434,46 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
-    /* LEFT BOX ANIMATION */
+    // Animate middle box
     const box = document.querySelector(".contact-left");
     if (box) box.classList.add("show");
 
-    /* Animate contact lines */
+    // Animate each line
     const lines = document.querySelectorAll(".contact-left p");
-    lines.forEach((line, i) => {
-        line.style.animationDelay = `${0.4 * (i + 1)}s`;
-    });
+    lines.forEach((line, i) => { line.style.animationDelay = `${0.4 * (i+1)}s`; });
 
-    /* FOOTER SLIDER */
-    const footerImages = document.querySelectorAll(".footer-slider img");
-    let footerIndex = 0;
-
-    setInterval(() => {
-        footerImages[footerIndex].classList.remove("active");
-        footerIndex = (footerIndex + 1) % footerImages.length;
-        footerImages[footerIndex].classList.add("active");
-    }, 2000);
-
-    /* RIGHT SIDE RANDOM IMAGE */
-    const randomImg = document.getElementById("randomImage");
-    const totalImages = 100; // 🔴 SET YOUR IMAGE COUNT
-
-    function showRandomImage() {
-        const num = Math.floor(Math.random() * totalImages) + 1;
-        randomImg.style.opacity = 0;
-
-        setTimeout(() => {
-            randomImg.src = `image${num}.jpg`;
-            randomImg.style.opacity = 1;
-        }, 300);
+    // Footer slider logic
+    const images = document.querySelectorAll(".footer-slider img");
+    let index = 0;
+    if (images.length > 0) images[0].classList.add("active");
+    function showNext() {
+        images[index].classList.remove("active");
+        index = (index + 1) % images.length;
+        images[index].classList.add("active");
     }
-
-    showRandomImage();
-    setInterval(showRandomImage, 2000);
+    setInterval(showNext, 2000);
 });
-</script>
 
+// Rotate images by moving the first image to the end every 2 seconds
+const rotator = document.getElementById("imageRotator");
+const totalImages = 100;
+for (let i = 1; i <= totalImages; i++) {
+    const img = document.createElement("img");
+    img.src = `image${i}.jpg`;
+    rotator.appendChild(img);
+}
+
+setInterval(() => {
+    const first = rotator.firstElementChild;
+    rotator.appendChild(first);
+}, 2000);
+
+
+
+</script>
 
 </body>
 </html>
-
 
 
 
