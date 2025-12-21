@@ -249,17 +249,15 @@
                 grid-template-columns: 1fr;
             }
         }
+/* ===== FORCE FOOTER SLIDER TO NEXT LINE ===== */
 .footer-slider {
-    position: relative;
+    flex-basis: 100%;
     width: 100%;
     max-width: 900px;
-    height: 360px;
-    margin: 40px auto;
-    overflow: hidden;
-    border-radius: 20px;
-    background: #000;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    margin: 30px auto 10px;
+    clear: both;
 }
+
 
 .footer-slider img {
     position: absolute;
@@ -541,6 +539,7 @@ interactiveElements.forEach(el => {
 
 </body>
 </html>
+
 
 
 
