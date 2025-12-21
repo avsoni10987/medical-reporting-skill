@@ -244,7 +244,11 @@
             color: #9ca3af;
         }
 
-      
+        @media (max-width: 900px) {
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 .footer-slider {
     position: relative;
     width: 100%;
@@ -278,32 +282,25 @@
 }
 
         /* ===== GLOBAL HOVER FOR ALL MAIN DIVS (SAFE) ===== */
-/* ===== SAFE HOVER EFFECTS (NO FOOTER CUT) ===== */
 .container,
 .course-card,
 .footer-content > div,
+.footer-slider,
 .header-top,
-.logo {
+.logo,
+.page-bg > div {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .container:hover,
 .course-card:hover,
 .footer-content > div:hover,
+.footer-slider:hover,
 .header-top:hover,
-.logo:hover {
-    transform: scale(1.05);
+.logo:hover,
+.page-bg > div:hover {
+    transform: scale(1.06);   /* 👈 stronger hover */
     cursor: pointer;
-}
-
-/* ❌ NEVER scale slider */
-.footer-slider {
-    transition: box-shadow 0.3s ease;
-}
-
-.footer-slider:hover {
-    transform: none !important;
-    box-shadow: 0 18px 40px rgba(52, 152, 219, 0.35);
 }
 
 /* ===== SMOOTH CURSOR INTERACTION (NO SIZE CHANGE) ===== */
@@ -315,69 +312,6 @@
 /* soft glow on hover */
 .cursor-react:hover {
     box-shadow: 0 18px 35px rgba(52, 152, 219, 0.25);
-}
-
-
-
-        /* ===== MOBILE FOOTER FIX ===== */
-
-    /* Remove hover scale issues on mobile */
-    .container:hover,
-    .course-card:hover,
-    .footer-content > div:hover,
-    .footer-slider:hover,
-    .header-top:hover,
-    .logo:hover,
-    .page-bg > div:hover {
-        transform: none;
-    }
-
-    /* Disable cursor movement effect on mobile */
-    .cursor-react {
-        transform: none !important;
-    }
-
-    /* Footer slider responsive height */
-    
-  @media (max-width: 768px) {
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .footer-left,
-    .footer-center,
-    .footer-right {
-        width: 100%;
-    }
-
-    .footer-slider {
-        height: 220px;
-        margin: 20px auto;
-    }
-
-    .footer-slider img {
-        object-fit: contain;
-    }
-
-    *:hover {
-        transform: none !important;
-    }
-
-    .site-footer {
-        overflow: visible;
-        padding-bottom: 30px;
-    }
-}
-
-
-    /* Text spacing */
-    .footer-right p,
-    .footer-center li {
-        margin-bottom: 10px;
-    }
 }
 
         
@@ -575,33 +509,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* ===== CURSOR MOVE INTERACTION (NO LAYOUT CHANGE) ===== */
+const interactiveElements = document.querySelectorAll(
+    ".container, .course-card, .footer-content > div, .footer-slider"
+);
 
-if (!isMobile) {
+interactiveElements.forEach(el => {
+    el.classList.add("cursor-react");
 
-    const interactiveElements = document.querySelectorAll(
-    ".container, .course-card, .footer-content > div"
-    );
+    el.addEventListener("mousemove", e => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
 
-    interactiveElements.forEach(el => {
-        el.classList.add("cursor-react");
+        const moveX = (x / rect.width) * 8;   // subtle
+        const moveY = (y / rect.height) * 8;
 
-        el.addEventListener("mousemove", e => {
-            const rect = el.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-
-            const moveX = (x / rect.width) * 8;
-            const moveY = (y / rect.height) * 8;
-
-            el.style.transform = `translate(${moveX}px, ${moveY}px)`;
-        });
-
-        el.addEventListener("mouseleave", () => {
-            el.style.transform = "translate(0, 0)";
-        });
+        el.style.transform = `translate(${moveX}px, ${moveY}px)`;
     });
 
-}
+    el.addEventListener("mouseleave", () => {
+        el.style.transform = "translate(0, 0)";
+    });
+});
+
+
     
 
 </script>
@@ -609,13 +540,6 @@ if (!isMobile) {
 
 </body>
 </html>
-
-
-
-
-
-
-
 
 
 
