@@ -314,6 +314,64 @@
     box-shadow: 0 18px 35px rgba(52, 152, 219, 0.25);
 }
 
+
+
+        /* ===== MOBILE FOOTER FIX ===== */
+@media (max-width: 768px) {
+
+    /* Footer layout */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        width: 100%;
+    }
+
+    /* Remove hover scale issues on mobile */
+    .container:hover,
+    .course-card:hover,
+    .footer-content > div:hover,
+    .footer-slider:hover,
+    .header-top:hover,
+    .logo:hover,
+    .page-bg > div:hover {
+        transform: none;
+    }
+
+    /* Disable cursor movement effect on mobile */
+    .cursor-react {
+        transform: none !important;
+    }
+
+    /* Footer slider responsive height */
+    .footer-slider {
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 20px auto;
+    }
+
+    .footer-slider img {
+        object-fit: contain;
+    }
+
+    /* Prevent overflow cut */
+    .site-footer {
+        overflow: visible;
+        padding-bottom: 30px;
+    }
+
+    /* Text spacing */
+    .footer-right p,
+    .footer-center li {
+        margin-bottom: 10px;
+    }
+}
+
         
     </style>
 </head>
@@ -540,6 +598,7 @@ interactiveElements.forEach(el => {
 
 </body>
 </html>
+
 
 
 
