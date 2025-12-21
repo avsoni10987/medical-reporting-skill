@@ -278,25 +278,32 @@
 }
 
         /* ===== GLOBAL HOVER FOR ALL MAIN DIVS (SAFE) ===== */
+/* ===== SAFE HOVER EFFECTS (NO FOOTER CUT) ===== */
 .container,
 .course-card,
 .footer-content > div,
-.footer-slider,
 .header-top,
-.logo,
-.page-bg > div {
+.logo {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .container:hover,
 .course-card:hover,
 .footer-content > div:hover,
-.footer-slider:hover,
 .header-top:hover,
-.logo:hover,
-.page-bg > div:hover {
-    transform: scale(1.06);   /* 👈 stronger hover */
+.logo:hover {
+    transform: scale(1.05);
     cursor: pointer;
+}
+
+/* ❌ NEVER scale slider */
+.footer-slider {
+    transition: box-shadow 0.3s ease;
+}
+
+.footer-slider:hover {
+    transform: none !important;
+    box-shadow: 0 18px 40px rgba(52, 152, 219, 0.35);
 }
 
 /* ===== SMOOTH CURSOR INTERACTION (NO SIZE CHANGE) ===== */
@@ -607,6 +614,7 @@ if (!isMobile) {
 
 </body>
 </html>
+
 
 
 
