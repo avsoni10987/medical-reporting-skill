@@ -577,30 +577,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* ===== CURSOR MOVE INTERACTION (NO LAYOUT CHANGE) ===== */
-const interactiveElements = document.querySelectorAll(
-    ".container, .course-card, .footer-content > div, .footer-slider"
-);
 
-interactiveElements.forEach(el => {
-    el.classList.add("cursor-react");
+if (!isMobile) {
 
-    el.addEventListener("mousemove", e => {
-        const rect = el.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
+    const interactiveElements = document.querySelectorAll(
+        ".container, .course-card, .footer-content > div, .footer-slider"
+    );
 
-        const moveX = (x / rect.width) * 8;   // subtle
-        const moveY = (y / rect.height) * 8;
+    interactiveElements.forEach(el => {
+        el.classList.add("cursor-react");
 
-        el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        el.addEventListener("mousemove", e => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            const moveX = (x / rect.width) * 8;
+            const moveY = (y / rect.height) * 8;
+
+            el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        });
+
+        el.addEventListener("mouseleave", () => {
+            el.style.transform = "translate(0, 0)";
+        });
     });
 
-    el.addEventListener("mouseleave", () => {
-        el.style.transform = "translate(0, 0)";
-    });
-});
-
-
+}
     
 
 </script>
@@ -608,6 +611,7 @@ interactiveElements.forEach(el => {
 
 </body>
 </html>
+
 
 
 
