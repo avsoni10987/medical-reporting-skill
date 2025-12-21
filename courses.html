@@ -314,6 +314,23 @@
     box-shadow: 0 18px 35px rgba(52, 152, 219, 0.25);
 }
 
+        /* ===== FIX FOOTER ALIGNMENT ===== */
+.footer-content {
+    align-items: flex-start;   /* prevents half up/down issue */
+}
+
+/* First block takes full row */
+.footer-left {
+    flex: 1 1 100%;
+}
+
+/* Second row: Quick Links + Contact Us side by side */
+.footer-center,
+.footer-right {
+    flex: 1 1 45%;
+    margin-top: 20px;
+}
+
         
     </style>
 </head>
@@ -540,6 +557,7 @@ interactiveElements.forEach(el => {
 
 </body>
 </html>
+
 
 
 
