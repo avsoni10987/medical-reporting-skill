@@ -449,7 +449,81 @@ nav a {
     }
 }
 
-        
+
+
+        /* =================================================
+   FINAL COLOR STANDARDIZATION – COURSES PAGE
+   (Same as previous pages)
+   ================================================= */
+
+/* DARK CONTAINER TEXT */
+.container,
+.course-card,
+.moving-points-box {
+    color: #f1f5f9;
+}
+
+/* MAIN PAGE HEADING */
+.container h1 {
+    background: linear-gradient(90deg, #38bdf8, #22c55e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 16px rgba(56,189,248,0.6);
+}
+
+/* SECTION / IMPORTANT HEADINGS */
+.container h2,
+.testimonials h2 {
+    color: #facc15 !important;   /* premium gold */
+    text-shadow: 0 3px 14px rgba(250,204,21,0.6);
+}
+
+/* COURSE CARD TITLES */
+.course-card h3,
+.moving-points-box h3,
+.footer-content h3 {
+    color: #60a5fa !important;   /* medical blue */
+    text-shadow: 0 3px 14px rgba(96,165,250,0.6);
+}
+
+/* COURSE CARD TEXT */
+.course-card p,
+.container p,
+.moving-points p {
+    color: #f8fafc !important;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* BULLET DOT COLOR */
+.course-card h3::before {
+    color: #38bdf8;
+}
+
+/* FOOTER TEXT */
+.site-footer h3,
+.site-footer h4 {
+    color: #facc15;
+}
+
+.site-footer p,
+.site-footer li {
+    color: #e5e7eb;
+}
+
+/* LINKS */
+a {
+    color: #38bdf8;
+}
+a:hover {
+    color: #7dd3fc;
+}
+
+/* REMOVE ANY DULL GREY EFFECT */
+div,
+section {
+    filter: none;
+}
+
     </style>
 </head>
 <body>
@@ -698,6 +772,7 @@ interactiveElements.forEach(el => {
 
 </body>
 </html>
+
 
 
 
