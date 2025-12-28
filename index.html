@@ -818,7 +818,21 @@ h1:hover, h2:hover, h3:hover {
     transition: 0.3s ease;
 }
 
-        
+/* ===== SAME PROFESSIONAL COLOR FOR DARK CARD H2 ===== */
+.dark-card h2 {
+    color: #fbbf24; /* premium gold */
+    text-shadow: 0 3px 12px rgba(251,191,36,0.45);
+    letter-spacing: 0.4px;
+}
+
+/* keep same gradient underline */
+.dark-card h2::after {
+    background: linear-gradient(90deg, #38bdf8, #22c55e);
+}
+.dark-card h2 {
+    filter: brightness(1.15);
+}
+
         
 </style>
 </head>
@@ -1121,6 +1135,7 @@ document.addEventListener('mouseleave', () => {
 
 </body>
 </html>
+
 
 
 
