@@ -866,6 +866,104 @@ h1:hover, h2:hover, h3:hover {
 }
 
 
+
+
+
+
+        /* ======================================================
+   MAXIMUM TEXT VISIBILITY ON BLACK / DARK BACKGROUNDS
+   ====================================================== */
+
+/* GLOBAL TEXT COLOR BOOST */
+body {
+    color: #f9fafb; /* near-white */
+}
+
+/* Paragraphs & normal text */
+p,
+li,
+span,
+div {
+    color: #e5e7eb; /* light grey – very readable */
+}
+
+/* Strong / bold text */
+strong,
+b {
+    color: #ffffff;
+}
+
+/* Headings – already styled, just force clarity */
+h1 {
+    text-shadow: 0 4px 18px rgba(56,189,248,0.6);
+}
+
+h2 {
+    color: #facc15 !important; /* bright gold */
+    text-shadow: 0 3px 14px rgba(250,204,21,0.6);
+}
+
+h3 {
+    color: #60a5fa !important; /* bright medical blue */
+    text-shadow: 0 3px 14px rgba(96,165,250,0.6);
+}
+
+/* Dark cards text */
+.dark-card p,
+.dark-card li {
+    color: #f1f5f9; /* almost white */
+}
+
+/* Hero section */
+.hero-text p,
+.hero-text li {
+    color: #ffffff;
+}
+
+/* Testimonials */
+.testimonial {
+    color: #f8fafc;
+}
+
+.testimonial strong {
+    color: #38bdf8;
+}
+
+/* Lists bullet symbol */
+.dark-card li::before,
+.hero-text li::before {
+    color: #facc15;
+    font-weight: 900;
+}
+
+/* Moving points box – already colored, just boost clarity */
+.moving-points p {
+    text-shadow: 0 2px 8px rgba(0,0,0,0.85);
+}
+
+/* Footer text */
+.site-footer p,
+.site-footer li {
+    color: #e5e7eb;
+}
+
+/* Links */
+a {
+    color: #38bdf8;
+}
+a:hover {
+    color: #7dd3fc;
+}
+
+/* REMOVE unwanted dimming from global div hover */
+div:hover {
+    filter: none;
+}
+
+        
+        
+
+        
         
 </style>
 </head>
@@ -1168,6 +1266,7 @@ document.addEventListener('mouseleave', () => {
 
 </body>
 </html>
+
 
 
 
