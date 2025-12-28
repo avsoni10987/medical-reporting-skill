@@ -719,6 +719,66 @@ nav a {
 }
 
 
+                /* ===== MOVING POINTS PREMIUM BOX ===== */
+.moving-points-box {
+    width: 100%;
+    max-width: 420px;
+    height: 480px;
+    background: rgba(0,0,0,0.85);
+    border-radius: 18px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    backdrop-filter: blur(6px);
+    position: relative;
+    z-index: 1;
+}
+
+/* animated container */
+.moving-points {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    animation: scrollUp 16s linear infinite;
+}
+
+/* pause on hover */
+.moving-points-box:hover .moving-points {
+    animation-play-state: paused;
+}
+
+/* animation */
+@keyframes scrollUp {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+}
+
+/* text style */
+.moving-points p {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    margin: 0;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* different colors */
+.moving-points .c1 { color: #22c55e; }  /* green */
+.moving-points .c2 { color: #38bdf8; }  /* sky blue */
+.moving-points .c3 { color: #facc15; }  /* yellow */
+.moving-points .c4 { color: #fb7185; }  /* pink */
+.moving-points .c5 { color: #a78bfa; }  /* violet */
+.moving-points .c6 { color: #f97316; }  /* orange */
+
+/* mobile */
+@media (max-width: 768px) {
+    .moving-points-box {
+        max-width: 100%;
+        height: 240px;
+    }
+}
+
+
         
 </style>
 </head>
@@ -848,6 +908,27 @@ nav a {
         Learn directly from experienced professionals from Hospitals, Radiology Centers,
         and Healthcare organizations and become job-ready for Medical Reporting roles.
       </p>
+
+<!-- MOVING POINTS BOX -->
+<div class="moving-points-box">
+    <div class="moving-points">
+        <p class="c1">✔ 100% job availibility in Medical Reporting Skill</p>
+        <p class="c2">✔ Work From Home & Office Opportunities</p>
+        <p class="c3">✔ Placement Assistance After Training until get the job</p>
+        <p class="c4">✔ Real-Time/Live Report Making Practice</p>
+        <p class="c5">✔ Industry Experienced Trainers</p>
+        <p class="c6">✔ Flexible Timings for Students & Working Professionals</p>
+        <p class="c1">✔ Recorded Classes providing so people can watch when they free</p>
+        <p class="c2">✔ Providing E-Book includes all things in one</p>
+        <p class="c3">✔ Take training and do job very quickly</p>
+        <p class="c4">✔ Explain everything will share our experience and skills to make all things so can work from home easily with all tools</p>
+        <p class="c5">✔ Will show how to make anything lifetime free without purchasing License-Key</p>
+        <p class="c6">✔ Peoples are doing work from home and saving their 3 hours daily travelling and feel safe</p>
+               
+    </div>
+</div>
+                    
+                    
     </div>
 
   </div>
@@ -1000,6 +1081,7 @@ document.addEventListener('mouseleave', () => {
 
 </body>
 </html>
+
 
 
 
