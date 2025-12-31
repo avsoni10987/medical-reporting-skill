@@ -539,6 +539,32 @@ section {
     text-shadow: 0 2px 8px rgba(0, 200, 83, 0.6); /* soft glow */
 }
 
+
+
+        nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 12px 0;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #c75a00;        /* dark orange */
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #e36b00;        /* slightly lighter on hover */
+}
+
+nav a.active {
+    font-weight: 600;
+    color: #ff7a00;        /* active link */
+}
+
     </style>
 </head>
 <body>
@@ -792,6 +818,7 @@ interactiveElements.forEach(el => {
 
 </body>
 </html>
+
 
 
 
