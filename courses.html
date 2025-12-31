@@ -566,39 +566,38 @@ nav a.active {
 }
 
 
-   /* ===== PREMIUM HEADER MARQUEE (PARROT GREEN) ===== */
+   /*/* ===== PREMIUM HEADER MARQUEE (CLEAR PARROT GREEN) ===== */
 .header-marquee-wrapper {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
     margin-top: 6px;
-    padding: 8px 0;
+    padding: 10px 0;
 
-    background: #ffffff;               /* clean white */
-    border-top: 1px solid #e5e7eb;
+    background: #ffffff;              /* pure white for clarity */
+    border-top: 1px solid #d1d5db;
+    border-bottom: 1px solid #d1d5db;
 
-    font-size: 18px;                   /* ⬅ slightly bigger */
+    font-size: 20px;                  /* bigger = clearer */
     font-weight: 700;
 }
 
 .header-marquee {
     display: inline-block;
-    color: #00c853;                    /* PARROT GREEN */
-    letter-spacing: 0.6px;
+    color: #008f3f;                   /* DARK PARROT GREEN */
+    letter-spacing: 0.8px;
     line-height: 1.6;
 
-    text-shadow:
-        0 1px 2px rgba(0,0,0,0.25),
-        0 0 6px rgba(0,200,83,0.35);   /* soft glow */
+    /* very light shadow only for crisp edges */
+    text-shadow: 0 1px 1px rgba(0,0,0,0.15);
 
-    animation: headerScroll 28s linear infinite;
+    animation: headerScroll 26s linear infinite;
 }
 
 /* Pause on hover */
 .header-marquee-wrapper:hover .header-marquee {
     animation-play-state: paused;
 }
-
 
         
 
@@ -855,6 +854,7 @@ interactiveElements.forEach(el => {
 
 </body>
 </html>
+
 
 
 
