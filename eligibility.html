@@ -527,14 +527,21 @@ header nav a.active {
 }
 
 
-/* ===== FOOTER h4 – CLEAR & READABLE ===== */
+/* ===== FORCE FOOTER HEADINGS COLOR VISIBILITY ===== */
 .site-footer h4 {
-    color: #fbbf24 !important;     /* warm gold – very readable */
-    font-size: 22px !important;
-    font-weight: 700;
-    letter-spacing: 0.4px;
+    color: #facc15 !important;       /* bright sun-gold */
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.6px;
 
-    text-shadow: none !important;  /* remove glow for clarity */
+    text-shadow: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+}
+
+/* prevent hover scale blur on footer headings */
+.footer-content > div:hover h4 {
+    transform: none !important;
 }
 
     
@@ -709,6 +716,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 </body>
 </html>
+
 
 
 
