@@ -565,6 +565,43 @@ nav a.active {
     color: #ff7a00;        /* active link */
 }
 
+
+   /* ===== PREMIUM HEADER MARQUEE (PARROT GREEN) ===== */
+.header-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 6px;
+    padding: 8px 0;
+
+    background: #ffffff;               /* clean white */
+    border-top: 1px solid #e5e7eb;
+
+    font-size: 18px;                   /* ⬅ slightly bigger */
+    font-weight: 700;
+}
+
+.header-marquee {
+    display: inline-block;
+    color: #00c853;                    /* PARROT GREEN */
+    letter-spacing: 0.6px;
+    line-height: 1.6;
+
+    text-shadow:
+        0 1px 2px rgba(0,0,0,0.25),
+        0 0 6px rgba(0,200,83,0.35);   /* soft glow */
+
+    animation: headerScroll 28s linear infinite;
+}
+
+/* Pause on hover */
+.header-marquee-wrapper:hover .header-marquee {
+    animation-play-state: paused;
+}
+
+
+        
+
     </style>
 </head>
 <body>
@@ -818,6 +855,7 @@ interactiveElements.forEach(el => {
 
 </body>
 </html>
+
 
 
 
