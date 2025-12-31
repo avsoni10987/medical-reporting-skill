@@ -439,6 +439,46 @@ nav a {
     text-shadow: 0 0 6px rgba(50,205,50,0.6);
 }
 
+        
+        /* ===== PREMIUM UPGRADE FOR SELECTED PARROT TEXT ===== */
+.parrot-text.premium-text {
+    margin-top: 20px;
+    padding: 18px 22px;
+
+    font-size: 20px;
+    line-height: 1.9;
+    font-weight: 700;
+
+    color: #eaffea;
+    background: linear-gradient(
+        135deg,
+        rgba(0, 200, 83, 0.18),
+        rgba(0, 0, 0, 0.75)
+    );
+
+    border-left: 6px solid #32cd32;
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,0.6),
+        inset 0 0 12px rgba(50,205,50,0.18);
+
+    backdrop-filter: blur(6px);
+    letter-spacing: 0.4px;
+    text-shadow: none; /* keeps text crystal clear */
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.parrot-text.premium-text:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.7),
+        inset 0 0 16px rgba(50,205,50,0.28);
+}
+
+
+        
         .parrot-contact {
     color: #32cd32;              /* Parrot green */
     font-weight: 800;
@@ -589,7 +629,7 @@ header nav a.active {
         <p class="parrot-contact"><span class="underline-word">Call</span>: +91-9752043256</p>
         <p class="parrot-contact"><span class="underline-word">WhatsApp</span>: +91-8871866088</p>
         <p class="parrot-contact"><span class="underline-word">Email Id</span>: avsoni10987@gmail.com</p>
-        <p class="parrot-text">It's a report making work, work from Home & Office, its guaranteed work at everywhere. Contact on same if you have any query or concern will explain in detail</p>
+        <p class="parrot-text premium-text">It's a report making work, work from Home & Office, its guaranteed work at everywhere. Contact on same if you have any query or concern will explain in detail</p>
        </div>
 
   <!-- RIGHT: Rotating Images -->
@@ -728,6 +768,7 @@ for (let i = 1; i <= totalImages; i++) {
 
 </body>
 </html>
+
 
 
 
