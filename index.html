@@ -999,6 +999,34 @@ header .title h2 {
 
 
         
+/* ===== NAV BAR ===== */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    padding: 14px 0;
+}
+
+/* Nav links */
+nav a {
+    text-decoration: none;
+    color: #c75a00;            /* DARK ORANGE */
+    font-size: 18px;
+    font-weight: 600;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* Hover effect */
+nav a:hover {
+    color: #ff8c1a;            /* brighter orange on hover */
+    border-bottom: 2px solid #ff8c1a;
+}
+
+/* Active page */
+nav a.active {
+    color: #9a3e00;            /* deeper dark orange */
+    border-bottom: 3px solid #9a3e00;
+}
 
 
         
@@ -1310,5 +1338,6 @@ document.addEventListener('mouseleave', () => {
 
 </body>
 </html>
+
 
 
