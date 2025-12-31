@@ -392,38 +392,31 @@ body {
 }
 
 
-    /* ===== NAV – DARK ORANGE FIX ===== */
+/* ===== CLEAN ORANGE NAV (IMAGE STYLE) ===== */
 header nav {
     display: flex;
-    gap: 24px;
+    gap: 22px;
 }
 
-/* Normal links */
+/* All links */
 header nav a {
-    color: #c75a00 !important;          /* dark orange */
-    font-size: 16px;
-    font-weight: 800 !important;
+    color: #ff6a00 !important;     /* clean bright orange */
+    font-size: 15px;
+    font-weight: 600 !important;
     text-decoration: none;
-    padding: 6px 4px;
-    letter-spacing: 0.4px;
-    transition: 
-        color 0.3s ease,
-        border-bottom 0.3s ease,
-        transform 0.3s ease;
+    padding-bottom: 4px;
 }
 
-/* Hover effect */
+/* Hover (only color change, no underline) */
 header nav a:hover {
-    color: #ff8c1a !important;          /* brighter orange */
-    border-bottom: 3px solid #ff8c1a;
-    transform: translateY(-2px);
+    color: #ff8c1a !important;
 }
 
-/* Active page */
+/* Active page underline */
 header nav a.active {
-    color: #9a3e00 !important;          /* deep dark orange */
-    border-bottom: 4px solid #9a3e00;
+    border-bottom: 2px solid #ff6a00;
 }
+
 
 </style>
 </head>
@@ -590,6 +583,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
