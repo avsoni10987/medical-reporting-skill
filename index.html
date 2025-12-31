@@ -986,6 +986,33 @@ header .title h2 {
     -webkit-text-fill-color: #000000 !important;
 }
 
+
+
+        
+        nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 12px 0;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #c75a00;        /* dark orange */
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #e36b00;        /* slightly lighter on hover */
+}
+
+nav a.active {
+    font-weight: 600;
+    color: #ff7a00;        /* active link */
+}
+
         
         
 </style>
@@ -1295,6 +1322,7 @@ document.addEventListener('mouseleave', () => {
 
 </body>
 </html>
+
 
 
 
