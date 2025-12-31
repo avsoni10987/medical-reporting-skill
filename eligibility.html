@@ -463,6 +463,35 @@ li {
     font-size: 16px !important;   /* was 13px → clearer & readable */
 }
 
+
+
+
+    
+    /* ===== CLEAN ORANGE NAV (IMAGE STYLE) ===== */
+header nav {
+    display: flex;
+    gap: 22px;
+}
+
+/* All links */
+header nav a {
+    color: #ff6a00 !important;     /* clean bright orange */
+    font-size: 15px;
+    font-weight: 600 !important;
+    text-decoration: none;
+    padding-bottom: 4px;
+}
+
+/* Hover (only color change, no underline) */
+header nav a:hover {
+    color: #ff8c1a !important;
+}
+
+/* Active page underline */
+header nav a.active {
+    border-bottom: 2px solid #ff6a00;
+}
+
     
 </style>
 </head>
@@ -635,6 +664,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 </body>
 </html>
+
 
 
 
