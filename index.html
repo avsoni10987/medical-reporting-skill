@@ -1117,6 +1117,45 @@ nav a.active {
     transition: 0.25s ease;
 }
 
+
+        /* =====================================================
+   CALL & EMAIL – HIGH VISIBILITY ON BLACK BACKGROUND
+   (NO HTML CHANGE)
+   ===================================================== */
+
+/* Base style for call/email lines */
+.features-card p strong {
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* 📞 Call Now line */
+.features-card p:has(strong:contains("Call")) {
+    color: #22c55e; /* bright green */
+    text-shadow: 0 0 10px rgba(34,197,94,0.6);
+    font-size: 22px;
+}
+
+/* 📧 Email line */
+.features-card p:has(strong:contains("Email")) {
+    color: #38bdf8; /* sky blue */
+    text-shadow: 0 0 10px rgba(56,189,248,0.6);
+    font-size: 22px;
+}
+
+/* Highlight labels */
+.features-card p strong {
+    color: #facc15; /* gold */
+    text-shadow: 0 0 8px rgba(250,204,21,0.6);
+}
+
+/* Hover glow (premium feel) */
+.features-card p:hover {
+    filter: brightness(1.15);
+    transform: translateX(4px);
+    transition: 0.25s ease;
+}
+
         
 </style>
 </head>
@@ -1435,6 +1474,7 @@ document.addEventListener('mouseleave', () => {
 
 </body>
 </html>
+
 
 
 
