@@ -566,89 +566,84 @@ header nav a.active {
 
 
 /* ===============================
-   ELIGIBILITY TEXT – COLORS ON BLACK
+   ELIGIBILITY COLORS (FIXED FOR <b><li>)
    =============================== */
 
 /* Main paragraph */
-.card p {
-    color: #e5f0ff;                /* ice blue */
-    text-shadow: 0 0 8px rgba(229,240,255,0.6);
+.card b p {
+    color: #e5f0ff;
+    text-shadow: 0 0 8px rgba(229,240,255,0.7);
     font-weight: 700;
 }
 
-/* Base list style */
-.card ul li {
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+/* Base list */
+.card ul b {
+    display: block;
+    margin-bottom: 14px;
 }
 
 /* 1 */
-.card ul li:nth-child(1) {
-    color: #93c5fd;                /* light blue */
-    text-shadow: 0 0 10px rgba(147,197,253,0.7);
+.card ul b:nth-child(1) li {
+    color: #93c5fd;
+    text-shadow: 0 0 10px rgba(147,197,253,0.8);
 }
 
 /* 2 */
-.card ul li:nth-child(2) {
-    color: #6ee7b7;                /* mint green */
-    text-shadow: 0 0 10px rgba(110,231,183,0.7);
+.card ul b:nth-child(2) li {
+    color: #6ee7b7;
+    text-shadow: 0 0 10px rgba(110,231,183,0.8);
 }
 
 /* 3 */
-.card ul li:nth-child(3) {
-    color: #67e8f9;                /* cyan */
-    text-shadow: 0 0 10px rgba(103,232,249,0.7);
+.card ul b:nth-child(3) li {
+    color: #67e8f9;
+    text-shadow: 0 0 10px rgba(103,232,249,0.8);
 }
 
 /* 4 */
-.card ul li:nth-child(4) {
-    color: #c4b5fd;                /* violet */
-    text-shadow: 0 0 10px rgba(196,181,253,0.7);
+.card ul b:nth-child(4) li {
+    color: #c4b5fd;
+    text-shadow: 0 0 10px rgba(196,181,253,0.8);
 }
 
 /* 5 */
-.card ul li:nth-child(5) {
-    color: #5eead4;                /* teal */
-    text-shadow: 0 0 10px rgba(94,234,212,0.7);
+.card ul b:nth-child(5) li {
+    color: #5eead4;
+    text-shadow: 0 0 10px rgba(94,234,212,0.8);
 }
 
 /* 6 */
-.card ul li:nth-child(6) {
-    color: #7dd3fc;                /* sky blue */
-    text-shadow: 0 0 10px rgba(125,211,252,0.7);
+.card ul b:nth-child(6) li {
+    color: #7dd3fc;
+    text-shadow: 0 0 10px rgba(125,211,252,0.8);
 }
 
 /* 7 */
-.card ul li:nth-child(7) {
-    color: #bef264;                /* lime */
-    text-shadow: 0 0 10px rgba(190,242,100,0.7);
+.card ul b:nth-child(7) li {
+    color: #bef264;
+    text-shadow: 0 0 10px rgba(190,242,100,0.8);
 }
 
 /* 8 */
-.card ul li:nth-child(8) {
-    color: #f9a8d4;                /* soft pink */
-    text-shadow: 0 0 10px rgba(249,168,212,0.7);
+.card ul b:nth-child(8) li {
+    color: #f9a8d4;
+    text-shadow: 0 0 10px rgba(249,168,212,0.8);
 }
 
 /* 9 */
-.card ul li:nth-child(9) {
-    color: #facc15;                /* gold */
-    text-shadow: 0 0 10px rgba(250,204,21,0.7);
+.card ul b:nth-child(9) li {
+    color: #facc15;
+    text-shadow: 0 0 10px rgba(250,204,21,0.9);
 }
 
-/* Hover effect (clean & premium) */
-.card ul li:hover {
+/* Hover */
+.card ul b:hover li {
     transform: translateX(10px);
     color: #ffffff;
     text-shadow:
-        0 0 8px rgba(255,255,255,0.9),
-        0 0 18px currentColor;
-}
-
-/* Optional fix because <li> is wrapped in <b> */
-.card b li {
-    list-style-position: inside;
+        0 0 10px rgba(255,255,255,0.9),
+        0 0 20px currentColor;
+    transition: 0.3s ease;
 }
 
 
@@ -831,6 +826,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 </body>
 </html>
+
 
 
 
