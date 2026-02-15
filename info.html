@@ -572,6 +572,35 @@ header nav a.active {
 .glass-card ul li::marker{
     color:#60a5fa;
 }
+
+    /* ===== FORCE DARK GLASS CARD ===== */
+
+.card.glass-card{
+    background: rgba(0,0,0,0.75) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border:1px solid rgba(255,255,255,0.12) !important;
+    border-radius:18px !important;
+
+    color:#ffffff !important;
+    box-shadow:0 12px 35px rgba(0,0,0,.85) !important;
+}
+
+/* white text */
+.card.glass-card h3{
+    color:#ffffff !important;
+}
+
+.card.glass-card p,
+.card.glass-card li{
+    color:#f1f5f9 !important;
+}
+
+/* blue highlight */
+.card.glass-card strong{
+    color:#60a5fa !important;
+}
     
 </style>
 </head>
@@ -620,7 +649,7 @@ header nav a.active {
 
 
 
-        <section class="card animate">
+       <section class="card animate glass-card">
         <h3>About the Training</h3>
         <p>
         This training program is designed to help you master accurate medical documentation, 
@@ -641,7 +670,7 @@ header nav a.active {
     </p>
     </section>
 
-    <section class="card">
+    <section class="card glass-card">
         <h3 class="animate">Benefits</h3>
         <ul class="animate">
         <li>Develop strong medical documentation and structured reporting skills</li>
@@ -764,5 +793,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
