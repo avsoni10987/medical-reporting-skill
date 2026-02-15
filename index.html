@@ -1192,6 +1192,73 @@ nav a.active {
     transition: 0.25s ease;
 }
 
+
+        /* ===== DYNAMIC MEDICAL TEXT ===== */
+
+.dynamic-heading{
+    font-size: 32px;
+    font-weight: 800;
+    letter-spacing: .5px;
+
+    background: linear-gradient(90deg,#38bdf8,#22c55e,#facc15,#38bdf8);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: medicalGradient 6s linear infinite;
+
+    text-shadow: 0 0 12px rgba(56,189,248,.35);
+    margin-bottom: 14px;
+}
+
+/* list style */
+.dynamic-list{
+    list-style: none;
+    padding-left: 0;
+}
+
+.dynamic-list li{
+    font-size: 22px;
+    font-weight: 700;
+    margin: 10px 0;
+    padding-left: 34px;
+    position: relative;
+
+    color:#eaf6ff;
+    transition:.3s ease;
+}
+
+/* colorful bullets */
+.dynamic-list li::before{
+    content:"◆";
+    position:absolute;
+    left:0;
+    font-size:20px;
+    animation: bulletColor 4s linear infinite;
+}
+
+/* hover glow */
+.dynamic-list li:hover{
+    transform: translateX(6px);
+    color:#ffffff;
+    text-shadow:0 0 12px rgba(56,189,248,.7);
+}
+
+/* ===== animations ===== */
+
+@keyframes medicalGradient{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes bulletColor{
+    0%{color:#38bdf8}
+    25%{color:#22c55e}
+    50%{color:#facc15}
+    75%{color:#fb7185}
+    100%{color:#38bdf8}
+}
         
 </style>
 </head>
@@ -1228,14 +1295,21 @@ nav a.active {
             <div class="hero-text animate-left delay-1">
 
             <h1>Medical Reporting Course from India's Dedicated Medical Reporting Place, Guaranteed work at everywhere - You can cross check by your end also.</h1>
-            <p>Learn Medical Reporting online and become job-ready in:</p>
-            <ul>
+
+                <div class="dynamic-text">
+                
+                <h3 class="dynamic-heading">Learn Medical Reporting online and become job-ready in:</h3>
+                
+                <ul class="dynamic-list">
                 <li>Training in Medical Reporting, Radiology, Hospital Reporting</li>
                 <li>Medical Analyst / Summarizer / Content Writing</li>
                 <li>Medical Transcription</li>
                 <li>Soft Skills and Communication Skills</li>
                 <li>Work From Home and Office Opportunities</li>
-            </ul>
+                </ul>
+
+</div>
+                    
         </div>
        
     </div>
@@ -1510,6 +1584,7 @@ document.addEventListener('mouseleave', () => {
 
 </body>
 </html>
+
 
 
 
