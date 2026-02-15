@@ -508,6 +508,98 @@ header nav a.active {
 
 
 
+    /* =======================================================
+   DARK GLASS THEME (White → Transparent Black)
+   ======================================================= */
+
+/* Page background darker */
+body{
+    background: linear-gradient(135deg,#020617,#0b1120,#020617);
+}
+
+/* Main container glass */
+.container{
+    background: rgba(0,0,0,0.55) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Info overlay stronger glass */
+.info-overlay{
+    background: rgba(0,0,0,0.72) !important;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* CARDS → BLACK GLASS */
+.card{
+    background: rgba(0,0,0,0.65) !important;
+    color:#eaf3ff !important;
+    border:1px solid rgba(255,255,255,0.10);
+    backdrop-filter: blur(8px);
+}
+
+/* Card hover premium glow */
+.card:hover{
+    background: rgba(0,0,0,0.78) !important;
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.8),
+        0 0 18px rgba(59,130,246,.25);
+}
+
+/* ALL TEXT WHITE */
+.card p,
+.card li,
+.container p{
+    color:#e6f0ff !important;
+}
+
+/* Headings bright */
+.card h3{
+    color:#60a5fa !important;
+    text-shadow:0 0 10px rgba(96,165,250,.45);
+}
+
+/* bullet points clearer */
+.card ul li{
+    margin-bottom:8px;
+}
+
+/* remove grey look */
+.container h1{
+    color:#ffffff !important;
+    text-shadow:0 0 18px rgba(59,130,246,.35);
+}
+
+/* overlay text */
+.info-overlay p{
+    color:#f1f7ff !important;
+}
+
+/* remove white header background */
+header{
+    background: rgba(0,0,0,0.55) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* nav text visible */
+nav a{
+    color:#eaf3ff !important;
+}
+nav a.active{
+    border-bottom:2px solid #3b82f6 !important;
+}
+
+/* marquee dark */
+.header-marquee-wrapper{
+    background: rgba(0,0,0,0.6) !important;
+    border-color: rgba(255,255,255,0.1);
+}
+
+.header-marquee{
+    color:#86efac !important;
+}
+
     
 </style>
 </head>
@@ -700,6 +792,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
