@@ -601,6 +601,48 @@ header nav a.active {
 .card.glass-card strong{
     color:#60a5fa !important;
 }
+
+    /* ===== UPDATED GLASS CARD (More Transparent + Bigger Text) ===== */
+
+.card.glass-card{
+    background: rgba(0,0,0,0.55) !important;   /* more transparent */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border:1px solid rgba(255,255,255,0.15) !important;
+    border-radius:20px !important;
+
+    padding: 40px !important;  /* more spacing */
+
+    box-shadow:0 15px 40px rgba(0,0,0,.7) !important;
+}
+
+/* Bigger Heading */
+.card.glass-card h3{
+    color:#ffffff !important;
+    font-size: 36px !important;   /* bigger */
+    margin-bottom: 22px;
+}
+
+/* Bigger Paragraph */
+.card.glass-card p{
+    color:#f8fafc !important;
+    font-size: 22px !important;   /* bigger text */
+    line-height: 1.9;
+}
+
+/* Bigger List */
+.card.glass-card li{
+    color:#f1f5f9 !important;
+    font-size: 22px !important;   /* bigger list text */
+    margin-bottom: 12px;
+}
+
+/* Strong highlight */
+.card.glass-card strong{
+    color:#93c5fd !important;
+    font-size: 23px;
+}
     
 </style>
 </head>
@@ -793,6 +835,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
