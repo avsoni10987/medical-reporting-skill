@@ -713,6 +713,59 @@ header nav a.active {
     transform: translateX(6px);
     text-shadow:0 0 8px rgba(59,130,246,0.7);
 }
+
+    /* ===== PREMIUM DYNAMIC HEADINGS ===== */
+
+/* Information (Main H1) */
+.container h1{
+    font-size: 46px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px;
+
+    background: linear-gradient(90deg,#60a5fa,#3b82f6,#1e40ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 8px rgba(59,130,246,0.6),
+        0 0 18px rgba(30,64,255,0.6);
+
+    animation: glowPulse 3s ease-in-out infinite alternate;
+}
+
+
+/* About the Training & Benefits (H3) */
+.card.glass-card h3{
+    font-weight: 900 !important;
+    letter-spacing: 0.8px;
+
+    background: linear-gradient(90deg,#93c5fd,#60a5fa,#2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 6px rgba(96,165,250,0.6),
+        0 0 14px rgba(37,99,235,0.6);
+
+    animation: glowPulse 2.5s ease-in-out infinite alternate;
+}
+
+
+/* Glow Animation */
+@keyframes glowPulse{
+    from{
+        text-shadow:
+            0 0 6px rgba(59,130,246,0.5),
+            0 0 15px rgba(30,64,255,0.4);
+    }
+    to{
+        text-shadow:
+            0 0 12px rgba(59,130,246,0.8),
+            0 0 25px rgba(30,64,255,0.8);
+    }
+}
+
+    
 </style>
 </head>
 <body>
@@ -904,6 +957,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
