@@ -643,7 +643,76 @@ header nav a.active {
     color:#93c5fd !important;
     font-size: 23px;
 }
-    
+
+    /* ===== PREMIUM HOVER FOR GLASS CARDS ===== */
+
+.card.glass-card{
+    transition: 
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        background 0.4s ease;
+}
+
+/* HOVER EFFECT */
+.card.glass-card:hover{
+    background: rgba(0,0,0,0.65) !important;  /* slightly darker on hover */
+
+    transform: translateY(-10px) scale(1.04); /* lift + zoom */
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.9),
+        0 0 25px rgba(59,130,246,0.45);  /* blue glow */
+
+    cursor: pointer;
+}
+
+/* Text glow on hover */
+.card.glass-card:hover h3{
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.6),
+        0 0 18px rgba(59,130,246,0.7);
+}
+
+    /* ===== EACH LINE HIGHLIGHT EFFECT ===== */
+
+/* make every line ready */
+.card.glass-card p,
+.card.glass-card li{
+    position: relative;
+    padding: 8px 14px;
+    margin: 6px 0;
+    border-radius: 10px;
+    transition: all 0.25s ease;
+    cursor: default;
+}
+
+/* sliding highlight background */
+.card.glass-card p::before,
+.card.glass-card li::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:10px;
+    background:linear-gradient(90deg, rgba(59,130,246,0.25), rgba(59,130,246,0.05));
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .25s ease;
+    z-index:-1;
+}
+
+/* when mouse over a line */
+.card.glass-card p:hover::before,
+.card.glass-card li:hover::before{
+    transform:scaleX(1);
+}
+
+/* text glow + move */
+.card.glass-card p:hover,
+.card.glass-card li:hover{
+    color:#ffffff !important;
+    transform: translateX(6px);
+    text-shadow:0 0 8px rgba(59,130,246,0.7);
+}
 </style>
 </head>
 <body>
@@ -835,6 +904,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
