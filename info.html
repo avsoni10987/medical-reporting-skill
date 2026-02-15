@@ -508,6 +508,70 @@ header nav a.active {
 
 
 
+    /* =================================================
+   BLACK GLASS CARD (Only selected sections)
+   ================================================= */
+
+.glass-card{
+    background: rgba(0,0,0,0.68);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:18px;
+
+    color:#ffffff;
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.75),
+        inset 0 0 18px rgba(255,255,255,.04);
+
+    transition: all .35s ease;
+}
+
+/* hover premium effect */
+.glass-card:hover{
+    background: rgba(0,0,0,0.78);
+    transform: translateY(-4px);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.9),
+        0 0 18px rgba(96,165,250,.25);
+}
+
+/* headings */
+.glass-card h3{
+    color:#ffffff;
+    font-weight:800;
+    letter-spacing:.5px;
+    text-shadow:0 0 10px rgba(255,255,255,.25);
+}
+
+/* paragraph text */
+.glass-card p{
+    color:#f1f5f9;
+    font-size:18px;
+    line-height:1.85;
+}
+
+/* list text */
+.glass-card li{
+    color:#e6edf7;
+    margin-bottom:10px;
+    font-size:18px;
+}
+
+/* strong words highlight */
+.glass-card strong{
+    color:#93c5fd;
+    font-weight:700;
+}
+
+/* nicer bullet */
+.glass-card ul{
+    padding-left:20px;
+}
+.glass-card ul li::marker{
+    color:#60a5fa;
+}
     
 </style>
 </head>
@@ -700,4 +764,5 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
