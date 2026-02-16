@@ -767,52 +767,7 @@ header nav a.active {
 
 
 
-/* ===== DYNAMIC DIAMOND BULLET ===== */
 
-ul {
-    padding-left: 28px;
-}
-
-ul li {
-    list-style: none;
-    position: relative;
-}
-
-/* Diamond Before Each Line */
-ul li::before {
-    content: "";
-    position: absolute;
-    left: -18px;
-    top: 8px;
-
-    width: 10px;
-    height: 10px;
-
-    background: linear-gradient(45deg, #ff4f87, #b84fff, #4fd1ff, #ff4f87);
-    background-size: 300% 300%;
-
-    transform: rotate(45deg);
-    border-radius: 2px;
-
-    animation: diamondColor 4s linear infinite,
-               diamondPulse 1.5s ease-in-out infinite;
-
-    box-shadow: 0 0 8px rgba(255, 79, 135, 0.8);
-}
-
-/* Color Changing Animation */
-@keyframes diamondColor {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Glow Pulse */
-@keyframes diamondPulse {
-    0% { transform: rotate(45deg) scale(1); }
-    50% { transform: rotate(45deg) scale(1.4); }
-    100% { transform: rotate(45deg) scale(1); }
-}
     
 </style>
 </head>
@@ -1002,9 +957,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
-
-
-
 
 
 
