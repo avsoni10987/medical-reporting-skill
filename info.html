@@ -767,10 +767,10 @@ header nav a.active {
 
 
 
+/* ===== DYNAMIC DIAMOND BULLET ===== */
 
-    /* target your list */
 ul {
-    padding-left: 25px;   /* space for diamond */
+    padding-left: 28px;
 }
 
 ul li {
@@ -778,42 +778,41 @@ ul li {
     position: relative;
 }
 
-/* diamond before each line */
+/* Diamond Before Each Line */
 ul li::before {
     content: "";
     position: absolute;
-    left: -18px;     /* distance from text */
-    top: 0.6em;      /* vertical alignment */
+    left: -18px;
+    top: 8px;
 
-    width: 9px;
-    height: 9px;
-
-    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
 
     background: linear-gradient(45deg, #ff4f87, #b84fff, #4fd1ff, #ff4f87);
     background-size: 300% 300%;
+
+    transform: rotate(45deg);
     border-radius: 2px;
 
     animation: diamondColor 4s linear infinite,
-               diamondPulse 1.8s ease-in-out infinite;
+               diamondPulse 1.5s ease-in-out infinite;
 
-    box-shadow: 0 0 8px rgba(255,80,140,0.7);
+    box-shadow: 0 0 8px rgba(255, 79, 135, 0.8);
 }
 
-/* color shifting */
+/* Color Changing Animation */
 @keyframes diamondColor {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* breathing animation */
+/* Glow Pulse */
 @keyframes diamondPulse {
-    0%   { transform: rotate(45deg) scale(1); }
-    50%  { transform: rotate(45deg) scale(1.4); }
+    0% { transform: rotate(45deg) scale(1); }
+    50% { transform: rotate(45deg) scale(1.4); }
     100% { transform: rotate(45deg) scale(1); }
 }
-
     
 </style>
 </head>
@@ -1003,6 +1002,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
