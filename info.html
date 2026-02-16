@@ -800,6 +800,35 @@ header nav a.active {
     100%{color:#38bdf8;}   /* Back to Blue */
 }
 
+    /* ===== GLOWING DYNAMIC HEADINGS ===== */
+
+h1, h2, h3, h4, h5, h6{
+    animation: headingColor 6s linear infinite,
+               headingGlow 2s ease-in-out infinite alternate;
+}
+
+/* color change */
+@keyframes headingColor{
+    0%{color:#38bdf8;}      /* blue */
+    25%{color:#22c55e;}     /* green */
+    50%{color:#facc15;}     /* yellow */
+    75%{color:#fb7185;}     /* pink */
+    100%{color:#38bdf8;}
+}
+
+/* glow pulse */
+@keyframes headingGlow{
+    0%{
+        text-shadow:0 0 5px currentColor,
+                    0 0 10px currentColor,
+                    0 0 15px currentColor;
+    }
+    100%{
+        text-shadow:0 0 10px currentColor,
+                    0 0 20px currentColor,
+                    0 0 35px currentColor;
+    }
+}
     
 </style>
 </head>
@@ -989,6 +1018,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
