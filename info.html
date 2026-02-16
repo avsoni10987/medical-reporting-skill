@@ -767,37 +767,38 @@ header nav a.active {
 
 
 
-    /* ===== DYNAMIC DIAMOND BULLETS FOR INFO ===== */
+
+    /* ===== COLOR CHANGING DIAMOND BULLET ===== */
 
 .card.glass-card ul{
     list-style: none;
-    padding-left: 0;
+    padding-left: 30px;
 }
 
 .card.glass-card ul li{
     position: relative;
-    padding-left: 34px; /* space for diamond */
 }
 
-/* diamond */
-.card.glass-card ul li::before{
-    content: "◆";
-    position: absolute;
-    left: 0;
-    top: 2px;
-    font-size: 18px;
-    animation: bulletColor 4s linear infinite;
+/* Diamond sign */
+.card.glass-card ul li::after{
+    content:"◆";
+    position:absolute;
+    left:-22px;
+    top:2px;
+    font-size:16px;
+    font-weight:bold;
+
+    animation: diamondColor 4s linear infinite;
 }
 
-/* animated color */
-@keyframes bulletColor{
-    0%{color:#38bdf8}
-    25%{color:#22c55e}
-    50%{color:#facc15}
-    75%{color:#fb7185}
-    100%{color:#38bdf8}
+/* Color animation */
+@keyframes diamondColor{
+    0%{color:#38bdf8;}     /* Blue */
+    25%{color:#22c55e;}    /* Green */
+    50%{color:#facc15;}    /* Yellow */
+    75%{color:#fb7185;}    /* Pink */
+    100%{color:#38bdf8;}   /* Back to Blue */
 }
-
 
     
 </style>
@@ -988,6 +989,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
