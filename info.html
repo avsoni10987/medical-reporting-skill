@@ -768,6 +768,59 @@ header nav a.active {
 
 
 
+
+
+    /* list style */
+.dynamic-list{
+    list-style: none;
+    padding-left: 0;
+}
+
+.dynamic-list li{
+    font-size: 22px;
+    font-weight: 700;
+    margin: 10px 0;
+    padding-left: 34px;
+    position: relative;
+
+    color:#eaf6ff;
+    transition:.3s ease;
+}
+
+/* colorful bullets */
+.dynamic-list li::before{
+    content:"◆";
+    position:absolute;
+    left:0;
+    font-size:20px;
+    animation: bulletColor 4s linear infinite;
+}
+
+/* hover glow */
+.dynamic-list li:hover{
+    transform: translateX(6px);
+    color:#ffffff;
+    text-shadow:0 0 12px rgba(56,189,248,.7);
+}
+
+
+/* ===== animations ===== */
+
+@keyframes medicalGradient{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes bulletColor{
+    0%{color:#38bdf8}
+    25%{color:#22c55e}
+    50%{color:#facc15}
+    75%{color:#fb7185}
+    100%{color:#38bdf8}
+}
+
+
     
 </style>
 </head>
@@ -820,6 +873,7 @@ header nav a.active {
     <h3 class="animate">About the Training</h3>
 
     <ul class="animate">
+        <ul class="dynamic-list">
         <li>Learn accurate medical documentation and structured reporting format</li>
         <li>Understand discharge summaries, patient history, and diagnostic findings</li>
         <li>Work on real hospital and radiology report examples</li>
@@ -830,6 +884,7 @@ header nav a.active {
         <li>Eligible for both Work From Home and office-based medical roles</li>
         <li>Develop confidence to independently handle medical documentation tasks</li>
     </ul>
+        </ul>
 </section>
 
 
@@ -957,6 +1012,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
