@@ -281,49 +281,26 @@
     z-index: 1;
 }
 
-        /* ===== UNIVERSAL SMART HOVER (ALL BOXES AUTO) ===== */
-
-/* Every visual box element */
-section,
+        /* ===== GLOBAL HOVER FOR ALL MAIN DIVS (SAFE) ===== */
 .container,
 .course-card,
-.moving-points-box,
 .footer-content > div,
 .footer-slider,
-.page-bg > div,
-.card,
-.box,
-.grid > div {
-    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+.header-top,
+.logo,
+.page-bg > div {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Hover effect */
-section:hover,
 .container:hover,
 .course-card:hover,
-.moving-points-box:hover,
 .footer-content > div:hover,
 .footer-slider:hover,
-.page-bg > div:hover,
-.card:hover,
-.box:hover,
-.grid > div:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 22px 50px rgba(0,0,0,0.55);
-    border-color: #38bdf8;
-    cursor: pointer;
-}
-
-/* Prevent header/navbar shaking */
-header:hover,
-nav:hover,
-.logo:hover,
-.title:hover,
 .header-top:hover,
-.header-marquee-wrapper:hover {
-    transform: none !important;
-    box-shadow: none !important;
-    cursor: default;
+.logo:hover,
+.page-bg > div:hover {
+    transform: scale(1.06);   /* 👈 stronger hover */
+    cursor: pointer;
 }
 
 /* ===== SMOOTH CURSOR INTERACTION (NO SIZE CHANGE) ===== */
@@ -836,8 +813,6 @@ interactiveElements.forEach(el => {
 
 </body>
 </html>
-
-
 
 
 
