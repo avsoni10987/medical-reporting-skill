@@ -647,6 +647,70 @@ header nav a.active {
 }
 
 
+
+    /* ==============================
+   FINAL READABILITY FIX
+   ============================== */
+
+/* Global reading comfort */
+body {
+    font-size: 18px;        /* base readable size */
+    line-height: 1.85;      /* breathing space */
+    font-weight: 500;       /* remove heavy bold look */
+}
+
+/* Main eligibility heading */
+.info-box h1 {
+    font-size: 50px;
+    letter-spacing: 0.5px;
+}
+
+/* Paragraph */
+.card p {
+    font-size: 23px !important;
+    line-height: 2.05 !important;
+    font-weight: 500;
+}
+
+/* Bullet list */
+.card ul li {
+    font-size: 21px !important;
+    line-height: 2 !important;
+    font-weight: 500;
+}
+
+/* Card spacing improvement */
+.card {
+    padding: 40px 50px;
+}
+
+/* Improve list readability */
+.card ul {
+    margin-top: 25px;
+    padding-left: 28px;
+}
+
+/* Mobile readability (very important) */
+@media (max-width: 768px) {
+
+    .info-box {
+        padding: 25px;
+    }
+
+    .info-box h1 {
+        font-size: 36px;
+    }
+
+    .card p {
+        font-size: 19px !important;
+        line-height: 1.9 !important;
+    }
+
+    .card ul li {
+        font-size: 18px !important;
+        line-height: 1.8 !important;
+    }
+}
     
 </style>
 </head>
@@ -826,6 +890,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 </body>
 </html>
+
 
 
 
