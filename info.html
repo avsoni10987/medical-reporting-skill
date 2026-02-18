@@ -835,38 +835,28 @@ h1, h2, h3, h4, h5, h6{
 }
 
 
-    /* ===================================================
-   INFORMATION HEADING — PREMIUM RAINBOW ANIMATION
+/* ===================================================
+   ONLY INFORMATION HEADING COLOR CHANGE (FINAL)
    =================================================== */
 
 .container h1{
-    font-size: 72px !important;
-    font-weight: 900 !important;
-    letter-spacing: 2px;
+    font-size:72px !important;
+    font-weight:900 !important;
+    letter-spacing:2px;
 
-    animation: rainbowMove 8s linear infinite;
-
-    text-shadow:
-        0 0 8px currentColor,
-        0 0 18px currentColor,
-        0 0 35px currentColor,
-        0 0 55px rgba(255,255,255,0.7);
+    animation: infoRainbow 10s linear infinite;
 }
 
-/* Smooth full spectrum cycle */
-@keyframes rainbowMove{
-    0%   { color:#ff0000; }   /* red */
-    10%  { color:#ff7300; }   /* orange */
-    20%  { color:#fffb00; }   /* yellow */
-    30%  { color:#48ff00; }   /* lime */
-    40%  { color:#00ffd5; }   /* aqua */
-    50%  { color:#009dff; }   /* blue */
-    60%  { color:#002bff; }   /* deep blue */
-    70%  { color:#7a00ff; }   /* purple */
-    80%  { color:#ff00c8; }   /* pink */
-    90%  { color:#ff006a; }   /* hot pink */
-    100% { color:#ff0000; }   /* back to red */
+/* smooth visible color change */
+@keyframes infoRainbow{
+    0%   { color:#00eaff; }  /* cyan */
+    20%  { color:#00ff88; }  /* green */
+    40%  { color:#ffe600; }  /* yellow */
+    60%  { color:#ff7a00; }  /* orange */
+    80%  { color:#ff00c8; }  /* pink */
+    100% { color:#00eaff; }
 }
+
     
 </style>
 </head>
@@ -1056,6 +1046,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
