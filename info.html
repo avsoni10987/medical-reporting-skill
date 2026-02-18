@@ -730,7 +730,6 @@ header nav a.active {
         0 4px 8px rgba(0,0,0,0.9),
         0 0 12px rgba(255,255,255,0.25);
 
-        animation: glowPulse 3s ease-in-out infinite alternate;
 }
 
 
@@ -800,15 +799,7 @@ header nav a.active {
     100%{color:#38bdf8;}   /* Back to Blue */
 }
 
-/* ===== FINAL WORKING DYNAMIC HEADING ===== */
 
-h1, h2, h3, h4, h5, h6{
-    -webkit-text-fill-color: initial !important;
-    background: none !important;
-
-    animation: headingColor 6s linear infinite,
-               headingGlow 2s ease-in-out infinite alternate !important;
-}
 
 /* Smooth color cycle */
 @keyframes headingColor{
@@ -820,19 +811,6 @@ h1, h2, h3, h4, h5, h6{
     100%{color:#38bdf8;}
 }
 
-/* Glow effect */
-@keyframes headingGlow{
-    from{
-        text-shadow:
-            0 0 6px currentColor,
-            0 0 15px currentColor;
-    }
-    to{
-        text-shadow:
-            0 0 12px currentColor,
-            0 0 30px currentColor;
-    }
-}
 
 
 /* ===================================================
@@ -1046,6 +1024,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
