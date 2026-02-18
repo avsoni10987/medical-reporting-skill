@@ -833,6 +833,38 @@ h1, h2, h3, h4, h5, h6{
             0 0 30px currentColor;
     }
 }
+
+
+    /* ===== FINAL FIX — INFORMATION HEADING SUPER CLEAR ===== */
+
+.container h1{
+    font-size: 68px !important;        /* MUCH bigger */
+    font-weight: 900 !important;
+    letter-spacing: 2px !important;
+
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+
+    animation: infoColorMove 5s linear infinite !important;
+}
+
+/* smooth bright readable colors */
+@keyframes infoColorMove{
+    0%   { color:#00eaff; }   /* cyan */
+    20%  { color:#00ff6a; }   /* green */
+    40%  { color:#ffe600; }   /* yellow */
+    60%  { color:#ff7a00; }   /* orange */
+    80%  { color:#ff2bd6; }   /* pink */
+    100% { color:#00eaff; }
+}
+
+/* strong glow */
+.container h1{
+    text-shadow:
+        0 0 8px currentColor,
+        0 0 18px currentColor,
+        0 0 35px rgba(255,255,255,0.6);
+}
     
 </style>
 </head>
@@ -1022,6 +1054,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
