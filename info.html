@@ -865,6 +865,42 @@ h1, h2, h3, h4, h5, h6{
         0 0 18px currentColor,
         0 0 35px rgba(255,255,255,0.6);
 }
+
+
+
+
+    /* ===================================================
+   INFORMATION HEADING — PREMIUM RAINBOW ANIMATION
+   =================================================== */
+
+.container h1{
+    font-size: 72px !important;
+    font-weight: 900 !important;
+    letter-spacing: 2px;
+
+    animation: rainbowMove 8s linear infinite;
+
+    text-shadow:
+        0 0 8px currentColor,
+        0 0 18px currentColor,
+        0 0 35px currentColor,
+        0 0 55px rgba(255,255,255,0.7);
+}
+
+/* Smooth full spectrum cycle */
+@keyframes rainbowMove{
+    0%   { color:#ff0000; }   /* red */
+    10%  { color:#ff7300; }   /* orange */
+    20%  { color:#fffb00; }   /* yellow */
+    30%  { color:#48ff00; }   /* lime */
+    40%  { color:#00ffd5; }   /* aqua */
+    50%  { color:#009dff; }   /* blue */
+    60%  { color:#002bff; }   /* deep blue */
+    70%  { color:#7a00ff; }   /* purple */
+    80%  { color:#ff00c8; }   /* pink */
+    90%  { color:#ff006a; }   /* hot pink */
+    100% { color:#ff0000; }   /* back to red */
+}
     
 </style>
 </head>
@@ -1054,6 +1090,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
