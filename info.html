@@ -835,6 +835,79 @@ header nav a.active {
     100% { color:#00eaff; }
 }
 
+
+    /* =========================================
+   UNIVERSAL PREMIUM RAINBOW GLOW HEADINGS
+   Information + About the Training + Benefits
+   ========================================= */
+
+/* Apply to all main headings */
+.container h1,
+.card.glass-card h3 {
+
+    color: #0b2a6b !important;   /* deep dark blue base */
+    font-weight: 900 !important;
+    letter-spacing: 1.5px;
+
+    transition: all 0.4s ease;
+
+    animation: rainbowGlow 6s linear infinite;
+}
+
+
+/* 7 COLOR GLOW ANIMATION */
+@keyframes rainbowGlow {
+
+    0%{
+        text-shadow:
+            0 0 6px #00eaff,
+            0 0 14px #00eaff,
+            0 0 22px #00eaff;
+    }
+
+    16%{
+        text-shadow:
+            0 0 6px #22c55e,
+            0 0 14px #22c55e,
+            0 0 22px #22c55e;
+    }
+
+    32%{
+        text-shadow:
+            0 0 6px #facc15,
+            0 0 14px #facc15,
+            0 0 22px #facc15;
+    }
+
+    48%{
+        text-shadow:
+            0 0 6px #fb7185,
+            0 0 14px #fb7185,
+            0 0 22px #fb7185;
+    }
+
+    64%{
+        text-shadow:
+            0 0 6px #a855f7,
+            0 0 14px #a855f7,
+            0 0 22px #a855f7;
+    }
+
+    80%{
+        text-shadow:
+            0 0 6px #ff7a00,
+            0 0 14px #ff7a00,
+            0 0 22px #ff7a00;
+    }
+
+    100%{
+        text-shadow:
+            0 0 6px #00eaff,
+            0 0 14px #00eaff,
+            0 0 22px #00eaff;
+    }
+}
+
     
 </style>
 </head>
@@ -1024,6 +1097,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 </body>
 </html>
+
 
 
 
