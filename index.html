@@ -1299,6 +1299,39 @@ li {
 .testimonial {
     font-size: 24px !important;
 }
+
+
+
+
+/* ===== MOVING POINTS SLOW READABLE SCROLL ===== */
+
+.moving-points-box{
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+}
+
+.moving-points{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    /* slower movement */
+    animation: scrollPoints 95s linear infinite;
+}
+
+/* smooth vertical scrolling */
+@keyframes scrollPoints{
+    0%   { transform: translateY(0%); }
+    100% { transform: translateY(-100%); }
+}
+
+/* pause when user hover (very important for readability) */
+.moving-points-box:hover .moving-points{
+    animation-play-state: paused;
+}
+
+
         
 </style>
 </head>
@@ -1624,6 +1657,7 @@ document.addEventListener('mouseleave', () => {
 
 </body>
 </html>
+
 
 
 
