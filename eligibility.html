@@ -786,6 +786,99 @@ body {
 }
 
 
+
+    
+/* ===== FLOATING CONTACT BUTTONS (PRO VERSION) ===== */
+.floating-contact{
+    position:fixed;
+    right:18px;
+    bottom:20px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    z-index:9999;
+}
+
+/* circle buttons */
+.float-btn{
+    width:82px;
+    height:82px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-decoration:none;
+    box-shadow:0 12px 32px rgba(0,0,0,.45);
+    transition:all .28s ease;
+    position:relative;
+}
+
+/* hover animation */
+.float-btn:hover{
+    transform:scale(1.18) translateY(-3px);
+    box-shadow:0 18px 50px rgba(0,0,0,.65);
+}
+
+/* WhatsApp */
+.whatsapp{
+    background:linear-gradient(135deg,#25D366,#0dbb54);
+}
+.whatsapp svg{
+    width:44px;
+    height:44px;
+    fill:white;
+}
+
+/* Call */
+.call{
+    background:linear-gradient(135deg,#ff7a00,#ff3c00);
+    font-size:42px;
+}
+
+/* Email */
+.email{
+    background:linear-gradient(135deg,#007bff,#003cff);
+    font-size:38px;
+}
+
+/* tooltip text */
+.float-btn span{
+    position:absolute;
+    right:95px;
+    background:#111;
+    color:#fff;
+    padding:7px 12px;
+    border-radius:6px;
+    font-size:14px;
+    opacity:0;
+    pointer-events:none;
+    transition:.25s;
+    white-space:nowrap;
+}
+
+.float-btn:hover span{
+    opacity:1;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .float-btn{
+        width:70px;
+        height:70px;
+    }
+    .whatsapp svg{
+        width:36px;
+        height:36px;
+    }
+    .call{ font-size:34px; }
+    .email{ font-size:32px; }
+
+    .float-btn span{
+        display:none;
+    }
+}
+
     
 </style>
 </head>
@@ -967,6 +1060,33 @@ document.addEventListener("DOMContentLoaded", function () {
 </html>
 
 
+
+<!-- ===== FLOATING CONTACT BUTTONS ===== -->
+<div class="floating-contact">
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/918871866088?text=Hello%20I%20want%20information%20about%20course"
+       target="_blank"
+       class="float-btn whatsapp">
+        <span>Chat on WhatsApp</span>
+        <svg viewBox="0 0 32 32">
+            <path d="M16 .396C7.163.396 0 7.56 0 16.396c0 2.89.757 5.706 2.194 8.178L.207 31.793l7.427-1.94A15.93 15.93 0 0 0 16 32c8.837 0 16-7.164 16-16.001C32 7.56 24.837.396 16 .396zm0 29.104a13.03 13.03 0 0 1-6.65-1.824l-.477-.282-4.41 1.151 1.177-4.293-.31-.494A13.025 13.025 0 0 1 2.97 16c0-7.185 5.844-13.03 13.03-13.03 7.185 0 13.03 5.845 13.03 13.03 0 7.186-5.845 13.03-13.03 13.03zm7.39-9.724c-.404-.202-2.388-1.178-2.757-1.31-.37-.135-.64-.203-.91.203-.27.404-1.046 1.31-1.283 1.58-.236.27-.472.304-.876.101-.404-.202-1.707-.629-3.252-2.005-1.202-1.072-2.014-2.396-2.25-2.8-.236-.405-.025-.624.177-.826.182-.181.404-.472.607-.708.202-.236.27-.405.404-.674.135-.27.067-.506-.034-.708-.101-.202-.91-2.19-1.247-3-.328-.789-.662-.681-.91-.694l-.775-.014c-.27 0-.708.101-1.078.506-.37.405-1.414 1.381-1.414 3.366 0 1.985 1.447 3.903 1.649 4.172.202.27 2.846 4.349 6.9 6.099.965.417 1.717.666 2.304.852.968.308 1.85.265 2.546.161.777-.116 2.388-.975 2.725-1.916.337-.942.337-1.75.236-1.916-.101-.169-.37-.27-.775-.472z"/>
+        </svg>
+    </a>
+
+    <!-- Call -->
+    <a href="tel:+919752043256" class="float-btn call">
+        <span>Call Now</span>
+        📞
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:avsoni10987@gmail.com" class="float-btn email">
+        <span>Send Email</span>
+        ✉️
+    </a>
+
+</div>
 
 
 
