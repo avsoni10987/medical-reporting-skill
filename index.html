@@ -1423,6 +1423,51 @@ li {
         display:none;
     }
 }
+
+
+/* ===== SCROLL FLOATING IMAGE ===== */
+.scroll-floating-image{
+    position: fixed;
+    left: 30px;
+    bottom: 120px;
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 9998;
+}
+
+/* visible state */
+.scroll-floating-image.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* blinking animation */
+@keyframes blinkEffect{
+    0%{ opacity:1; }
+    50%{ opacity:0.4; }
+    100%{ opacity:1; }
+}
+
+.scroll-floating-image.blink{
+    animation: blinkEffect 1s ease-in-out infinite;
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .scroll-floating-image{
+        width: 90px;
+        height: 90px;
+        left: 15px;
+        bottom: 100px;
+    }
+}
+
         
 </style>
 </head>
@@ -1745,7 +1790,29 @@ document.addEventListener('mouseleave', () => {
 });
 </script>
 
+        <script>
+let scrollTimeout;
+const scrollImage = document.getElementById("scrollImage");
 
+window.addEventListener("scroll", () => {
+
+    // show image
+    scrollImage.classList.add("active");
+    scrollImage.classList.add("blink");
+
+    // clear previous timeout
+    clearTimeout(scrollTimeout);
+
+    // when scrolling stops
+    scrollTimeout = setTimeout(() => {
+        scrollImage.classList.remove("blink");
+    }, 600);
+});
+</script>
+
+<!-- ===== FLOATING BLINKING IMAGE ===== -->
+<img src="people1.jpg" class="scroll-floating-image" id="scrollImage">
+        
 </body>
      
 </html>
@@ -1781,6 +1848,7 @@ document.addEventListener('mouseleave', () => {
     </a>
 
 </div>
+
 
 
 
