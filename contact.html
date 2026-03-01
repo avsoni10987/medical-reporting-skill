@@ -822,6 +822,63 @@ header nav a.active {
     filter:none;
     content:url("https://img.icons8.com/ios-filled/24/f59e0b/new-post.png");
 }
+
+
+
+        /* ===== ULTRA MODERN DYNAMIC PREMIUM BOX ===== */
+.premium-text-white{
+    position: relative;
+    margin-top:20px;
+    padding:22px 26px;
+
+    font-size:20px;
+    line-height:1.9;
+    font-weight:700;
+
+    color:#ffffff;
+
+    border-radius:18px;
+
+    /* Glass background */
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+
+    overflow:hidden;
+}
+
+/* Animated Gradient Border */
+.premium-text-white::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    padding:2px; /* border thickness */
+    border-radius:18px;
+
+    background: linear-gradient(
+        270deg,
+        #00f5ff,
+        #00ff87,
+        #8b5cf6,
+        #ff7a00,
+        #00f5ff
+    );
+
+    background-size:400% 400%;
+    animation: borderMove 8s ease infinite;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+}
+
+/* Smooth gradient animation */
+@keyframes borderMove{
+    0%{ background-position:0% 50%; }
+    50%{ background-position:100% 50%; }
+    100%{ background-position:0% 50%; }
+}
     </style>
 </head>
 <body>
@@ -1071,6 +1128,7 @@ for (let i = 1; i <= totalImages; i++) {
     </a>
 
 </div>
+
 
 
 
