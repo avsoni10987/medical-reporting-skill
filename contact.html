@@ -715,6 +715,51 @@ header nav a.active {
     }
 }
 
+
+        /* ===== WHITE CONTACT INFO STYLE ===== */
+
+.contact-info-white p{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+
+    font-size:22px;
+    font-weight:800;
+    color:#ffffff;
+
+    text-shadow:0 0 6px rgba(255,255,255,0.35);
+}
+
+/* small mono icons */
+.contact-info-white img{
+    width:20px;
+    height:20px;
+    filter: brightness(0) invert(1); /* force white mono */
+}
+
+/* label bold */
+.contact-info-white .label{
+    font-weight:900;
+}
+
+/* premium white description box */
+.premium-text-white{
+    margin-top:20px;
+    padding:18px 22px;
+
+    font-size:20px;
+    line-height:1.9;
+    font-weight:700;
+
+    color:#ffffff;
+    background:rgba(255,255,255,0.08);
+
+    border-left:6px solid #ffffff;
+    border-radius:14px;
+
+    box-shadow:0 8px 24px rgba(0,0,0,0.6);
+}
         
     </style>
 </head>
@@ -753,15 +798,45 @@ header nav a.active {
     <!-- MAIN CONTACT SECTION -->
     <div class="contact-section">
 
-    <!-- LEFT: Contact Info -->
-    <div class="contact-left">
-        <h2>Contact Us:</h2>
-        <p class="parrot-contact"><span class="underline-word">Call</span>: +91-9752043256</p>
-        <p class="parrot-contact"><span class="underline-word">WhatsApp</span>: +91-8871866088</p>
-        <p class="parrot-contact"><span class="underline-word">Email Id</span>: avsoni10987@gmail.com</p>
-        <p class="parrot-text premium-text">It's a report making work, work from Home & Office, its guaranteed work at everywhere. Contact on same if you have any query or concern will explain in detail</p>
-       </div>
 
+   <!-- LEFT: Contact Info -->
+<div class="contact-left">
+
+    <h2>Contact Us:</h2>
+
+    <div class="contact-info-white">
+
+        <p>
+            <img src="https://img.icons8.com/ios-filled/24/ffffff/phone.png" alt="Call">
+            <span class="label">Call:</span>
+            <span class="value">+91-9752043256</span>
+        </p>
+
+        <p>
+            <img src="https://img.icons8.com/ios-filled/24/ffffff/whatsapp.png" alt="WhatsApp">
+            <span class="label">WhatsApp:</span>
+            <span class="value">+91-8871866088</span>
+        </p>
+
+        <p>
+            <img src="https://img.icons8.com/ios-filled/24/ffffff/new-post.png" alt="Email">
+            <span class="label">Email Id:</span>
+            <span class="value">avsoni10987@gmail.com</span>
+        </p>
+
+    </div>
+
+    <p class="premium-text-white">
+        It's a report making work. Work from Home & Office. Guaranteed work opportunity everywhere. 
+        Contact us if you have any query or concern — we will explain everything in detail.
+    </p>
+
+</div>
+
+
+
+
+        
   <!-- RIGHT: Rotating Images -->
 <div class="contact-right">
     <div class="image-rotator" id="imageRotator">
@@ -935,6 +1010,7 @@ for (let i = 1; i <= totalImages; i++) {
     </a>
 
 </div>
+
 
 
 
