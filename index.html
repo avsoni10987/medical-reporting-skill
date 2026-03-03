@@ -1423,6 +1423,51 @@ li {
         display:none;
     }
 }
+
+
+
+        /* ======================================================
+   UNIVERSAL PREMIUM SHINE BORDER
+   ====================================================== */
+
+.shine-border{
+    position:relative;
+    border-radius:20px; /* matches your design */
+    overflow:hidden;
+}
+
+/* animated gradient border */
+.shine-border::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    padding:2.5px; /* border thickness */
+    border-radius:20px;
+
+    background:linear-gradient(
+        270deg,
+        #38bdf8,
+        #22c55e,
+        #facc15,
+        #fb7185,
+        #38bdf8
+    );
+
+    background-size:400% 400%;
+    animation:shineMove 8s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+}
+
+@keyframes shineMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
         
 </style>
 </head>
@@ -1455,7 +1500,7 @@ li {
 
 <!-- HERO SECTION -->
 <section class="hero">
-    <div class="hero-overlay">
+    <div class="hero-overlay shine-border">
             <div class="hero-text animate-left delay-1">
 
             <h1 class="dynamic-heading">Medical Reporting Course from India's Dedicated Medical Reporting Place, Guaranteed work at everywhere - Medical report typist job is available at everywhere like in Hospital, Radiology centers, At-home with Doctors, At-home with several unlimited clients, from outside etc...</h1>
@@ -1483,7 +1528,7 @@ li {
 <div class="section-wrapper">
 
   <!-- Intro block -->
-  <div class="intro-block dark-card animate-left delay-2">
+  <div class="intro-block dark-card animate-left delay-2 shine-border">
     <h2>Join Online Medical Reporting Skill Course with best Job opportunities at Everywhere</h2>
     <p>
       Join our Medical Reporting Training skill Program and learn Medical Reporting work,
@@ -1501,7 +1546,7 @@ li {
 
   <!-- Program features -->
 
-          <div class="highlight-box dark-card animate-left delay-2">
+          <div class="highlight-box dark-card animate-left delay-2 shine-border">
 
     <h3>Program Features</h3>
     <ul>
@@ -1516,7 +1561,7 @@ li {
   <!-- Features grid: left = overview, right = why join -->
   <div class="features-grid">
 
-            <div class="features-card dark-card animate-left delay-2">
+            <div class="features-card dark-card animate-left delay-2 shine-border">
 
       <h3>Advance Minor & Major reports real content in Medical Reporting</h3>
       <p><strong>Duration:</strong> 1 Months to 3-4 Months</p>
@@ -1545,7 +1590,7 @@ li {
     </div>
 
 
-            <div class="features-card dark-card animate-right delay-3">
+            <div class="features-card dark-card animate-right delay-3 shine-border">
 
       <h3>Why join Medical Reporting Skill</h3>
       <div class="badges">
@@ -1561,7 +1606,7 @@ li {
       </p>
 
 <!-- MOVING POINTS BOX -->
-<div class="moving-points-box">
+<div class="moving-points-box shine-border">
     <div class="moving-points">
 
       <p class="c1">✔ 100% job availibility in Medical Reporting Skill</p>
@@ -1600,14 +1645,14 @@ li {
 
     <div class="testimonial-list">
 
-              <div class="testimonial animate-left delay-2">
+              <div class="testimonial animate-left delay-2 shine-border">
 
         I joined the online Medical Reporting batch and the explanations about
         real-time reports and documentation were very clear. I feel confident
         to work on hospital and radiology reports now.
         <strong>-- Student A</strong>
       </div>
-              <div class="testimonial animate-up delay-3">
+              <div class="testimonial animate-up delay-3 shine-border">
 
         I was looking for a flexible course I could do along with my job.
         Weekend online classes and lifetime placement support really helped me
@@ -1615,7 +1660,7 @@ li {
         <strong>-- Student B</strong>
       </div>
 
-              <div class="testimonial animate-right delay-4">
+              <div class="testimonial animate-right delay-4 shine-border">
 
         Trainers are supportive and share real-world examples. The course is
         very detailed and helped me understand how reports are actually used in Hospitals/Radiology centers/ MNC's or in any Industries.
@@ -1652,7 +1697,7 @@ li {
         </div>
     </div>
 
-<div class="footer-slider">
+<div class="footer-slider shine-border">
     <img src="image1.jpg" class="active">
     <img src="image2.jpg">
     <img src="image3.jpg">
@@ -1781,6 +1826,7 @@ document.addEventListener('mouseleave', () => {
     </a>
 
 </div>
+
 
 
 
