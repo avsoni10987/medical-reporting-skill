@@ -910,6 +910,15 @@ body {
     opacity:1;
 }
 
+    /* ===== ELIGIBILITY SEQUENTIAL ANIMATION FIX ===== */
+const items = document.querySelectorAll(".eligibility-item");
+
+items.forEach((item, index) => {
+    setTimeout(() => {
+        item.classList.add("show");
+    }, index * 250); // sequential effect
+});
+
 /* Different Fast Premium Colors */
 .eligibility-item:nth-child(1){ background:linear-gradient(135deg,#2563eb,#1e40af); }
 .eligibility-item:nth-child(2){ background:linear-gradient(135deg,#22c55e,#15803d); }
@@ -1155,6 +1164,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </a>
 
 </div>
+
 
 
 
