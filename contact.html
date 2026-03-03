@@ -879,6 +879,46 @@ header nav a.active {
     50%{ background-position:100% 50%; }
     100%{ background-position:0% 50%; }
 }
+
+
+        /* ===== UNIVERSAL SHINING BORDER EFFECT ===== */
+.shine-border {
+    position: relative;
+    border-radius: 18px; /* match your boxes */
+    overflow: hidden;
+}
+
+.shine-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2px; /* border thickness */
+    border-radius: 18px;
+
+    background: linear-gradient(
+        270deg,
+        #00f5ff,
+        #00ff87,
+        #8b5cf6,
+        #ff7a00,
+        #00f5ff
+    );
+
+    background-size: 400% 400%;
+    animation: borderShine 8s ease infinite;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+}
+
+@keyframes borderShine {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
     </style>
 </head>
 <body>
@@ -918,7 +958,7 @@ header nav a.active {
 
 
    <!-- LEFT: Contact Info -->
-<div class="contact-left">
+<div class="contact-left shine-border">
 
     <h2>Contact Us:</h2>
 
@@ -956,7 +996,7 @@ header nav a.active {
 
         
   <!-- RIGHT: Rotating Images -->
-<div class="contact-right">
+<div class="contact-right shine-border">
     <div class="image-rotator" id="imageRotator">
         <!-- Images will be added dynamically -->
     </div>
@@ -964,7 +1004,7 @@ header nav a.active {
     
     
 <!-- MOVING POINTS BOX -->
-<div class="moving-points-box">
+<div class="moving-points-box shine-border">
     <div class="moving-points">
          <p class="c1">✔ 100% job availibility in Medical Reporting Skill</p>
         <p class="c2">✔ Work From Home & Office Opportunities</p>
@@ -1026,7 +1066,7 @@ header nav a.active {
         </div>
 
         <!-- Footer Image Slider -->
-        <div class="footer-slider">
+        <div class="footer-slider shine-border">
             <img src="image27.jpg" class="active">
             <img src="image28.jpg">
             <img src="image29.jpg">
@@ -1128,4 +1168,5 @@ for (let i = 1; i <= totalImages; i++) {
     </a>
 
 </div>
+
 
