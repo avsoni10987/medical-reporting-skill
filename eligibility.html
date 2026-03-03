@@ -1128,22 +1128,13 @@ document.addEventListener("DOMContentLoaded", function () {
         setInterval(showNext, 2500);
     }
 
-    /* ===== ELIGIBILITY CARD ANIMATION ===== */
-    const card = document.querySelector(".card");
+   /* ===== ELIGIBILITY SEQUENTIAL ANIMATION ===== */
+const items = document.querySelectorAll(".eligibility-item");
 
-    if (card) {
-        card.classList.add("from-left"); // change to from-right if needed
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
-                }
-            });
-        }, { threshold: 0.2 });
-
-        observer.observe(card);
-    }
+items.forEach((item, index) => {
+    setTimeout(() => {
+        item.classList.add("show");
+    }, index * 300);   // 300ms delay each
 });
 </script>
 
@@ -1180,6 +1171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </a>
 
 </div>
+
 
 
 
