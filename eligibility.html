@@ -879,6 +879,62 @@ body {
     }
 }
 
+
+
+    /* ===== PREMIUM ELIGIBILITY SEPARATE CARDS ===== */
+
+.eligibility-wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    margin-top:30px;
+}
+
+/* Base style */
+.eligibility-item{
+    padding:28px 40px;
+    border-radius:18px;
+    font-size:26px;
+    font-weight:600;
+    line-height:1.8;
+    color:#fff;
+    box-shadow:0 12px 30px rgba(0,0,0,.45);
+    transform:translateY(60px);
+    opacity:0;
+    transition:all .6s ease;
+}
+
+/* Sequential show */
+.eligibility-item.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* Different Fast Premium Colors */
+.eligibility-item:nth-child(1){ background:linear-gradient(135deg,#2563eb,#1e40af); }
+.eligibility-item:nth-child(2){ background:linear-gradient(135deg,#22c55e,#15803d); }
+.eligibility-item:nth-child(3){ background:linear-gradient(135deg,#06b6d4,#0e7490); }
+.eligibility-item:nth-child(4){ background:linear-gradient(135deg,#a855f7,#6d28d9); }
+.eligibility-item:nth-child(5){ background:linear-gradient(135deg,#f97316,#c2410c); }
+.eligibility-item:nth-child(6){ background:linear-gradient(135deg,#ec4899,#be185d); }
+.eligibility-item:nth-child(7){ background:linear-gradient(135deg,#facc15,#ca8a04); }
+.eligibility-item:nth-child(8){ background:linear-gradient(135deg,#0ea5e9,#0369a1); }
+.eligibility-item:nth-child(9){ background:linear-gradient(135deg,#14b8a6,#0f766e); }
+.eligibility-item:nth-child(10){ background:linear-gradient(135deg,#ef4444,#991b1b); }
+
+/* Hover Effect */
+.eligibility-item:hover{
+    transform:scale(1.05);
+    box-shadow:0 18px 50px rgba(0,0,0,.7);
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .eligibility-item{
+        font-size:20px;
+        padding:20px 24px;
+    }
+}
     
 </style>
 </head>
@@ -913,32 +969,44 @@ body {
 
 <!-- PAGE CONTENT -->
 <div class="container">
-    <div class="info-box">
-        <h1>Eligibility</h1>
+  <div class="eligibility-wrapper">
 
-        <div class="card">
-         <b>   <p>
-                Open to graduates in life sciences, BSc, MSc, B.Pharmacy, M.Pharmacy,
-                medical or non-medical, Bio-technology and allied fields.
-                Freshers and experienced professionals are welcome.
-            </p></b>
-
-            <ul>
-               <b> <li>(BSc / MSc / PhD)/ MBBS / Pharm.D / B.Pharm / M.Pharm</li></b>
-<b><li>Life science degrees, Physical & mathematical science degrees, Computer & data-related degrees, Environmental & earth science degrees, 
-Interdisciplinary / applied science degrees, Medical & health science, BSc(Hons), BS, BE, etc.</li></b>
-
-            <b><li>B.Sc Nursing/ BMLT / BSc MLT/ DMLT/ Lab / Pathology–related medical degrees and diplomas</li></b>
-                
-                <b><li>Basic computer literacy</li></b>
-                <b><li>Medical or Non-medical</li></b>
-                <b><li>Anyone can do & No age bar</li></b>
-                <b><li>Working person or non-working (like student) anyone can do</li></b>
-                <b><li>Science / Commerce / any other field – anyone can do and get the job and can work from wherever you want</li></b>
-                <b><li>Good communication skills (spoken & written – we will guide)</li></b>
-            </ul>
-        </div>
+    <div class="eligibility-item"> 
+        Open to graduates in life sciences, BSc, MSc, B.Pharmacy, M.Pharmacy,
+        medical or non-medical, Bio-technology and allied fields.
+        Freshers and experienced professionals are welcome.
     </div>
+
+    <div class="eligibility-item">(BSc / MSc / PhD) / MBBS / Pharm.D / B.Pharm / M.Pharm</div>
+
+    <div class="eligibility-item">
+        Life science degrees, Physical & mathematical science degrees,
+        Computer & data-related degrees, Environmental & earth science degrees,
+        Interdisciplinary / applied science degrees, Medical & health science,
+        BSc(Hons), BS, BE, etc.
+    </div>
+
+    <div class="eligibility-item">
+        B.Sc Nursing / BMLT / BSc MLT / DMLT / Lab / Pathology–related degrees
+    </div>
+
+    <div class="eligibility-item">Basic computer literacy</div>
+
+    <div class="eligibility-item">Medical or Non-medical</div>
+
+    <div class="eligibility-item">Anyone can do & No age bar</div>
+
+    <div class="eligibility-item">Working or Non-working (Students also eligible)</div>
+
+    <div class="eligibility-item">
+        Science / Commerce / Any field – Work from anywhere
+    </div>
+
+    <div class="eligibility-item">
+        Good communication skills (spoken & written – we guide)
+    </div>
+
+</div>
 </div>
 
 <!-- FOOTER -->
@@ -1087,6 +1155,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </a>
 
 </div>
+
 
 
 
