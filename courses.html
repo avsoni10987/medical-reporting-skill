@@ -716,6 +716,48 @@ nav a {
     }
 }
 
+        /* ======================================================
+   UNIVERSAL PREMIUM SHINING BORDER (SAFE VERSION)
+   ====================================================== */
+
+.shine-border{
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* animated gradient border */
+.shine-border::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 2.5px; /* border thickness */
+    border-radius: 20px;
+
+    background: linear-gradient(
+        270deg,
+        #38bdf8,
+        #22c55e,
+        #facc15,
+        #fb7185,
+        #38bdf8
+    );
+
+    background-size: 400% 400%;
+    animation: shineMove 8s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+}
+
+@keyframes shineMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
         
     </style>
 </head>
@@ -749,14 +791,14 @@ nav a {
 
     <!-- MAIN COURSES CONTENT -->
     <div class="page-bg">
-        <div class="container">
+        <div class="container shine-border">
             <h1>Our Courses</h1>
             <p class="courses-subtitle">
               Explore our specialized Medical Reporting courses designed for Any professionals.
             </p>
 
-            <div class="course-grid">
-                <div class="course-card">
+            <div class="course-grid shine-border">
+                <div class="course-card shine-border">
                     <h3>Medical Reporting for Home Based Work</h3>
                     <p>
                         Medical Reporting for Home-Based Work
@@ -817,7 +859,7 @@ This allows you to earn in international projects without relocating, giving you
 </div>
  
 <!-- MOVING POINTS BOX -->
-<div class="moving-points-box">
+<div class="moving-points-box shine-border">
     <div class="moving-points">
         <p class="c1">✔ 100% job availibility in Medical Reporting Skill</p>
         <p class="c2">✔ Work From Home & Office Opportunities</p>
@@ -845,13 +887,13 @@ This allows you to earn in international projects without relocating, giving you
 
     <!-- FOOTER -->
     <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-left">
+        <div class="footer-content shine-border">
+            <div class="footer-left shine-border">
                 <h3>Medical Reporting Skill</h3>
                 <p>Empowering healthcare professionals through industry-focused medical reporting training.</p>
             </div>
 
-            <div class="footer-center">
+            <div class="footer-center shine-border">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -862,7 +904,7 @@ This allows you to earn in international projects without relocating, giving you
                 </ul>
             </div>
 
-            <div class="footer-right">
+            <div class="footer-right shine-border">
                 <h4>Contact Us</h4>
                 <p>Email: <a href="mailto:info@medicalreportingskill.com">avsoni10987@gmail.com</a></p>
                 <p>Phone: +91 9752043256</p>
@@ -872,7 +914,7 @@ This allows you to earn in international projects without relocating, giving you
         </div>
 
 
-<div class="footer-slider">
+<div class="footer-slider shine-border">
     <img src="image21.jpg" class="active">
     <img src="image22.jpg">
     <img src="image23.jpg">
@@ -1000,6 +1042,7 @@ interactiveElements.forEach(el => {
     </a>
 
 </div>
+
 
 
 
