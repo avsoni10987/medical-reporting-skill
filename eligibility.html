@@ -879,6 +879,79 @@ body {
     }
 }
 
+
+    /* ================================
+   PREMIUM SEQUENTIAL ELIGIBILITY
+   ================================ */
+
+.eligibility-wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    margin-top:40px;
+}
+
+/* Base Card */
+.eligibility-item{
+    padding:28px 35px;
+    font-size:24px;
+    border-radius:14px;
+    font-weight:600;
+    position:relative;
+    overflow:hidden;
+    backdrop-filter:blur(6px);
+
+    /* animation hidden state */
+    opacity:0;
+    transform:translateX(-80px);
+}
+
+/* Shine Border Effect */
+.eligibility-item::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    padding:2px;
+    border-radius:14px;
+    background:linear-gradient(90deg,#60a5fa,#22c55e,#a855f7,#facc15,#60a5fa);
+    background-size:400% 400%;
+    animation:borderMove 6s linear infinite;
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+@keyframes borderMove{
+    0%{background-position:0% 50%;}
+    100%{background-position:200% 50%;}
+}
+
+/* Show animation */
+.eligibility-item.show{
+    opacity:1;
+    transform:translateX(0);
+    transition:all 0.9s ease;
+}
+
+/* Different Background Colors */
+.eligibility-item:nth-child(1){ background:rgba(59,130,246,0.12); color:#93c5fd;}
+.eligibility-item:nth-child(2){ background:rgba(34,197,94,0.12); color:#6ee7b7;}
+.eligibility-item:nth-child(3){ background:rgba(168,85,247,0.12); color:#c4b5fd;}
+.eligibility-item:nth-child(4){ background:rgba(14,165,233,0.12); color:#67e8f9;}
+.eligibility-item:nth-child(5){ background:rgba(250,204,21,0.12); color:#facc15;}
+.eligibility-item:nth-child(6){ background:rgba(244,63,94,0.12); color:#fda4af;}
+.eligibility-item:nth-child(7){ background:rgba(20,184,166,0.12); color:#5eead4;}
+.eligibility-item:nth-child(8){ background:rgba(99,102,241,0.12); color:#a5b4fc;}
+.eligibility-item:nth-child(9){ background:rgba(236,72,153,0.12); color:#f9a8d4;}
+.eligibility-item:nth-child(10){ background:rgba(132,204,22,0.12); color:#bef264;}
+
+/* Hover */
+.eligibility-item:hover{
+    transform:translateX(10px) scale(1.02);
+    box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
     
 </style>
 </head>
@@ -916,28 +989,48 @@ body {
     <div class="info-box">
         <h1>Eligibility</h1>
 
-        <div class="card">
-         <b>   <p>
-                Open to graduates in life sciences, BSc, MSc, B.Pharmacy, M.Pharmacy,
-                medical or non-medical, Bio-technology and allied fields.
-                Freshers and experienced professionals are welcome.
-            </p></b>
+     
+    <div class="eligibility-wrapper">
 
-            <ul>
-               <b> <li>(BSc / MSc / PhD)/ MBBS / Pharm.D / B.Pharm / M.Pharm</li></b>
-<b><li>Life science degrees, Physical & mathematical science degrees, Computer & data-related degrees, Environmental & earth science degrees, 
-Interdisciplinary / applied science degrees, Medical & health science, BSc(Hons), BS, BE, etc.</li></b>
+    <div class="eligibility-item">
+        Open to graduates in life sciences, BSc, MSc, B.Pharmacy, M.Pharmacy,
+        medical or non-medical, Bio-technology and allied fields.
+        Freshers and experienced professionals are welcome.
+    </div>
 
-            <b><li>B.Sc Nursing/ BMLT / BSc MLT/ DMLT/ Lab / Pathology–related medical degrees and diplomas</li></b>
-                
-                <b><li>Basic computer literacy</li></b>
-                <b><li>Medical or Non-medical</li></b>
-                <b><li>Anyone can do & No age bar</li></b>
-                <b><li>Working person or non-working (like student) anyone can do</li></b>
-                <b><li>Science / Commerce / any other field – anyone can do and get the job and can work from wherever you want</li></b>
-                <b><li>Good communication skills (spoken & written – we will guide)</li></b>
-            </ul>
-        </div>
+    <div class="eligibility-item">(BSc / MSc / PhD)/ MBBS / Pharm.D / B.Pharm / M.Pharm</div>
+
+    <div class="eligibility-item">
+        Life science degrees, Physical & mathematical science degrees,
+        Computer & data-related degrees, Environmental & earth science degrees,
+        Interdisciplinary / applied science degrees, Medical & health science,
+        BSc(Hons), BS, BE, etc.
+    </div>
+
+    <div class="eligibility-item">
+        B.Sc Nursing / BMLT / BSc MLT / DMLT / Lab / Pathology–related degrees
+    </div>
+
+    <div class="eligibility-item">Basic computer literacy</div>
+
+    <div class="eligibility-item">Medical or Non-medical – Anyone can apply</div>
+
+    <div class="eligibility-item">Anyone can do & No age bar</div>
+
+    <div class="eligibility-item">
+        Working person or non-working (students) anyone can do
+    </div>
+
+    <div class="eligibility-item">
+        Science / Commerce / any field – work from anywhere
+    </div>
+
+    <div class="eligibility-item">
+        Good communication skills (spoken & written – we will guide)
+    </div>
+
+</div>
+    
     </div>
 </div>
 
@@ -1087,6 +1180,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </a>
 
 </div>
+
 
 
 
