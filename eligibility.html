@@ -971,7 +971,30 @@ body {
 }
 
 
+/* ===============================
+   STICKY FOOTER PROFESSIONAL FIX
+================================= */
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.site-footer {
+    margin-top: auto;
+}
+
+    
     
 </style>
 </head>
@@ -1004,7 +1027,8 @@ body {
     </div>
 </header>
 
-<!-- PAGE CONTENT -->
+<main>
+    <!-- PAGE CONTENT -->
 <div class="container bg-section">
     <div class="info-box">
         <h1>Eligibility</h1>
@@ -1102,6 +1126,8 @@ body {
     
     </div>
 </div>
+    
+</main>
 
 <!-- FOOTER -->
 <footer class="site-footer">
@@ -1242,6 +1268,7 @@ items.forEach((item, index) => {
 
 </body>
 </html>
+
 
 
 
