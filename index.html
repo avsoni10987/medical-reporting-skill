@@ -1616,71 +1616,6 @@ li {
         padding: 25px 20px;
     }
 }
-
-
-/* =========================================
-   DOUBLE SIDE LIGHT SWEEP EFFECT
-========================================= */
-
-.premium-para{
-    position: relative;
-    font-size: 42px;
-    font-weight: 800;
-    line-height: 1.4;
-    text-align: center;
-    color: white;
-    overflow: hidden;
-}
-
-/* LEFT LIGHT */
-.premium-para::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -40%;
-    width: 40%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.7),
-        transparent
-    );
-    transform: skewX(-20deg);
-    animation: sweepLeft 6s linear infinite;
-}
-
-/* RIGHT LIGHT */
-.premium-para::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    right: -40%;
-    width: 40%;
-    height: 100%;
-    background: linear-gradient(
-        -120deg,
-        transparent,
-        rgba(255,255,255,0.7),
-        transparent
-    );
-    transform: skewX(20deg);
-    animation: sweepRight 6s linear infinite;
-}
-
-/* LEFT MOVE */
-@keyframes sweepLeft{
-    0%{ left:-40%; }
-    50%{ left:50%; }
-    100%{ left:120%; }
-}
-
-/* RIGHT MOVE */
-@keyframes sweepRight{
-    0%{ right:-40%; }
-    50%{ right:50%; }
-    100%{ right:120%; }
-}
         
 </style>
 </head>
@@ -1717,7 +1652,7 @@ li {
             <div class="hero-text animate-left delay-1">
 
 <div class="premium-hero-box shine-border">
-    <h1 class="premium-para">
+    <h1>
         Medical Reporting Course from India's Dedicated Medical Reporting Place,
         Guaranteed work everywhere – Medical report typist jobs available in
         Hospitals, Radiology Centers, Work-from-Home with Doctors,
@@ -2048,8 +1983,6 @@ document.addEventListener('mouseleave', () => {
     </a>
 
 </div>
-
-
 
 
 
