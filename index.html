@@ -1468,6 +1468,154 @@ li {
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
+
+        /* =====================================================
+   PREMIUM HERO + COURSE SECTION (ALL IN ONE CSS)
+   ===================================================== */
+
+/* Shared Premium Box Design */
+.premium-hero-box,
+.premium-course-box{
+    margin: 40px 0;
+    padding: 35px 40px;
+    border-radius: 22px;
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #111827,
+        #0b1120
+    );
+
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    backdrop-filter: blur(8px);
+    transition: 0.4s ease;
+}
+
+/* Hover Effect */
+.premium-hero-box:hover,
+.premium-course-box:hover{
+    transform: scale(1.03);
+}
+
+/* Animated Gradient Border (Common) */
+.premium-hero-box::before,
+.premium-course-box::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    padding:3px;
+    border-radius:22px;
+
+    background:linear-gradient(
+        270deg,
+        #38bdf8,
+        #22c55e,
+        #facc15,
+        #fb7185,
+        #38bdf8
+    );
+
+    background-size:400% 400%;
+    animation: premiumBorder 8s linear infinite;
+
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+}
+
+/* Border Animation */
+@keyframes premiumBorder{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* =====================================================
+   PREMIUM HERO HEADING TEXT
+   ===================================================== */
+
+.premium-hero-box h1{
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.4;
+    text-align: center;
+
+    background: linear-gradient(90deg,#38bdf8,#22c55e,#facc15);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 18px rgba(56,189,248,0.35);
+}
+
+/* =====================================================
+   PREMIUM COURSE BOX STYLING
+   ===================================================== */
+
+.premium-course-box h3{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+
+    background: linear-gradient(90deg,#38bdf8,#22c55e,#facc15);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* List Style */
+.premium-course-box ul{
+    list-style: none;
+    padding: 0;
+}
+
+.premium-course-box ul li{
+    font-size: 18px;
+    margin-bottom: 14px;
+    padding-left: 30px;
+    position: relative;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+/* Glowing Check Bullet */
+.premium-course-box ul li::before{
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #22c55e;
+    font-weight: bold;
+    text-shadow: 0 0 8px #22c55e;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+
+@media (max-width: 768px){
+
+    .premium-hero-box h1{
+        font-size: 26px;
+    }
+
+    .premium-course-box h3{
+        font-size: 22px;
+    }
+
+    .premium-course-box ul li{
+        font-size: 16px;
+    }
+
+    .premium-hero-box,
+    .premium-course-box{
+        padding: 25px 20px;
+    }
+}
         
 </style>
 </head>
@@ -1503,20 +1651,29 @@ li {
     <div class="hero-overlay shine-border">
             <div class="hero-text animate-left delay-1">
 
-            <h1 class="dynamic-heading">Medical Reporting Course from India's Dedicated Medical Reporting Place, Guaranteed work at everywhere - Medical report typist job is available at everywhere like in Hospital, Radiology centers, At-home with Doctors, At-home with several unlimited clients, from outside etc...</h1>
-
+<div class="premium-hero-box shine-border">
+    <h1>
+        Medical Reporting Course from India's Dedicated Medical Reporting Place,
+        Guaranteed work everywhere – Medical report typist jobs available in
+        Hospitals, Radiology Centers, Work-from-Home with Doctors,
+        Tele-reporting companies, MNCs, Pharmaceutical industries and more.
+    </h1>
+</div>
                 <div class="dynamic-text">
                 
-                <h3 class="dynamic-heading">Learn Medical Reporting online and become job-ready in:</h3>
-                
-                <ul class="dynamic-list">
-                <li>Training in Medical Reporting, Radiology, Hospital Reporting</li>
-                <li>Medical Analyst / Summarizer / Content Writing</li>
-                <li>Medical Transcription</li>
-                <li>Soft Skills and Communication Skills</li>
-                <li>Work From Home and Office Opportunities</li>
-                </ul>
+             
+<div class="premium-course-box">
+   
+        <h3>Learn Medical Reporting Online and Become Job-Ready In:</h3>
 
+    <ul>
+        <li>Training in Medical Reporting, Radiology & Hospital Reporting</li>
+        <li>Medical Analyst / Summarizer / Content Writing</li>
+        <li>Medical Transcription</li>
+        <li>Soft Skills & Communication Skills</li>
+        <li>Work From Home & Office Opportunities</li>
+    </ul>
+</div>
 </div>
                     
         </div>
@@ -1826,6 +1983,7 @@ document.addEventListener('mouseleave', () => {
     </a>
 
 </div>
+
 
 
 
