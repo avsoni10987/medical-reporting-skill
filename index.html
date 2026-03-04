@@ -1616,6 +1616,62 @@ li {
         padding: 25px 20px;
     }
 }
+
+        /* =========================================
+   SINGLE PARAGRAPH MIX MERGE EFFECT
+========================================= */
+
+.merge-heading{
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.4;
+    text-align: center;
+    position: relative;
+    color: white;
+    overflow: hidden;
+}
+
+/* Duplicate layers using pseudo elements */
+.merge-heading::before,
+.merge-heading::after{
+    content: attr(class);
+}
+
+/* Real animation layer */
+.merge-heading{
+    background: linear-gradient(90deg,#00c6ff,#00ff88,#ffd700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: mergeEffect 8s ease-in-out infinite;
+}
+
+/* Animation */
+@keyframes mergeEffect{
+
+    0%{
+        letter-spacing: 15px;
+        opacity: 0;
+        transform: scaleX(0.2);
+    }
+
+    30%{
+        letter-spacing: 3px;
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    70%{
+        letter-spacing: 0px;
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    100%{
+        letter-spacing: 15px;
+        opacity: 0;
+        transform: scaleX(0.2);
+    }
+}
         
 </style>
 </head>
@@ -1652,7 +1708,7 @@ li {
             <div class="hero-text animate-left delay-1">
 
 <div class="premium-hero-box shine-border">
-    <h1>
+    <h1 class="merge-heading">
         Medical Reporting Course from India's Dedicated Medical Reporting Place,
         Guaranteed work everywhere – Medical report typist jobs available in
         Hospitals, Radiology Centers, Work-from-Home with Doctors,
@@ -1983,6 +2039,7 @@ document.addEventListener('mouseleave', () => {
     </a>
 
 </div>
+
 
 
 
