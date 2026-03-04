@@ -1616,62 +1616,6 @@ li {
         padding: 25px 20px;
     }
 }
-
-        /* =========================================
-   SPLIT MERGE HERO TEXT ANIMATION
-========================================= */
-
-.split-text-container{
-    overflow: hidden;
-    text-align: center;
-}
-
-.split-text-container h1{
-    font-size: 42px;
-    font-weight: 800;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* Gradient Text */
-.left-text,
-.right-text{
-    display: inline-block;
-    white-space: nowrap;
-
-    background: linear-gradient(90deg,#38bdf8,#22c55e,#facc15);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Start Outside Screen */
-.left-text{
-    transform: translateX(-150%);
-    animation: slideLeft 7s ease-in-out infinite;
-}
-
-.right-text{
-    transform: translateX(150%);
-    animation: slideRight 7s ease-in-out infinite;
-}
-
-/* Left Animation */
-@keyframes slideLeft{
-    0%{ transform: translateX(-150%); opacity:0; }
-    30%{ transform: translateX(0); opacity:1; }
-    70%{ transform: translateX(0); opacity:1; }
-    100%{ transform: translateX(-150%); opacity:0; }
-}
-
-/* Right Animation */
-@keyframes slideRight{
-    0%{ transform: translateX(150%); opacity:0; }
-    30%{ transform: translateX(0); opacity:1; }
-    70%{ transform: translateX(0); opacity:1; }
-    100%{ transform: translateX(150%); opacity:0; }
-}
         
 </style>
 </head>
@@ -1708,28 +1652,19 @@ li {
             <div class="hero-text animate-left delay-1">
 
 <div class="premium-hero-box shine-border">
- 
-        <div class="split-text-container">
-        <h1>
-                <span class="left-text">
+    <h1>
         Medical Reporting Course from India's Dedicated Medical Reporting Place,
         Guaranteed work everywhere – Medical report typist jobs available in
         Hospitals, Radiology Centers, Work-from-Home with Doctors,
         Tele-reporting companies, MNCs, Pharmaceutical industries and more.
-      </span>
-        </h1>
+    </h1>
 </div>
                 <div class="dynamic-text">
                 
              
 <div class="premium-course-box">
    
-        <div class="split-text-container">
-        <h3>
-        <span class="right-text">
-                        Learn Medical Reporting Online and Become Job-Ready In:
-         </span>
-        </h3>
+        <h3>Learn Medical Reporting Online and Become Job-Ready In:</h3>
 
     <ul>
         <li>Training in Medical Reporting, Radiology & Hospital Reporting</li>
