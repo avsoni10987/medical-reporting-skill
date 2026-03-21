@@ -1468,6 +1468,79 @@ li {
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
+
+
+        /* ===== ALL-IN-ONE PREMIUM HERO TEXT UPGRADE ===== */
+
+.dynamic-heading{
+    font-size: 42px !important;
+    line-height: 1.5;
+    font-weight: 900;
+    margin-bottom: 18px;
+
+    background: linear-gradient(90deg,#38bdf8,#22c55e,#facc15,#38bdf8);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: medicalGradient 6s linear infinite;
+
+    text-shadow:
+        0 4px 18px rgba(56,189,248,0.45),
+        0 0 12px rgba(34,197,94,0.35);
+}
+
+/* Sub heading */
+.dynamic-text h3{
+    margin-top: 20px;
+    font-size: 30px !important;
+}
+
+/* List container */
+.dynamic-list{
+    margin-top: 16px;
+    padding-left: 0;
+}
+
+/* List items */
+.dynamic-list li{
+    font-size: 23px !important;
+    font-weight: 700;
+    margin: 14px 0;
+    padding: 14px 18px 14px 40px;
+
+    border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(4px);
+
+    position: relative;
+    color:#eaf6ff;
+
+    box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+    transition: all 0.3s ease;
+}
+
+/* Tick icon */
+.dynamic-list li::before{
+    content:"✔";
+    position:absolute;
+    left:14px;
+    top:50%;
+    transform: translateY(-50%);
+    font-size:18px;
+    color:#22c55e;
+    text-shadow: 0 0 10px rgba(34,197,94,0.7);
+}
+
+/* Hover effect */
+.dynamic-list li:hover{
+    transform: translateX(8px) scale(1.02);
+    background: rgba(56,189,248,0.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+        
         
 </style>
 </head>
