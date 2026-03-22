@@ -1046,6 +1046,39 @@ header nav a.active {
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
+
+/* ===== TICK MARK BULLETS WITH COLOR CHANGE ===== */
+
+.card.glass-card ul{
+    list-style: none;
+    padding-left: 30px;
+}
+
+.card.glass-card ul li{
+    position: relative;
+}
+
+/* Tick mark */
+.card.glass-card ul li::before{
+    content: "✔";
+    position: absolute;
+    left: -22px;
+    top: 2px;
+    font-size: 16px;
+    font-weight: bold;
+
+    animation: tickColor 3s linear infinite;
+}
+
+/* Color animation */
+@keyframes tickColor{
+    0%{color:#22c55e;}     /* Green */
+    25%{color:#38bdf8;}    /* Blue */
+    50%{color:#facc15;}    /* Yellow */
+    75%{color:#fb7185;}    /* Pink */
+    100%{color:#22c55e;}
+}
+
     
 </style>
 
