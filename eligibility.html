@@ -996,60 +996,7 @@ main {
 }
 
 
-    /* ================================
-   ELIGIBILITY TICK FULL CODE
-================================ */
 
-/* spacing for tick */
-.eligibility-item {
-    position: relative;
-    padding-left: 55px;
-}
-
-/* default tick */
-.eligibility-item::before {
-    content: "✔";
-    position: absolute;
-    left: 18px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 22px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-
-    /* animation */
-    animation: tickPulse 2s infinite ease-in-out;
-}
-
-/* different colors */
-.eligibility-item:nth-child(1)::before { color: #60a5fa; }
-.eligibility-item:nth-child(2)::before { color: #22c55e; }
-.eligibility-item:nth-child(3)::before { color: #a78bfa; }
-.eligibility-item:nth-child(4)::before { color: #06b6d4; }
-.eligibility-item:nth-child(5)::before { color: #facc15; }
-.eligibility-item:nth-child(6)::before { color: #f472b6; }
-.eligibility-item:nth-child(7)::before { color: #34d399; }
-.eligibility-item:nth-child(8)::before { color: #fb7185; }
-.eligibility-item:nth-child(9)::before { color: #38bdf8; }
-.eligibility-item:nth-child(10)::before { color: #a3e635; }
-.eligibility-item:nth-child(11)::before { color: #c084fc; }
-
-/* hover effect */
-.eligibility-item:hover::before {
-    color: #ffffff;
-    transform: translateY(-50%) scale(1.4);
-    text-shadow:
-        0 0 10px #ffffff,
-        0 0 20px currentColor;
-}
-
-/* pulse animation */
-@keyframes tickPulse {
-    0%   { transform: translateY(-50%) scale(1); }
-    50%  { transform: translateY(-50%) scale(1.2); }
-    100% { transform: translateY(-50%) scale(1); }
-}
-    
     
 </style>
 </head>
