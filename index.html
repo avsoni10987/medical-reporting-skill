@@ -1671,66 +1671,90 @@ h3:hover::after {
 
 
 
-/* ===== FINAL HEADER IMPROVEMENT (PASTE THIS AT END) ===== */
+/* ===== ULTRA BOLD PREMIUM HEADER ===== */
 
 header {
-    padding: 20px 60px !important;
-    gap: 12px !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    background: linear-gradient(to right, #ffffff, #f8fafc);
+    padding: 28px 70px !important;
+    gap: 16px !important;
+    background: linear-gradient(to right, #ffffff, #eef2ff);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
-/* Logo size */
+/* Logo Bigger */
 .logo img {
-    height: 75px !important;
+    height: 85px !important;
 }
 
-/* Main Title */
+/* 🔥 MAIN TITLE (Very Bold & Sharp) */
 .title h2 {
-    font-size: 30px !important;
-    font-weight: 800 !important;
-    color: #111 !important;
+    font-size: 36px !important;       /* BIG */
+    font-weight: 900 !important;      /* EXTRA BOLD */
+    color: #0f172a !important;        /* deep dark */
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 0px #cbd5e1; /* sharp effect */
+}
+
+/* 🌟 TAGLINE (Highlighted) */
+.title p {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #22c55e !important;        /* strong green */
     letter-spacing: 0.5px;
 }
 
-/* Subtitle / Tagline */
-.title p {
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    color: #16a34a !important;  /* green highlight */
-}
-
-/* Navigation Menu */
+/* 🚀 NAVIGATION (Clean + Attractive) */
 nav {
-    gap: 25px !important;
+    gap: 30px !important;
 }
 
 nav a {
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    color: #333;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    color: #1e293b;
+    position: relative;
     transition: 0.3s;
 }
 
+/* Hover underline animation */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -6px;
+    left: 0;
+    background: #f59e0b;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
 nav a:hover {
-    color: #f39c12;
+    color: #f59e0b;
 }
 
+/* Active link */
 nav a.active {
-    border-bottom: 3px solid #f39c12;
-    padding-bottom: 4px;
+    color: #f59e0b;
 }
 
-/* Marquee Text */
+/* 💬 MARQUEE (More visible & bold) */
 .header-marquee-wrapper {
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    color: #d35400 !important;
-    margin-top: 8px;
-    padding-top: 8px;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    color: #dc2626 !important;   /* strong red */
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid #e5e7eb;
 }
-        
-        
+
+/* Smooth text movement */
+.header-marquee {
+    animation: headerScroll 22s linear infinite;
+}        
 </style>
 </head>
 <body>
