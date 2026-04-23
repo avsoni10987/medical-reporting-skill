@@ -1757,9 +1757,32 @@ nav a.active {
     animation: headerScroll 22s linear infinite;
 }     
        
+/* ===== FIXED MARQUEE (Slow + Instant Visible) ===== */
+
 .header-marquee {
     display: inline-block;
-    animation: headerScroll 70s linear infinite;
+    white-space: nowrap;
+
+    /* Start already visible */
+    transform: translateX(0);
+
+    /* Slow & smooth */
+    animation: headerScroll 60s linear infinite;
+}
+
+/* Pause on hover (keep this) */
+.header-marquee-wrapper:hover .header-marquee {
+    animation-play-state: paused;
+}
+
+/* KEYFRAME FIX (No delay, starts visible) */
+@keyframes headerScroll {
+    0% {
+        transform: translateX(0);       /* visible immediately */
+    }
+    100% {
+        transform: translateX(-100%);   /* move left fully */
+    }
 }
         
 </style>
