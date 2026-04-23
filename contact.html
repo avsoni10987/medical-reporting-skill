@@ -946,6 +946,198 @@ header nav a.active {
     line-height:2.1 !important;
 }
 
+
+/* ===== ULTRA BOLD PREMIUM HEADER ===== */
+
+header {
+    padding: 28px 70px !important;
+    gap: 16px !important;
+    background: linear-gradient(to right, #ffffff, #eef2ff);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Logo Bigger */
+.logo img {
+    height: 85px !important;
+}
+
+        
+/* 🔥 MAIN TITLE (Very Bold & Sharp) */
+.title h2 {
+    font-size: 36px !important;       /* BIG */
+    font-weight: 900 !important;      /* EXTRA BOLD */
+    color: #0f172a !important;        /* deep dark */
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 0px #cbd5e1; /* sharp effect */
+}
+
+/* 🌟 TAGLINE (Highlighted) */
+.title p {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #22c55e !important;        /* strong green */
+    letter-spacing: 0.5px;
+}
+
+/* 🚀 ULTRA PREMIUM NAVIGATION TEXT */
+
+nav {
+    gap: 35px !important;   /* more spacing */
+}
+
+nav a {
+    font-size: 19px !important;     /* BIGGER */
+    font-weight: 800 !important;    /* EXTRA BOLD */
+    color: #0f172a !important;      /* deep dark */
+    letter-spacing: 0.8px;          /* clean spacing */
+    text-transform: uppercase;      /* strong look */
+
+    position: relative;
+    padding: 6px 0;
+    transition: all 0.3s ease;
+
+    /* sharp + depth */
+    text-shadow: 0.5px 0.5px 0px #ffffff;
+}
+
+/* 🔥 Hover Effect */
+nav a:hover {
+    color: #f59e0b !important;   /* orange highlight */
+    transform: translateY(-2px); /* slight lift */
+}
+
+/* ✨ Animated Underline */
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: -6px;
+    left: 0;
+    background: linear-gradient(to right, #f59e0b, #f97316);
+    transition: 0.3s ease;
+    border-radius: 2px;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* 🎯 ACTIVE MENU (Current Page) */
+nav a.active {
+    color: #f59e0b !important;
+}
+
+nav a.active::after {
+    width: 100%;
+}
+
+
+
+        /* ✨ OUTLINE ANIMATION FOR NAV TEXT */
+
+nav a {
+    font-size: 19px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+
+    color: #0f172a; /* solid readable text */
+
+    /* Outline effect */
+    -webkit-text-stroke: 1px transparent;
+
+    position: relative;
+
+    /* animated outline using text-shadow */
+    animation: outlineFlow 4s linear infinite;
+}
+
+/* 🎨 Color changing outline */
+@keyframes outlineFlow {
+    0% {
+        text-shadow: 
+            1px 0 #2563eb,
+            -1px 0 #2563eb,
+            0 1px #2563eb,
+            0 -1px #2563eb;
+    }
+    25% {
+        text-shadow: 
+            1px 0 #22c55e,
+            -1px 0 #22c55e,
+            0 1px #22c55e,
+            0 -1px #22c55e;
+    }
+    50% {
+        text-shadow: 
+            1px 0 #f59e0b,
+            -1px 0 #f59e0b,
+            0 1px #f59e0b,
+            0 -1px #f59e0b;
+    }
+    75% {
+        text-shadow: 
+            1px 0 #ef4444,
+            -1px 0 #ef4444,
+            0 1px #ef4444,
+            0 -1px #ef4444;
+    }
+    100% {
+        text-shadow: 
+            1px 0 #2563eb,
+            -1px 0 #2563eb,
+            0 1px #2563eb,
+            0 -1px #2563eb;
+    }
+}
+
+        
+/* 💬 MARQUEE (More visible & bold) */
+.header-marquee-wrapper {
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    color: #dc2626 !important;   /* strong red */
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid #e5e7eb;
+}
+
+/* Smooth text movement */
+.header-marquee {
+    animation: headerScroll 22s linear infinite;
+}     
+       
+/* ===== FIXED MARQUEE (Slow + Instant Visible) ===== */
+
+.header-marquee {
+    display: inline-block;
+    white-space: nowrap;
+
+    /* Start already visible */
+    transform: translateX(0);
+
+    /* Slow & smooth */
+    animation: headerScroll 60s linear infinite;
+}
+
+/* Pause on hover (keep this) */
+.header-marquee-wrapper:hover .header-marquee {
+    animation-play-state: paused;
+}
+
+/* KEYFRAME FIX (No delay, starts visible) */
+@keyframes headerScroll {
+    0% {
+        transform: translateX(0);       /* visible immediately */
+    }
+    100% {
+        transform: translateX(-100%);   /* move left fully */
+    }
+}
+  
+
         
     </style>
 </head>
