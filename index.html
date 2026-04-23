@@ -1756,6 +1756,49 @@ nav a.active {
 nav a.active::after {
     width: 100%;
 }
+
+
+
+
+        /* 🌈 Animated Color Text for Menu */
+
+nav a {
+    font-size: 19px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+
+    /* Gradient color */
+    background: linear-gradient(
+        90deg,
+        #2563eb,   /* blue */
+        #22c55e,   /* green */
+        #f59e0b,   /* orange */
+        #ef4444,   /* red */
+        #2563eb
+    );
+
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: colorFlow 6s linear infinite;
+
+    position: relative;
+}
+
+/* Smooth moving colors */
+@keyframes colorFlow {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 300%;
+    }
+}
+
+
+        
 /* 💬 MARQUEE (More visible & bold) */
 .header-marquee-wrapper {
     font-size: 17px !important;
