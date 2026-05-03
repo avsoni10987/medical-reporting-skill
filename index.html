@@ -1906,15 +1906,36 @@ nav a {
 .c9 { color: #10b981; }   /* emerald */
 .c10 { color: #f97316; }  /* deep orange */
 
-/* animation */
-@keyframes companyScroll {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+/* ===== CLEAN ANIMATION SYSTEM ===== */
+
+/* Base state */
+[class*="animate-"] {
+    opacity: 0;
+    transform: translateY(40px);
 }
+
+/* When page loads */
+.page-loaded .animate-left {
+    animation: slideInLeft 1s ease forwards;
+}
+
+.page-loaded .animate-right {
+    animation: slideInRight 1s ease forwards;
+}
+
+.page-loaded .animate-up {
+    animation: slideInUp 1s ease forwards;
+}
+
+.page-loaded .animate-fade {
+    animation: fadeIn 1.2s ease forwards;
+}
+
+/* delays */
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+.delay-4 { animation-delay: 1.2s; }
 
         
 </style>
@@ -2268,6 +2289,12 @@ document.addEventListener('mouseleave', () => {
 });
 </script>
 
+        
+<script>
+window.addEventListener("load", () => {
+    document.body.classList.add("page-loaded");
+});
+</script>
 
 </body>
      
