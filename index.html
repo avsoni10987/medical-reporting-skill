@@ -1860,6 +1860,62 @@ nav a {
         transform: translateX(-100%);   /* move left fully */
     }
 }
+
+
+
+        /* ===== MOVING COMPANY STRIP ===== */
+.company-strip {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 18px 0;
+    border-top: 1px solid #eee;
+}
+
+/* moving container */
+.company-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: companyScroll 35s linear infinite;
+}
+
+/* pause on hover */
+.company-strip:hover .company-track {
+    animation-play-state: paused;
+}
+
+/* text style (LIKE LOGOS FEEL) */
+.company-track span {
+    display: inline-block;
+    margin: 0 35px;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* different brand colors */
+.c1 { color: #22c55e; }   /* green */
+.c2 { color: #2563eb; }   /* blue */
+.c3 { color: #f59e0b; }   /* orange */
+.c4 { color: #ec4899; }   /* pink */
+.c5 { color: #14b8a6; }   /* teal */
+.c6 { color: #8b5cf6; }   /* violet */
+.c7 { color: #ef4444; }   /* red */
+.c8 { color: #0ea5e9; }   /* sky */
+.c9 { color: #10b981; }   /* emerald */
+.c10 { color: #f97316; }  /* deep orange */
+
+/* animation */
+@keyframes companyScroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
         
 </style>
 </head>
@@ -1890,6 +1946,36 @@ nav a {
     </div>
 </header>
 
+
+<div class="company-strip">
+    <div class="company-track">
+
+        <span class="c1">Apollo Hospitals</span>
+        <span class="c2">Fortis Healthcare</span>
+        <span class="c3">AIIMS</span>
+        <span class="c4">Max Healthcare</span>
+        <span class="c5">Narayana Health</span>
+        <span class="c6">Manipal Hospitals</span>
+        <span class="c7">Dr Lal PathLabs</span>
+        <span class="c8">Thyrocare</span>
+        <span class="c9">Metropolis Healthcare</span>
+        <span class="c10">SRL Diagnostics</span>
+        <span class="c1">Teleradiology Solutions</span>
+        <span class="c2">Medanta Hospital</span>
+        <span class="c3">Global Hospitals</span>
+        <span class="c4">Cloudnine Hospitals</span>
+        <span class="c5">HCG Cancer Centre</span>
+        <span class="c6">Aster DM Healthcare</span>
+        <span class="c7">Sun Pharma</span>
+        <span class="c8">Cipla</span>
+        <span class="c9">Dr Reddy’s Labs</span>
+        <span class="c10">Pfizer</span>
+
+    </div>
+</div>
+        
+
+        
 <!-- HERO SECTION -->
 <section class="hero">
     <div class="hero-overlay shine-border">
