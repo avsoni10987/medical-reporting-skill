@@ -1240,6 +1240,62 @@ nav a {
 }
   
 
+
+    
+        /* ===== MOVING COMPANY STRIP ===== */
+.company-strip {
+    width: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 18px 0;
+    border-top: 1px solid #eee;
+}
+
+/* moving container */
+.company-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: companyScroll 35s linear infinite;
+}
+
+/* pause on hover */
+.company-strip:hover .company-track {
+    animation-play-state: paused;
+}
+
+/* text style (LIKE LOGOS FEEL) */
+.company-track {
+    display: inline-block;
+    white-space: nowrap;
+
+    /* SLOW & SMOOTH */
+    animation: companyScroll 80s linear infinite;
+}
+
+/* different brand colors */
+.c1 { color: #22c55e; }   /* green */
+.c2 { color: #2563eb; }   /* blue */
+.c3 { color: #f59e0b; }   /* orange */
+.c4 { color: #ec4899; }   /* pink */
+.c5 { color: #14b8a6; }   /* teal */
+.c6 { color: #8b5cf6; }   /* violet */
+.c7 { color: #ef4444; }   /* red */
+.c8 { color: #0ea5e9; }   /* sky */
+.c9 { color: #10b981; }   /* emerald */
+.c10 { color: #f97316; }  /* deep orange */
+
+
+
+/* animation */
+@keyframes companyScroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
     
 </style>
 
@@ -1273,6 +1329,76 @@ nav a {
     </div>
 </header>
 
+<div class="company-strip">
+    <div class="company-track">
+
+        <!-- Hospitals -->
+        <span class="c1">Apollo Hospitals</span>
+        <span class="c2">Fortis Healthcare</span>
+        <span class="c3">AIIMS</span>
+        <span class="c4">Max Healthcare</span>
+        <span class="c5">Narayana Health</span>
+        <span class="c6">Manipal Hospitals</span>
+        <span class="c7">Medanta Hospital</span>
+        <span class="c8">Aster DM Healthcare</span>
+        <span class="c9">Global Hospitals</span>
+        <span class="c10">Cloudnine Hospitals</span>
+
+        <!-- Diagnostics -->
+        <span class="c1">Dr Lal PathLabs</span>
+        <span class="c2">Thyrocare</span>
+        <span class="c3">Metropolis Healthcare</span>
+        <span class="c4">SRL Diagnostics</span>
+        <span class="c5">Suburban Diagnostics</span>
+
+        <!-- Pharma MNCs -->
+        <span class="c6">Pfizer</span>
+        <span class="c7">Novartis</span>
+        <span class="c8">Roche</span>
+        <span class="c9">Sanofi</span>
+        <span class="c10">Johnson & Johnson</span>
+        <span class="c1">GlaxoSmithKline</span>
+        <span class="c2">Merck</span>
+        <span class="c3">Abbott</span>
+        <span class="c4">AstraZeneca</span>
+        <span class="c5">Bayer</span>
+        <span class="c6">Eli Lilly</span>
+        <span class="c7">Takeda</span>
+        <span class="c8">Amgen</span>
+
+        <!-- Indian Pharma -->
+        <span class="c9">Sun Pharma</span>
+        <span class="c10">Cipla</span>
+        <span class="c1">Dr Reddy’s Labs</span>
+        <span class="c2">Lupin</span>
+        <span class="c3">Zydus Lifesciences</span>
+        <span class="c4">Torrent Pharma</span>
+
+        <!-- Teleradiology / Reporting Companies -->
+        <span class="c5">Teleradiology Solutions</span>
+        <span class="c6">5C Network</span>
+        <span class="c7">Rad365</span>
+        <span class="c8">Agfa HealthCare</span>
+        <span class="c9">GE Healthcare</span>
+        <span class="c10">Philips Healthcare</span>
+        <span class="c1">Siemens Healthineers</span>
+        <span class="c2">Everlight Radiology</span>
+        <span class="c3">vRad (Virtual Radiologic)</span>
+        <span class="c4">USARAD Holdings</span>
+
+        <!-- CRO / Medical Writing / Reporting -->
+        <span class="c5">IQVIA</span>
+        <span class="c6">Parexel</span>
+        <span class="c7">Syneos Health</span>
+        <span class="c8">ICON plc</span>
+        <span class="c9">Medpace</span>
+        <span class="c10">Clario</span>
+
+    </div>
+</div>
+
+
+    
 <!-- MAIN INFO CONTENT -->
 <div class="container shine-border">
 
