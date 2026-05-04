@@ -1238,7 +1238,16 @@ nav a {
         transform: translateX(-100%);   /* move left fully */
     }
 }
-  
+
+    .header-marquee {
+    display: inline-block;
+    white-space: nowrap;
+
+    transform: translateX(20%);  /* start slightly right */
+
+    animation: headerScroll 60s linear infinite;
+    animation-delay: 2s;   /* ⏳ delay before start */
+}
 
 
     
