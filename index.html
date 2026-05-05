@@ -228,7 +228,7 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 .hero-form,
 .dark-card,
 .testimonial {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
 }
 
 /* grow slightly on hover */
@@ -563,14 +563,6 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 
 
 /* ===== GLOBAL DIV HOVER EFFECT ===== */
-div {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-div:hover {
-    transform: scale(1.02);
-    cursor: pointer;
-}
 
 /* ===== SCROLL & MOUSE ACTIVATION SUPPORT ===== */
 
@@ -1977,7 +1969,31 @@ nav a {
         animation: companyScroll 120s linear infinite;
     }
 }
-    
+
+
+
+
+        .header-marquee {
+    display: inline-block;
+    white-space: nowrap;
+    /* your existing code */
+}
+
+.company-track {
+    display: inline-block;
+    white-space: nowrap;
+    /* your existing code */
+}
+
+/* 🔥 ADD THIS RIGHT HERE */
+.header-marquee,
+.company-track {
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+        
 </style>
 </head>
 <body>
