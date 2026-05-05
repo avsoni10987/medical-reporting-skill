@@ -1923,35 +1923,58 @@ nav a {
 
 
 
-        /* ===== FINAL MARQUEE FIX (DESKTOP + MOBILE) ===== */
-
+       /* =========================
+   HEADER MARQUEE (FIXED)
+   ========================= */
 .header-marquee {
     display: inline-block;
     white-space: nowrap;
-
-    padding-left: 100%; /* smooth start */
+    padding-left: 100%;
 
     animation: headerScroll 60s linear infinite;
 
-    /* anti-shake performance fix */
     will-change: transform;
     backface-visibility: hidden;
 }
 
-/* smooth GPU animation */
-@keyframes headerScroll {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        transform: translate3d(-100%, 0, 0);
-    }
+/* =========================
+   COMPANY STRIP (FIXED)
+   ========================= */
+.company-track {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+
+    animation: companyScroll 80s linear infinite;
+
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
-/* MOBILE – slower for stability */
+/* =========================
+   KEYFRAMES (GPU SMOOTH)
+   ========================= */
+@keyframes headerScroll {
+    0%   { transform: translate3d(0,0,0); }
+    100% { transform: translate3d(-100%,0,0); }
+}
+
+@keyframes companyScroll {
+    0%   { transform: translate3d(0,0,0); }
+    100% { transform: translate3d(-100%,0,0); }
+}
+
+/* =========================
+   MOBILE (SLOW = NO SHAKE)
+   ========================= */
 @media (max-width: 768px) {
+
     .header-marquee {
         animation: headerScroll 80s linear infinite;
+    }
+
+    .company-track {
+        animation: companyScroll 120s linear infinite;
     }
 }
     
