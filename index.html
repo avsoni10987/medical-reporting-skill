@@ -2393,21 +2393,23 @@ const observer = new IntersectionObserver(entries => {
 animatedElements.forEach(el => observer.observe(el));
 
 /* ===== MOUSE MOVE INTERACTION (VERY LIGHT) ===== */
-document.addEventListener('mousemove', e => {
-    const x = (window.innerWidth / 2 - e.clientX) / 60;
-    const y = (window.innerHeight / 2 - e.clientY) / 60;
+if (window.innerWidth > 768) {
+    document.addEventListener('mousemove', e => {
+        const x = (window.innerWidth / 2 - e.clientX) / 60;
+        const y = (window.innerHeight / 2 - e.clientY) / 60;
 
-    document.querySelectorAll('.hero-overlay, .dark-card, .testimonial').forEach(el => {
-        el.style.transform = `translate(${x}px, ${y}px) scale(1.02)`;
+        document.querySelectorAll('.hero-overlay, .dark-card, .testimonial').forEach(el => {
+            el.style.transform = `translate(${x}px, ${y}px) scale(1.02)`;
+        });
     });
-});
 
-/* Reset transform when mouse leaves window */
-document.addEventListener('mouseleave', () => {
-    document.querySelectorAll('.hero-overlay, .dark-card, .testimonial').forEach(el => {
-        el.style.transform = '';
+    document.addEventListener('mouseleave', () => {
+        document.querySelectorAll('.hero-overlay, .dark-card, .testimonial').forEach(el => {
+            el.style.transform = '';
+        });
     });
-});
+}
+
 </script>
 
         
