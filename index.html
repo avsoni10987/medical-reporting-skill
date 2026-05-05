@@ -1921,57 +1921,6 @@ nav a {
 
 
 
-        /* ===== FINAL NO-SHAKE OVERRIDE (PASTE AT LAST) ===== */
-
-/* HEADER MARQUEE FIX */
-.header-marquee-wrapper {
-    position: relative !important;
-    overflow: hidden !important;
-}
-
-.header-marquee {
-    position: absolute !important;
-    white-space: nowrap !important;
-    left: 100% !important;
-
-    animation: finalMarqueeMove 40s linear infinite !important;
-}
-
-/* COMPANY STRIP FIX */
-.company-strip {
-    position: relative !important;
-    overflow: hidden !important;
-}
-
-.company-track {
-    position: absolute !important;
-    white-space: nowrap !important;
-    left: 100% !important;
-
-    animation: finalCompanyMove 80s linear infinite !important;
-}
-
-/* KEYFRAMES (NO TRANSFORM = NO SHAKE) */
-@keyframes finalMarqueeMove {
-    0%   { left: 100%; }
-    100% { left: -100%; }
-}
-
-@keyframes finalCompanyMove {
-    0%   { left: 100%; }
-    100% { left: -100%; }
-}
-
-/* MOBILE SLOW (MORE STABLE) */
-@media (max-width: 768px) {
-    .header-marquee {
-        animation: finalMarqueeMove 60s linear infinite !important;
-    }
-
-    .company-track {
-        animation: finalCompanyMove 120s linear infinite !important;
-    }
-}
 
     
 </style>
