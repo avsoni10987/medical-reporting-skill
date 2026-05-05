@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Medical Reporting Skill - Info</title>
 <link rel="stylesheet" href="style">
-        
 <style>
 
         
@@ -228,7 +227,7 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 .hero-form,
 .dark-card,
 .testimonial {
-
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* grow slightly on hover */
@@ -563,6 +562,14 @@ nav a.active { border-bottom: 2px solid #007bff; padding-bottom: 2px; }
 
 
 /* ===== GLOBAL DIV HOVER EFFECT ===== */
+div {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+div:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
 
 /* ===== SCROLL & MOUSE ACTIVATION SUPPORT ===== */
 
@@ -1911,89 +1918,8 @@ nav a {
     }
 }
 
-        
 
-
-
-       /* =========================
-   HEADER MARQUEE (FIXED)
-   ========================= */
-.header-marquee {
-    display: inline-block;
-    white-space: nowrap;
-    padding-left: 100%;
-
-    animation: headerScroll 60s linear infinite;
-
-    will-change: transform;
-    backface-visibility: hidden;
-}
-
-/* =========================
-   COMPANY STRIP (FIXED)
-   ========================= */
-.company-track {
-    display: inline-block;
-    white-space: nowrap;
-    padding-left: 100%;
-
-    animation: companyScroll 80s linear infinite;
-
-    will-change: transform;
-    backface-visibility: hidden;
-}
-
-/* =========================
-   KEYFRAMES (GPU SMOOTH)
-   ========================= */
-@keyframes headerScroll {
-    0%   { transform: translate3d(0,0,0); }
-    100% { transform: translate3d(-100%,0,0); }
-}
-
-@keyframes companyScroll {
-    0%   { transform: translate3d(0,0,0); }
-    100% { transform: translate3d(-100%,0,0); }
-}
-
-/* =========================
-   MOBILE (SLOW = NO SHAKE)
-   ========================= */
-@media (max-width: 768px) {
-
-    .header-marquee {
-        animation: headerScroll 80s linear infinite;
-    }
-
-    .company-track {
-        animation: companyScroll 120s linear infinite;
-    }
-}
-
-
-
-
-        .header-marquee {
-    display: inline-block;
-    white-space: nowrap;
-    /* your existing code */
-}
-
-.company-track {
-    display: inline-block;
-    white-space: nowrap;
-    /* your existing code */
-}
-
-/* 🔥 ADD THIS RIGHT HERE */
-.header-marquee,
-.company-track {
-    transform: translateZ(0);
-    will-change: transform;
-    backface-visibility: hidden;
-    perspective: 1000px;
-}
-        
+    
 </style>
 </head>
 <body>
@@ -2409,23 +2335,21 @@ const observer = new IntersectionObserver(entries => {
 animatedElements.forEach(el => observer.observe(el));
 
 /* ===== MOUSE MOVE INTERACTION (VERY LIGHT) ===== */
-if (window.innerWidth > 768) {
-    document.addEventListener('mousemove', e => {
-        const x = (window.innerWidth / 2 - e.clientX) / 60;
-        const y = (window.innerHeight / 2 - e.clientY) / 60;
+document.addEventListener('mousemove', e => {
+    const x = (window.innerWidth / 2 - e.clientX) / 60;
+    const y = (window.innerHeight / 2 - e.clientY) / 60;
 
-        document.querySelectorAll('.hero-overlay, .dark-card, .testimonial').forEach(el => {
-            el.style.transform = `translate(${x}px, ${y}px) scale(1.02)`;
-        });
+    document.querySelectorAll('.hero-overlay, .dark-card, .testimonial').forEach(el => {
+        el.style.transform = `translate(${x}px, ${y}px) scale(1.02)`;
     });
+});
 
-    document.addEventListener('mouseleave', () => {
-        document.querySelectorAll('.hero-overlay, .dark-card, .testimonial').forEach(el => {
-            el.style.transform = '';
-        });
+/* Reset transform when mouse leaves window */
+document.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.hero-overlay, .dark-card, .testimonial').forEach(el => {
+        el.style.transform = '';
     });
-}
-
+});
 </script>
 
         
@@ -2466,7 +2390,6 @@ if (window.innerWidth > 768) {
     </a>
 
 </div>
-
 
 
 
