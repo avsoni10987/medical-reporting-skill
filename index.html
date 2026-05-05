@@ -1918,7 +1918,35 @@ nav a {
     }
 }
 
-        
+
+
+        .header-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: #ffffff;
+    padding: 8px 0;
+}
+
+.header-marquee {
+    display: inline-block;
+    white-space: nowrap;
+
+    /* GPU smooth */
+    will-change: transform;
+
+    animation: smoothScroll 40s linear infinite;
+}
+
+/* PERFECT smooth animation */
+@keyframes smoothScroll {
+    0% {
+        transform: translate3d(100%, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
         
 </style>
 </head>
