@@ -1921,11 +1921,39 @@ nav a {
 
         
 
+
+
+        /* ===== FINAL MARQUEE FIX (DESKTOP + MOBILE) ===== */
+
+.header-marquee {
+    display: inline-block;
+    white-space: nowrap;
+
+    padding-left: 100%; /* smooth start */
+
+    animation: headerScroll 60s linear infinite;
+
+    /* anti-shake performance fix */
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* smooth GPU animation */
+@keyframes headerScroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
 /* MOBILE – slower for stability */
 @media (max-width: 768px) {
     .header-marquee {
         animation: headerScroll 80s linear infinite;
     }
+}
     
 </style>
 </head>
