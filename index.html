@@ -1920,12 +1920,33 @@ nav a {
 }
 
 
-.blue-underline {
-    display: inline-block;
-    border-bottom: 4px solid #007bff;
-    padding-bottom: 4px;
+
+.blue-underline{
+    display:inline-block;
+    border-bottom:4px solid #007bff;
+    padding-bottom:4px;
 }
-    
+
+.red-gradient{
+    background:linear-gradient(
+        90deg,
+        #ff0000,
+        #ff4d4d,
+        #ff7f50,
+        #ff0000
+    );
+    background-size:300% 300%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:redFlow 5s linear infinite;
+}
+
+@keyframes redFlow{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+        
 </style>
 </head>
 <body>
@@ -2072,8 +2093,10 @@ nav a {
             <div class="hero-text animate-left delay-1">
 
 <h1 class="dynamic-heading">
-    <span class="blue-underline">Medical-Reporting & Medical-Coding training</span>
-        from India's Dedicated Medical Reporting Skill Place, Guaranteed work at everywhere - Medical report typist job is available at everywhere like in Hospital, Radiology centers, At-home with Doctors, At-home with several unlimited clients, from Inside &amp; outside Clients etc...
+    <span class="blue-underline red-gradient">
+        Medical-Reporting & Medical-Coding training
+    </span>
+    from India's Dedicated Medical Reporting Skill Place, Guaranteed work at everywhere - Medical report typist job is available at everywhere like in Hospital, Radiology centers, At-home with Doctors, At-home with several unlimited clients, from Inside &amp; outside Clients etc...
 </h1>
                 <div class="dynamic-text">
                 
