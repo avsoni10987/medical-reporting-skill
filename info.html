@@ -1297,6 +1297,23 @@ nav a {
 }
 
     
+    .underline-gradient{
+    display:inline-block;
+    position:relative;
+    padding-bottom:10px;
+}
+
+.underline-gradient::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(90deg,#0d6efd,#ff3b3b);
+    border-radius:10px;
+}
+    
 </style>
 
 </head>
@@ -1439,7 +1456,11 @@ nav a {
 <!-- MAIN INFO CONTENT -->
 <div class="container shine-border">
 
-    <h1 class="animate">Information about Medical-Reporting & Medical-Coding Guaranteed Home-based Job Opportunities</h1>
+  <h1 class="animate underline-gradient">
+    Information about Medical-Reporting & Medical-Coding Guaranteed Home-based Job Opportunities
+</h1>
+
+    
  <div class="animate">
     <div class="info-overlay shine-border">
         <p>
