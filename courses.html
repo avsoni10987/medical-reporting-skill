@@ -1009,6 +1009,30 @@ nav a {
     }
 }
 
+        .subtitle-highlight{
+    font-size: 28px;              /* Bigger text */
+    font-weight: 700;
+    color: #1f2937;
+    text-align: center;
+    line-height: 1.6;
+    margin: 20px auto 35px;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.subtitle-highlight::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(90deg, #0d6efd, #ff3b3b);
+    border-radius: 10px;
+}
+
 
     </style>
 </head>
@@ -1153,9 +1177,9 @@ nav a {
     <div class="page-bg">
         <div class="container shine-border">
             <h1>Our Courses</h1>
-            <p class="courses-subtitle">
-              Explore our specialized Medical-Reporting & Medical-Coding courses designed for Any professionals.
-            </p>
+            <p class="courses-subtitle subtitle-highlight">
+    Explore our specialized Medical-Reporting & Medical-Coding courses designed for Any professionals.
+</p>
 
             <div class="course-grid shine-border">
                 <div class="course-card shine-border">
